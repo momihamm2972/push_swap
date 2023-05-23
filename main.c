@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linedlist.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/24 00:32:09 by momihamm         ###   ########.fr       */
+/*   Created: 2023/05/23 23:08:48 by momihamm          #+#    #+#             */
+/*   Updated: 2023/05/24 00:32:21 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-t_node	*ft_lstnew(int content)
+typedef struct node
 {
-	t_node	*head;
-
-	head = (t_node *) malloc(sizeof (t_node));
-	head->a = (int)content;
-	head->next = NULL;
-	return (head);
-}
+    int             data;
+    struct  node    *next;
+}t_node;
 
 t_node	*ft_lstlast(t_node *head)
 {
@@ -31,17 +28,12 @@ t_node	*ft_lstlast(t_node *head)
 	return (head);
 }
 
-int	ft_lstsize(t_node *head)
+int main(void)
 {
-	int	size;
-
-	size = 0;
-	if (!head)
-		return (0);
-	while (head)
-	{
-		head = head->next;
-		size++;
-	}
-	return (size);
+    t_node *head = (t_node*)malloc (sizeof(t_node));
+    head->data = 20;
+    t_node *scond = (t_node*)malloc (sizeof(t_node));
+    scond->data = 50;
+    scond->next = NULL;
+    printf ("%p\n%p",scond,ft_lstlast(head));
 }
