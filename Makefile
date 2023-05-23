@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/22 00:51:46 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/23 18:42:19 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ $(NAME) : $(OBJ)
 clean :
 		@rm -f $(OBJ)
 
-fclean :
+fclean : clean
 		@rm -f $(NAME)
 
 re : fclean all
