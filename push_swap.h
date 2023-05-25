@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/25 21:32:07 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/25 21:42:27 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ typedef struct node
 }t_node;
 
 t_node	*ft_lstnew(int content);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

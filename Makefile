@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/23 18:42:19 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/25 21:42:44 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ FILES = push_swap.c\
 		parssing3.c\
 		parssing4.c\
 		parssing5.c\
-		parssing6.c
+		parssing6.c\
+		utils0.c
 
 OBJ = $(FILES:.c=.o)
 
