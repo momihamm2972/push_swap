@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils0.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/25 21:44:52 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:12:47 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_strlen(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (str[i])
@@ -22,13 +22,13 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str1;
-	char	*str2;
-	char	*buff;
-	int		indx_of_conca;
-	int		indx;
+	char *str1;
+	char *str2;
+	char *buff;
+	int indx_of_conca;
+	int indx;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -48,4 +48,64 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		buff[indx++] = str2[indx_of_conca++];
 	buff[indx] = '\0';
 	return (buff);
+}
+
+int ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int ft_atoi(const char *str)
+{
+	int i;
+	int r;
+	int s;
+
+	i = 0;
+	r = 0;
+	s = 1;
+	while (str[i] != '\0')
+	{
+		while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+			i++;
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (str[i] == '-')
+				s = -1;
+			i++;
+		}
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (0);
+		r = (r * 10) + str[i] - '0';
+		i++;
+		if ((str[i] >= 0 && str[i] <= 47) || (str[i] >= 58 && str[i] <= 127))
+			break;
+	}
+	return (r * s);
+}
+
+char *ft_substr(char *s, int start, int len)
+{
+	char *alloc_adds;
+	int str_len;
+	int indx;
+	int end;
+
+	if (!s)
+		return (NULL);
+	str_len = ft_strlen (s);
+	if (start >= str_len)
+		return (ft_calloc (1, sizeof(char)));
+	if (len > ft_strlen(&s[start]))
+		len = ft_strlen(&s[start]);
+	alloc_adds = (char *) ft_calloc(len + 1, sizeof (char));
+	if (!alloc_adds)
+		return (NULL);
+	indx = 0;
+	end = start + len;
+	while (start < end && indx < len + 1 && s[start])
+		alloc_adds[indx++] = s[start++];
+	return (alloc_adds);
 }

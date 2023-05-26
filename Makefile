@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
+#    By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/25 21:42:44 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/26 18:05:21 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = CC
-FLAGS = -Wall -Werror -Wextra
+CC = cc
+#FLAGS = -Wall -Werror -Wextra
 FILES = push_swap.c\
 		excution0.c\
 		excution1.c\
@@ -35,10 +35,10 @@ OBJ = $(FILES:.c=.o)
 all : $(NAME)
 
 %.o : %.c push_swap.h
-	$(CC) $(FLAGS) -c $<
+	$(CC) -c $<
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) $(FILES) -o $(NAME)
+	$(CC) $(FILES) -o $(NAME)
 
 clean :
 		@rm -f $(OBJ)
