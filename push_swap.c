@@ -36,11 +36,11 @@ int main(int ac, char **av)
 			}
 			// printf ("%s\n",arg1);
 			
-			// printf ("%s\t",av[i]);
+		// 	// printf ("%s\t",av[i]);
 			i++;
 		} 
-		printf ("%s",arg1);
-		// printf("wiwi\n%s\n",av[1]);
+		// printf ("%s",arg1);
+		// // printf("wiwi\n%s\n",av[1]);
 		arg2 = ft_split(arg1, '$');
 		int j = 0;
 		while (arg2[j])

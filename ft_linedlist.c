@@ -45,3 +45,11 @@ int	ft_lstsize(t_node *head)
 	}
 	return (size);
 }
+
+// void ft_lstadd_back(t_node **lst, t_node *new)
+// {
+// 	t_node *ptr;
+
+// 	ptr = (t_node *)ft_lstlast(lst);
+
+// }
