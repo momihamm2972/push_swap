@@ -57,33 +57,34 @@ int ft_isdigit(int c)
 	return (0);
 }
 
-int ft_atoi(const char *str)
+long long	ft_atoi(char *str)
 {
-	int i;
-	int r;
-	int s;
+	long long i_r_s [4];
 
-	i = 0;
-	r = 0;
-	s = 1;
-	while (str[i] != '\0')
+	i_r_s [0] = -1;
+	i_r_s [1] = 0;
+	i_r_s [2] = 1;
+	i_r_s [3] = -2147483648;
+	if (ft_strlen(str) > 15)
+			return (9999999999999999);
+	while (str[++i_r_s [0]] != '\0')
 	{
-		while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-			i++;
-		if (str[i] == '-' || str[i] == '+')
+		while (str[i_r_s [0]] == 32 || (str[i_r_s [0]] >= 9 && str[i_r_s [0]] <= 13))
+			i_r_s [0]++;
+		if (str[i_r_s [0]] == '-' || str[i_r_s [0]] == '+')
 		{
-			if (str[i] == '-')
-				s = -1;
-			i++;
+			if (str[i_r_s [0]] == '-')
+				i_r_s [2] = -1;
+			i_r_s [0]++;
 		}
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
-		r = (r * 10) + str[i] - '0';
-		i++;
-		if ((str[i] >= 0 && str[i] <= 47) || (str[i] >= 58 && str[i] <= 127))
-			break;
+		if (!ft_isdigit(str[i_r_s [0]]))
+			return (9999999999999999);
+		i_r_s [1] = (i_r_s [1] * 10) + str[i_r_s [0]] - '0';
 	}
-	return (r * s);
+	if (i_r_s [1] * i_r_s [2] > 2147483647
+		|| i_r_s [1] * i_r_s [2] < i_r_s [3])
+		return (999999999999999999);
+	return (i_r_s [1] * i_r_s [2]);
 }
 
 char *ft_substr(char *s, int start, int len)
@@ -109,3 +110,4 @@ char *ft_substr(char *s, int start, int len)
 		alloc_adds[indx++] = s[start++];
 	return (alloc_adds);
 }
+

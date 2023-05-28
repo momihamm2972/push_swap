@@ -28,6 +28,7 @@ FILES = push_swap.c\
 		parssing4.c\
 		parssing5.c\
 		parssing6.c\
+		ft_linedlist.c\
 		utils0.c
 
 OBJ = $(FILES:.c=.o)

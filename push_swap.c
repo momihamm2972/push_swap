@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:11 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/26 21:13:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/28 21:12:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,76 @@
 
 int main(int ac, char **av)
 {
-	(void) av;
+	// (void) av;
+	// printf ("%s",av[1]);
 	if (ac >= 2)
 	{
-		// printf ("%s\n",ft_strjoin("pnl ", "music91"));
-		char *arg1;
-		char **arg2;
+		t_node *head;
+		t_parss *parssing;
+		parssing = malloc (sizeof(t_parss));
+		// char *arg1;
+		// char **arg2;
 		int i = 1;
-		arg1 = malloc (1);
+		parssing->arg1 = malloc (1);
 		while (av[i] != NULL)
 		{
 			if (ft_check_if_str_has_wrong_char(av[i],' ') == 1)
 			{
-				arg1 = ft_strjoin(arg1, split_the_str(av[i]));
-				arg1 = ft_strjoin(arg1,"$"); 	
+				parssing->arg1 = ft_strjoin(parssing->arg1, split_the_str(av[i]));
+				parssing->arg1 = ft_strjoin(parssing->arg1,"$"); 	
 			}
 			else
 			{
-				arg1 = ft_strjoin(arg1, av[i]);
-				arg1 = ft_strjoin(arg1, "$");
+				parssing->arg1 = ft_strjoin(parssing->arg1, av[i]);
+				parssing->arg1 = ft_strjoin(parssing->arg1, "$");
 			}
-			// printf ("%s\n",arg1);
-			
-		// 	// printf ("%s\t",av[i]);
 			i++;
-		} 
-		// printf ("%s",arg1);
-		// // printf("wiwi\n%s\n",av[1]);
-		arg2 = ft_split(arg1, '$');
+		}
+		if (check_the_arg_(parssing->arg1) == 1)
+			exit(printf ("456\n"));
+		parssing->arg2 = ft_split(parssing->arg1, '$');
+		// printf ("04");
+		/*##################print the 2d array###########################*/
 		int j = 0;
-		while (arg2[j])
-			printf("%s\n",arg2[j++]);
+		while (parssing->arg2[j])
+			j++;
+			// printf("%s\n",parssing->arg2[j++]);
+		// printf ("/*###############################################################*/\n");
+		long long lenof2d [j-1];
+		j = -1;
+		while (parssing->arg2[++j])
+		{
+
+			lenof2d[j] = ft_atoi(parssing->arg2[j]);
+			// printf ("*%lld\n",lenof2d[j]);
+			if (lenof2d[j] > 2147483647 || lenof2d[j] < -2147483648)
+			{
+				write (2 ,"Error 201\n", 10);
+				// printf ("")
+				exit (0);
+			}
+			if (j >= 1)
+			{
+				// printf ("dkhel%lld\n",lenof2d[j]);
+				check_duble(lenof2d, lenof2d[j]);
+			}
+			// 	j++;
+		}
+		j=0;
+		while (lenof2d[j])
+			j++;
+			// printf("*%lld\n",lenof2d[j++]);
+		head = ft_lstnew((int)lenof2d[0]);
+		j = 1;
+		while (lenof2d[j])
+		{
+			ft_lstadd_back(&head, ft_lstnew(lenof2d[j]));
+			j++;
+		}
+		// printf ("size ++>%d\n",ft_lstsize(head));
+
+		// printf("####%d$$$$$$",head->data);
 	}
 	else
-		printf("mimi\n");
+		write (2, "Error 404 : at least one argument must be taken!!\n", 50);
 }

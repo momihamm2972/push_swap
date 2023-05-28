@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 22:25:40 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/25 22:26:54 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/28 04:27:03 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,23 @@ int	ft_lstsize(t_node *head)
 	}
 	return (size);
 }
-
 void ft_lstadd_back(t_node **lst, t_node *new)
 {
 	t_node *last;
 
 	last = ft_lstlast(*lst);
 	last->next = new;
+}
+
+void ft_lstadd_front(t_node **lst, t_node *new)
+{
+	t_node *head;
+	
+	head = ft_lstnew(new->data);
+	if (!(*lst))
+		(*lst) = head;
+	head->next = (*lst);
+	(*lst) = head;
 }
 
 int main(void)
@@ -81,4 +91,6 @@ int main(void)
 	t_node *last = ft_lstlast(head);
 	// last = ft_lstlast(head);
 	printf ("\nlast is => %d",last->data);
+	ft_lstadd_front (&head, ft_lstnew(404));
+	printf ("\nthe fornt one is %d",head->data);
 }
