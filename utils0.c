@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils0.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/26 21:12:47 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/28 23:09:46 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ long long	ft_atoi(char *str)
 	i_r_s [1] = 0;
 	i_r_s [2] = 1;
 	i_r_s [3] = -2147483648;
-	if (ft_strlen(str) > 15)
-			return (9999999999999999);
+	// if (ft_strlen(str) > 15)
+	// 		return (9999999999999999);
 	while (str[++i_r_s [0]] != '\0')
 	{
 		while (str[i_r_s [0]] == 32 || (str[i_r_s [0]] >= 9 && str[i_r_s [0]] <= 13))

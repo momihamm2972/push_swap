@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/28 03:51:35 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/30 22:59:16 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ int ft_isdigit(int c);
 long long ft_atoi (char *str);
 void check_duble(long long *arr, int num);
 int check_the_arg_(char *str);
+int sing_in_str(char *str);
 
 #endif

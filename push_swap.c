@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:11 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/28 21:12:56 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/30 23:23:01 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,23 @@ int main(int ac, char **av)
 		parssing->arg1 = malloc (1);
 		while (av[i] != NULL)
 		{
-			if (ft_check_if_str_has_wrong_char(av[i],' ') == 1)
+			if (sing_in_str(av[i]) == 0)
 			{
-				parssing->arg1 = ft_strjoin(parssing->arg1, split_the_str(av[i]));
-				parssing->arg1 = ft_strjoin(parssing->arg1,"$"); 	
+				if (ft_check_if_str_has_wrong_char(av[i],' ') == 1)
+				{
+					parssing->arg1 = ft_strjoin(parssing->arg1, split_the_str(av[i]));
+					parssing->arg1 = ft_strjoin(parssing->arg1,"$"); 	
+				}
+				else
+				{
+					parssing->arg1 = ft_strjoin(parssing->arg1, av[i]);
+					parssing->arg1 = ft_strjoin(parssing->arg1, "$");
+				}
 			}
 			else
 			{
-				parssing->arg1 = ft_strjoin(parssing->arg1, av[i]);
-				parssing->arg1 = ft_strjoin(parssing->arg1, "$");
+				write (1, "Error 500\n", 10);
+				exit(0);
 			}
 			i++;
 		}
@@ -58,13 +66,14 @@ int main(int ac, char **av)
 			// printf ("*%lld\n",lenof2d[j]);
 			if (lenof2d[j] > 2147483647 || lenof2d[j] < -2147483648)
 			{
+				printf ("%lld$",lenof2d[j]);
 				write (2 ,"Error 201\n", 10);
 				// printf ("")
 				exit (0);
 			}
 			if (j >= 1)
 			{
-				// printf ("dkhel%lld\n",lenof2d[j]);
+				printf ("dkhel%lld\n",lenof2d[j]);
 				check_duble(lenof2d, lenof2d[j]);
 			}
 			// 	j++;
