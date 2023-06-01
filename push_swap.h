@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/30 22:59:16 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/01 22:14:24 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct node
 {
 	int		data;
-	int		position;
+	// int		position;
 	struct node	*next;
 }t_node;
 

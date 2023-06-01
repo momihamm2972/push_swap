@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:11 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/30 23:23:01 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/01 21:39:50 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ int main(int ac, char **av)
 			// printf ("*%lld\n",lenof2d[j]);
 			if (lenof2d[j] > 2147483647 || lenof2d[j] < -2147483648)
 			{
-				printf ("%lld$",lenof2d[j]);
+				// printf ("%lld$",lenof2d[j]);
 				write (2 ,"Error 201\n", 10);
 				// printf ("")
 				exit (0);
 			}
 			if (j >= 1)
 			{
-				printf ("dkhel%lld\n",lenof2d[j]);
+				// printf ("dkhel%lld\n",lenof2d[j]);
 				check_duble(lenof2d, lenof2d[j]);
 			}
 			// 	j++;
