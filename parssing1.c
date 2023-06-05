@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parssing1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:53 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/26 21:16:21 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:37:03 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,9 @@ char **ft_split(char *s, char c)
 		r_s_e_c[1] = r_s_e_c[2];
 	}
 	return (spl);
+}
+int	error_msg(void)
+{
+	write (2, "Error 404!!\n", 12);
+	return (0);
 }

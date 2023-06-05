@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/01 22:14:24 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:37:12 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ long long ft_atoi (char *str);
 void check_duble(long long *arr, int num);
 int check_the_arg_(char *str);
 int sing_in_str(char *str);
+int	error_msg(void);
 
 #endif

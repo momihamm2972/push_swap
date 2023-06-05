@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:11 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/01 21:39:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/05 15:14:29 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int main(int ac, char **av)
 		parssing->arg1 = malloc (1);
 		while (av[i] != NULL)
 		{
+			if (check_the_arg_(parssing->arg1) == 1)
+				exit(error_msg());
 			if (sing_in_str(av[i]) == 0)
 			{
 				if (ft_check_if_str_has_wrong_char(av[i],' ') == 1)
@@ -47,8 +49,6 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
-		if (check_the_arg_(parssing->arg1) == 1)
-			exit(printf ("456\n"));
 		parssing->arg2 = ft_split(parssing->arg1, '$');
 		// printf ("04");
 		/*##################print the 2d array###########################*/
@@ -93,6 +93,4 @@ int main(int ac, char **av)
 
 		// printf("####%d$$$$$$",head->data);
 	}
-	else
-		write (2, "Error 404 : at least one argument must be taken!!\n", 50);
 }
