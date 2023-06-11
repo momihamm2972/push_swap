@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/11 01:38:00 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/11 03:41:39 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,49 +95,32 @@ void	push_to_stack(t_node *stack_0, t_node **stack_1)
 		return ;
 	}
 	ft_lstadd_front(stack_1, ft_lstnew(stack_0->data));
-	tmp = stack_0;
-	stack_0 = stack_0->next;
-	free (tmp);
-	printf ("wiwi\n");
-	// printf("%d\n", stack_1->next->data);
-	// printf ("A-->%d\tB-->%d\n",stack_0->data,stack_1->data);
+}
+
+void	ss(t_node **stack_a, t_node **stack_b)
+{
+	int	tmp_a;
+	int tmp_b;
+
+	tmp_a = (*stack_a)->data;
+	(*stack_a)->data = (*stack_a)->next->data;
+	(*stack_a)->next->data = tmp_a;
+	tmp_b = (*stack_b)->data;
+	(*stack_b)->data = (*stack_b)->next->data;
+	(*stack_b)->next->data = tmp_b;
 }
 
 int main(void)
 {
 	t_node *stack_a = ft_lstnew(83);
 	// stack_a = NULL;
-	t_node *stack_b = ft_lstnew(91);
+	t_node *stack_b = ft_lstnew(16);
+	stack_a->next = ft_lstnew(38);
+	stack_b->next = ft_lstnew(61);
+	// stack_a->next->next = ft_lstnew(54);
 	// printf ("b%d\n",stac?k_b->data);
-	push_to_stack(stack_a, &stack_b);
-	printf ("a%d\n",stack_a->data);
-	printf ("b%d\n",stack_b->data);
-	// stack->next = ft_lstnew(04);
-	// printf ("%d\n",stack->data);
-	// stack->next = ft_lstnew(910);
-	// stack->next = a;
-	// ft_lstadd_front(&stack,a);
-	// printf("%d\n", a->next->data);
-	// stack->next->next = ft_lstnew(47);
-	// stack->next->next->next = ft_lstnew(2001);
-	// printf ("be : %d %d\n",stack->data,stack->next->data);
-	// swap_2_elements (stack);
-	// printf ("af : %d %d\n",stack->data,stack->next->data);
-	// a->next = ljadid;
-	// printf("%d==>%d\n", ft_lstsize(ljadid),ljadid->data);
-	// t_node *the_last = ft_lstlast(stack);
-	// printf ("%d\n",the_last->data);
-	// printf ("I--->%d\nII--->%d\nIII--->%d\n",stack->data,stack->next->data,stack->next->next->data);
-	// while (stack->next)
-	// {
-	// 	if (stack->next->next == NULL)
-	// 	{
-	// 		printf ("%d\n",stack->next->data);
-	// 		break;
-	// 	}
-	// 	stack->next = stack->next->next;
-	// }
-	// printf ("%p\n",stack->next);
-	// t_node *new = ft_lstnew(10);
-	// ft_lstadd_back(&stack, new);
+	// push_to_stack(stack_a, &stack_b);
+	printf ("before A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);	
+	ss (&stack_a, &stack_b);
+	printf ("after A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);
 }
