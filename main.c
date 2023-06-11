@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/11 03:41:39 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/11 03:50:13 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,8 @@ void	push_to_stack(t_node *stack_0, t_node **stack_1)
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
-	int	tmp_a;
-	int tmp_b;
-
-	tmp_a = (*stack_a)->data;
-	(*stack_a)->data = (*stack_a)->next->data;
-	(*stack_a)->next->data = tmp_a;
-	tmp_b = (*stack_b)->data;
-	(*stack_b)->data = (*stack_b)->next->data;
-	(*stack_b)->next->data = tmp_b;
+	swap_2_elements(*stack_a);
+	swap_2_elements(*stack_b);
 }
 
 int main(void)
