@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/11 03:50:13 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/12 05:00:21 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,17 +103,48 @@ void	ss(t_node **stack_a, t_node **stack_b)
 	swap_2_elements(*stack_b);
 }
 
+t_node	*before_the_last(t_node **stack)
+{
+	while ((*stack)->next)
+	{
+		if ((*stack)->next->next->next == NULL)
+			return ((*stack)->next);
+		(*stack)->next = (*stack)->next->next;
+	}
+}
+
+void	rotate (t_node **stack)
+{
+	t_node *the_last;
+	t_node *the_new_last;
+	
+	the_last = ft_lstlast(*stack);
+	the_last->next = (*stack);
+	// tmp = (*stack);
+	// (*stack) = the_last;
+	// the_last->next = tmp;
+	// printf ("%d", the_last->data);
+}
+
+
 int main(void)
 {
 	t_node *stack_a = ft_lstnew(83);
 	// stack_a = NULL;
-	t_node *stack_b = ft_lstnew(16);
+	// t_node *stack_b = ft_lstnew(16);
 	stack_a->next = ft_lstnew(38);
-	stack_b->next = ft_lstnew(61);
+	stack_a->next->next = ft_lstnew(61);
+	stack_a->next->next->next = ft_lstnew (2);
+	// printf ("%d\n",stack_a->data);
+	// t_node *akher = ft_lstlast(stack_a);
+	rotate (&stack_a);
+	// t_node *momiham =  before_the_last(&stack_a);
+	printf ("$%d\n",stack_a->data);
 	// stack_a->next->next = ft_lstnew(54);
 	// printf ("b%d\n",stac?k_b->data);
 	// push_to_stack(stack_a, &stack_b);
-	printf ("before A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);	
-	ss (&stack_a, &stack_b);
-	printf ("after A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);
+	// printf ("before A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);	
+	// ss (&stack_a, &stack_b);
+	// printf ("after A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);
+	rotate (&stack_a);
 }
