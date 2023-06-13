@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/13 02:01:21 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/13 02:13:02 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ int ft_lstsize(t_node *lst)
 
 t_node *ft_lstlast(t_node *lst)
 {
-  t_node *ptr;
-  
-  ptr = lst;
+	t_node *ptr;
+
+	if (!lst)
+		return (NULL);
+	ptr = lst;
     while (ptr->next)
     {
         if (ptr->next->next == NULL)
@@ -139,6 +141,8 @@ void	rotate (t_node **stack)
 	t_node *tmp;
 	t_node *last;
 	
+	if (!(*stack))
+		return ;
 	tmp = (*stack);
 	last = ft_lstlast ((*stack));
 	last->next = (*stack);
@@ -146,18 +150,30 @@ void	rotate (t_node **stack)
 	last->next->next = NULL;
 }
 
+void	rr (t_node **stack_a, t_node **stack_b)
+{
+	rotate (stack_a);
+	rotate (stack_b);
+}
+
+
+void rev_rotate (t_node **stack)
+{
+	
+}
+
 
 int main(void)
 {
 	t_node *stack_a = ft_lstnew(83);
-	// stack_a = NULL;
+	stack_a = NULL;
 	// t_node *stack_b = ft_lstnew(16);
-	stack_a->next = ft_lstnew(38);
-	stack_a->next->next = ft_lstnew(61);
-	stack_a->next->next->next = ft_lstnew (2);
-	print_nodes (&stack_a);
+	// stack_a->next = ft_lstnew(38);
+	// stack_a->next->next = ft_lstnew(61);
+	// stack_a->next->next->next = ft_lstnew (2);
+	// print_nodes (&stack_a);
 	printf ("#####################\n");
 	rotate (&stack_a);
-	print_nodes(&stack_a);
+	// print_nodes(&stack_a);
 
 }
