@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/12 05:00:21 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/13 02:01:21 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ int ft_lstsize(t_node *lst)
 
 t_node *ft_lstlast(t_node *lst)
 {
-	while (lst->next)
-	{
-		if (lst->next->next == NULL)
-			return (lst->next);
-		lst->next = lst->next->next;
-	}
+  t_node *ptr;
+  
+  ptr = lst;
+    while (ptr->next)
+    {
+        if (ptr->next->next == NULL)
+            return (ptr->next);
+        ptr = ptr->next;
+    }
 }
 
 void ft_lstadd_back(t_node **lst, t_node *new)
@@ -113,17 +116,34 @@ t_node	*before_the_last(t_node **stack)
 	}
 }
 
+void    print_nodes(t_node **stack)
+{
+    int key_of_list;
+    t_node *tmp;
+
+    if (!stack)
+        return;
+    key_of_list = 0;
+    tmp = (*stack);
+    printf ("node=>%d==========>data==%d\n",key_of_list, tmp->data);
+    while (tmp->next)
+    {
+        key_of_list++;
+        printf ("node=>%d==========>data==%d\n",key_of_list, tmp->next->data);
+        tmp = tmp->next;
+    }
+}
+
 void	rotate (t_node **stack)
 {
-	t_node *the_last;
-	t_node *the_new_last;
+	t_node *tmp;
+	t_node *last;
 	
-	the_last = ft_lstlast(*stack);
-	the_last->next = (*stack);
-	// tmp = (*stack);
-	// (*stack) = the_last;
-	// the_last->next = tmp;
-	// printf ("%d", the_last->data);
+	tmp = (*stack);
+	last = ft_lstlast ((*stack));
+	last->next = (*stack);
+	(*stack) = (*stack)->next;
+	last->next->next = NULL;
 }
 
 
@@ -135,16 +155,9 @@ int main(void)
 	stack_a->next = ft_lstnew(38);
 	stack_a->next->next = ft_lstnew(61);
 	stack_a->next->next->next = ft_lstnew (2);
-	// printf ("%d\n",stack_a->data);
-	// t_node *akher = ft_lstlast(stack_a);
+	print_nodes (&stack_a);
+	printf ("#####################\n");
 	rotate (&stack_a);
-	// t_node *momiham =  before_the_last(&stack_a);
-	printf ("$%d\n",stack_a->data);
-	// stack_a->next->next = ft_lstnew(54);
-	// printf ("b%d\n",stac?k_b->data);
-	// push_to_stack(stack_a, &stack_b);
-	// printf ("before A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);	
-	// ss (&stack_a, &stack_b);
-	// printf ("after A{%d %d}\tB[%d %d]\n",stack_a->data,stack_a->next->data,stack_b->data, stack_b->next->data);
-	rotate (&stack_a);
+	print_nodes(&stack_a);
+
 }
