@@ -6,12 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/13 04:27:01 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/15 00:03:33 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct node
 {
@@ -27,6 +28,12 @@ t_node *ft_lstnew(int content)
 	head->data = content;
 	head->next = NULL;
 	return (head);
+}
+
+int	error_msg(void)
+{
+	write (2, "Error 404!!\n", 12);
+	return (0);
 }
 
 void ft_lstadd_front(t_node **lst, t_node *new)
@@ -181,24 +188,32 @@ void	rrr (t_node **stack_a, t_node **stack_b)
 	rev_rotate (stack_a);
 	rev_rotate (stack_b);
 }
+int ft_double(t_node **stack, int data)
+{
+    t_node *ptr;
+    int cont;
+
+    ptr = (*stack);
+    cont = 0;
+    while (ptr)
+    {
+        if (ptr->data == data)
+            cont++;
+        if (cont > 1)
+            exit (error_msg ());
+        ptr = ptr->next;
+    }
+    return (0);
+}
 
 int main(void)
 {
-	t_node *stack_a = NULL;
-	ft_lstadd_front (&stack_a, ft_lstnew(38));
-	printf ("%d\n",stack_a->data);
-	// ft_lstadd_front (&stack_a, ft_lstnew(65));
-	// ft_lstadd_front (&stack_a, ft_lstnew(98));
-	// ft_lstadd_front (&stack_a, ft_lstnew(34));
-	// ft_lstadd_front (&stack_a, ft_lstnew(12));
-	// stack_a = NULL;
-	// t_node *stack_b = ft_lstnew(16);
-	// stack_a->next = ft_lstnew(38);
-	// stack_a->next->next = ft_lstnew(61);
-	// stack_a->next->next->next = ft_lstnew (2);
-	// print_nodes (&stack_a);
-	// printf ("#####################\n");
-	// rev_rotate (&stack_a);
-	// print_nodes(&stack_a);
-
+    t_node *head = ft_lstnew (1);
+	head->next = ft_lstnew (5);
+	head->next->next = ft_lstnew (3);
+	head->next->next->next =  ft_lstnew (4);
+	head->next->next->next->next = ft_lstnew (5);
+	print_nodes (&head);
+	printf ("\n\t%d\n\n", ft_double (&head, 5));
+	print_nodes (&head);
 }

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/14 01:49:06 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/14 23:45:21 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ long long	ft_atoi(char *str)
 	i_r_s [1] = 0;
 	i_r_s [2] = 1;
 	i_r_s [3] = -2147483648;
-	// if (ft_strlen(str) > 15)
-	// 		return (9999999999999999);
+
 	while (str[++i_r_s [0]] != '\0')
 	{
 		while (str[i_r_s [0]] == 32 || (str[i_r_s [0]] >= 9 && str[i_r_s [0]] <= 13))
@@ -78,12 +77,12 @@ long long	ft_atoi(char *str)
 			i_r_s [0]++;
 		}
 		if (!ft_isdigit_atoi(str[i_r_s [0]]))
-			return (9999999999999999);
+			exit (error_msg ());
 		i_r_s [1] = (i_r_s [1] * 10) + str[i_r_s [0]] - '0';
 	}
 	if (i_r_s [1] * i_r_s [2] > 2147483647
 		|| i_r_s [1] * i_r_s [2] < i_r_s [3])
-		return (999999999999999999);
+		exit(error_msg());
 	return (i_r_s [1] * i_r_s [2]);
 }
 

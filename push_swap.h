@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/14 04:16:32 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/15 00:06:28 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	*ft_calloc(size_t count, size_t size);
 void	free_all(char **s, int ptrs);
 void check_duble(long long *arr, int num);
 void	*ft_memcpy(void *to, const void *from, size_t len);
-int ft_lstsize(t_node *lst);
+int sipared_arg (char *str);
+int ft_double(t_node **stack, int data);
+// int ft_lstsize(t_node *lst);
 int	ft_lstsize(t_node *head);
 int ft_check_if_str_has_wrong_char(char *str, char c);
 int ft_strlen(char *str);

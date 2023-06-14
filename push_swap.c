@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/14 04:29:38 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/15 00:08:39 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ int main (int ac, char **av)
         parssing->indx = 0;
         head->data = ft_atoi (parssing->arg2[parssing->indx]);
         while (parssing->arg2[++parssing->indx])
+        {
             ft_lstadd_back(&head, ft_lstnew (ft_atoi(parssing->arg2[parssing->indx])));
+            ft_double (&head, ft_atoi(parssing->arg2[parssing->indx]));
+        }
         print_nodes (&head);
     }
 }

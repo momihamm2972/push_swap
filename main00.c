@@ -6,12 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:36:25 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/14 02:03:35 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/14 23:53:38 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "push_swap.h"
 
 int	ft_strlen(char *s)
 {
@@ -150,7 +151,25 @@ int empty_arg (char *str)
     return (0);
 }
 
+int ft_double(t_node **stack, int data)
+{
+    t_node *ptr;
+    int cont;
+
+    ptr = (*stack);
+    cont = 0;
+    while (ptr)
+    {
+        if (ptr->data == data)
+            cont++;
+        if (cont > 1)
+            exit (error_msg ());
+        ptr = ptr->next;
+    }
+    return (0);
+}
+
 int main(void)
 {
-    printf ("%d",sing_of_arg("                             -78   323                       "));
+    t_node *head = ft_lstnew ()
 }
