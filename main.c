@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/13 02:13:02 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/13 04:27:01 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ t_node *ft_lstnew(int content)
 
 void ft_lstadd_front(t_node **lst, t_node *new)
 {
-	t_node *head;
+	// t_node *head;
 			
-	if (!(*lst))
-		(*lst) = head;
+	// if (!(*lst))
+	// 	(*lst) = head;
 	new->next = (*lst);
 	(*lst) = new;
-}
+}	
 
 int ft_lstsize(t_node *lst)
 {
@@ -110,12 +110,17 @@ void	ss(t_node **stack_a, t_node **stack_b)
 
 t_node	*before_the_last(t_node **stack)
 {
-	while ((*stack)->next)
-	{
-		if ((*stack)->next->next->next == NULL)
-			return ((*stack)->next);
-		(*stack)->next = (*stack)->next->next;
-	}
+		t_node *ptr;
+
+	if (!(*stack))
+		return (NULL);
+	ptr = (*stack);
+    while (ptr->next)
+    {
+        if (ptr->next->next->next == NULL)
+            return (ptr->next);
+        ptr = ptr->next;
+    }
 }
 
 void    print_nodes(t_node **stack)
@@ -123,7 +128,7 @@ void    print_nodes(t_node **stack)
     int key_of_list;
     t_node *tmp;
 
-    if (!stack)
+    if (!(*stack))
         return;
     key_of_list = 0;
     tmp = (*stack);
@@ -159,21 +164,41 @@ void	rr (t_node **stack_a, t_node **stack_b)
 
 void rev_rotate (t_node **stack)
 {
+	t_node *the_last;
+	t_node *new_last;
 	
+	if (!(*stack))
+		return ;
+	the_last = ft_lstlast ((*stack));
+	new_last = before_the_last(stack);
+	the_last->next = (*stack);
+	(*stack) = new_last->next;
+	new_last->next = NULL;
 }
 
+void	rrr (t_node **stack_a, t_node **stack_b)
+{
+	rev_rotate (stack_a);
+	rev_rotate (stack_b);
+}
 
 int main(void)
 {
-	t_node *stack_a = ft_lstnew(83);
-	stack_a = NULL;
+	t_node *stack_a = NULL;
+	ft_lstadd_front (&stack_a, ft_lstnew(38));
+	printf ("%d\n",stack_a->data);
+	// ft_lstadd_front (&stack_a, ft_lstnew(65));
+	// ft_lstadd_front (&stack_a, ft_lstnew(98));
+	// ft_lstadd_front (&stack_a, ft_lstnew(34));
+	// ft_lstadd_front (&stack_a, ft_lstnew(12));
+	// stack_a = NULL;
 	// t_node *stack_b = ft_lstnew(16);
 	// stack_a->next = ft_lstnew(38);
 	// stack_a->next->next = ft_lstnew(61);
 	// stack_a->next->next->next = ft_lstnew (2);
 	// print_nodes (&stack_a);
-	printf ("#####################\n");
-	rotate (&stack_a);
+	// printf ("#####################\n");
+	// rev_rotate (&stack_a);
 	// print_nodes(&stack_a);
 
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils0.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/28 23:09:46 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/14 01:49:06 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return (buff);
 }
 
-int ft_isdigit(int c)
+int ft_isdigit_atoi(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -77,7 +77,7 @@ long long	ft_atoi(char *str)
 				i_r_s [2] = -1;
 			i_r_s [0]++;
 		}
-		if (!ft_isdigit(str[i_r_s [0]]))
+		if (!ft_isdigit_atoi(str[i_r_s [0]]))
 			return (9999999999999999);
 		i_r_s [1] = (i_r_s [1] * 10) + str[i_r_s [0]] - '0';
 	}

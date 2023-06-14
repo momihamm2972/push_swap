@@ -3,94 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 14:58:11 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/05 15:14:29 by momihamm         ###   ########.fr       */
+/*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
+/*   Updated: 2023/06/14 04:29:38 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+// char    *arg_v_r(char *str)
+// {
+//     if (istheargincowt (str) == 1 || istheargincowt (str) == 0)
+//     {
+//         if (empty_arg(str) == 1)
+//         {
+//             if (ft_isdigit (str) == 0)
+//             {
+//                 if (sing_of_arg (str) == 0)
+//                     str = make_the_str_can_splited (str);
+//                 else
+//                     exit (error_msg ());
+//             }
+//             else
+//                 exit (error_msg ());
+//         }
+//         else
+//             exit (error_msg ());
+//     }
+//     return (str);
+// }
+
+// char *finale_char (char *str)
+// {
+//     char *final;
+
+//     final = malloc (1);
+//     str = arg_v_r (str);
+//     final = ft_strjoin (final, str);
+//     final = ft_strjoin (final, "$$");
+//     return (final);
+// }
+
+int main (int ac, char **av)
 {
-	// (void) av;
-	// printf ("%s",av[1]);
-	if (ac >= 2)
-	{
-		t_node *head;
-		t_parss *parssing;
-		parssing = malloc (sizeof(t_parss));
-		// char *arg1;
-		// char **arg2;
-		int i = 1;
-		parssing->arg1 = malloc (1);
-		while (av[i] != NULL)
-		{
-			if (check_the_arg_(parssing->arg1) == 1)
-				exit(error_msg());
-			if (sing_in_str(av[i]) == 0)
-			{
-				if (ft_check_if_str_has_wrong_char(av[i],' ') == 1)
-				{
-					parssing->arg1 = ft_strjoin(parssing->arg1, split_the_str(av[i]));
-					parssing->arg1 = ft_strjoin(parssing->arg1,"$"); 	
-				}
-				else
-				{
-					parssing->arg1 = ft_strjoin(parssing->arg1, av[i]);
-					parssing->arg1 = ft_strjoin(parssing->arg1, "$");
-				}
-			}
-			else
-			{
-				write (1, "Error 500\n", 10);
-				exit(0);
-			}
-			i++;
-		}
-		parssing->arg2 = ft_split(parssing->arg1, '$');
-		// printf ("04");
-		/*##################print the 2d array###########################*/
-		int j = 0;
-		while (parssing->arg2[j])
-			j++;
-			// printf("%s\n",parssing->arg2[j++]);
-		// printf ("/*###############################################################*/\n");
-		long long lenof2d [j-1];
-		j = -1;
-		while (parssing->arg2[++j])
-		{
+    if (ac >= 2)
+    {
+        t_parss *parssing;
+        t_node *head;
 
-			lenof2d[j] = ft_atoi(parssing->arg2[j]);
-			// printf ("*%lld\n",lenof2d[j]);
-			if (lenof2d[j] > 2147483647 || lenof2d[j] < -2147483648)
-			{
-				// printf ("%lld$",lenof2d[j]);
-				write (2 ,"Error 201\n", 10);
-				// printf ("")
-				exit (0);
-			}
-			if (j >= 1)
-			{
-				// printf ("dkhel%lld\n",lenof2d[j]);
-				check_duble(lenof2d, lenof2d[j]);
-			}
-			// 	j++;
-		}
-		j=0;
-		while (lenof2d[j])
-			j++;
-			// printf("*%lld\n",lenof2d[j++]);
-		head = ft_lstnew((int)lenof2d[0]);
-		j = 1;
-		while (lenof2d[j])
-		{
-			ft_lstadd_back(&head, ft_lstnew(lenof2d[j]));
-			j++;
-		}
-		// printf ("size ++>%d\n",ft_lstsize(head));
-
-		// printf("####%d$$$$$$",head->data);
-	}
+        parssing = malloc (sizeof (t_parss));
+        head = malloc (sizeof (t_node));
+        parssing->arg1 = malloc (1);
+        parssing->indx_of_arg = 0;
+        while (av[++parssing->indx_of_arg])
+            parssing->arg1 = ft_strjoin (parssing->arg1, finale_char (av[parssing->indx_of_arg]));
+        // printf ("#%s\n",parssing->arg1);
+        parssing->arg2 = ft_split (parssing->arg1, '$');
+        parssing->indx = 0;
+        head->data = ft_atoi (parssing->arg2[parssing->indx]);
+        while (parssing->arg2[++parssing->indx])
+            ft_lstadd_back(&head, ft_lstnew (ft_atoi(parssing->arg2[parssing->indx])));
+        print_nodes (&head);
+    }
 }
