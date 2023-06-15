@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/15 00:08:39 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/15 04:16:40 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,29 +44,33 @@
 //     final = ft_strjoin (final, "$$");
 //     return (final);
 // }
+void    parssing (t_parss *my_struct)
+{
+    t_node *head;
 
+    head = malloc (sizeof (t_node));
+    my_struct->arg2 = ft_split (my_struct->arg1, '$');
+    my_struct->indx = 0;
+    head->data = ft_atoi (my_struct->arg2[my_struct->indx]);
+    while (my_struct->arg2[++my_struct->indx])
+        {
+            ft_lstadd_back(&head, ft_lstnew (ft_atoi(my_struct->arg2[my_struct->indx])));
+            ft_double (&head, ft_atoi(my_struct->arg2[my_struct->indx]));
+        }
+        sorted (&head);
+        print_nodes (&head);
+}
 int main (int ac, char **av)
 {
     if (ac >= 2)
     {
-        t_parss *parssing;
-        t_node *head;
+        t_parss *pars;
 
-        parssing = malloc (sizeof (t_parss));
-        head = malloc (sizeof (t_node));
-        parssing->arg1 = malloc (1);
-        parssing->indx_of_arg = 0;
-        while (av[++parssing->indx_of_arg])
-            parssing->arg1 = ft_strjoin (parssing->arg1, finale_char (av[parssing->indx_of_arg]));
-        // printf ("#%s\n",parssing->arg1);
-        parssing->arg2 = ft_split (parssing->arg1, '$');
-        parssing->indx = 0;
-        head->data = ft_atoi (parssing->arg2[parssing->indx]);
-        while (parssing->arg2[++parssing->indx])
-        {
-            ft_lstadd_back(&head, ft_lstnew (ft_atoi(parssing->arg2[parssing->indx])));
-            ft_double (&head, ft_atoi(parssing->arg2[parssing->indx]));
-        }
-        print_nodes (&head);
+        pars = malloc (sizeof (t_parss));
+        pars->arg1 = malloc (1);
+        pars->indxarg = 0;
+        while (av[++pars->indxarg])
+            pars->arg1 = ft_strjoin (pars->arg1, finale_char (av[pars->indxarg]));
+        parssing (pars);
     }
 }

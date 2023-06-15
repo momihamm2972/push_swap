@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:02 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/15 00:21:17 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:57:30 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,29 @@ int ft_double(t_node **stack, int data)
         ptr = ptr->next;
     }
     return (0);
+}
+
+int sorted (t_node **stack)
+{
+	t_node *ptr;
+	int checker;
+
+	if (!(*stack))
+		return (0);
+	ptr = (*stack);
+	checker = ptr->data;
+	ptr = ptr->next;
+	while (ptr)
+	{
+		if (checker < ptr->data)
+		{
+			checker = ptr->data;
+			ptr = ptr->next;
+		}
+		else
+			return (0);
+		if (ptr == NULL)
+			exit (error_msg ());
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/15 00:03:33 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:55:51 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,14 +206,48 @@ int ft_double(t_node **stack, int data)
     return (0);
 }
 
+int sorted (t_node **stack)
+{
+	t_node *ptr;
+	int checker;
+
+	if (!(*stack))
+		return (0);
+	ptr = (*stack);
+	checker = ptr->data;
+	ptr = ptr->next;
+	while (ptr)
+	{
+		printf ("ch==%d\tdata==%d\n",checker, ptr->data);
+		if (checker < ptr->data)
+		{
+			checker = ptr->data;
+			ptr = ptr->next;
+		}
+		else
+		{
+			printf ("hwawa mas tyiit\n");
+			return (0);
+		}
+		if (ptr == NULL)
+			exit (error_msg ());
+	}
+	return (0);
+}
+
 int main(void)
 {
-    t_node *head = ft_lstnew (1);
-	head->next = ft_lstnew (5);
+    t_node *head = ft_lstnew (0);
+	head->next = ft_lstnew (17);
 	head->next->next = ft_lstnew (3);
-	head->next->next->next =  ft_lstnew (4);
-	head->next->next->next->next = ft_lstnew (5);
-	print_nodes (&head);
-	printf ("\n\t%d\n\n", ft_double (&head, 5));
-	print_nodes (&head);
+	head->next->next->next =  ft_lstnew (84);
+	head->next->next->next->next = ft_lstnew (95);
+	// print_nodes (&head);
+	printf ("\n\t%d\n\n", sorted (&head));
+	// print_nodes (&head);
+	// int a,b;
+	// a = 1;
+	// b = 2;
+	// if (a < b)
+	// 	printf ("john snow!");
 }
