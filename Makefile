@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
+#    By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/28 23:09:12 by momihamm         ###   ########.fr        #
+#    Updated: 2023/06/16 10:37:55 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ FILES = push_swap.c\
 		excution4.c\
 		excution5.c\
 		excution6.c\
-		parssing0.c\
 		parssing1.c\
 		parssing2.c\
 		parssing3.c\
