@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 06:31:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/16 11:35:32 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void    parssing (t_parss *my_struct)
 		my_struct->beforsorted = position00_nodes (my_struct->len_of_arr, head);
 		sort_an_arr (my_struct->beforsorted, my_struct->len_of_arr);
 		position01_nodes (my_struct, head);
-        print_nodes (&head);//hna ***********************;
+        first_trys (my_struct, &head);
+        // print_nodes (&head);//hna ***********************;
 }
 

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 06:10:46 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/16 12:59:14 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 typedef struct node
 {
 	int data;
+	int position;
 	struct node *next;
 }t_node;
 
@@ -237,14 +238,41 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1)
 	free (fri);
 }
 
+int finally_sorted (t_node **stack)
+{
+	t_node	*tmp;
+	int		indx;
+	
+	if (!(*stack))
+		return (1);
+	tmp = (*stack);
+	if (tmp->position == 0)
+		indx = 1;
+	else
+		return (1);
+	while (tmp)
+	{
+		tmp = tmp->next;
+		if ((tmp != NULL) && (tmp->position != indx))
+			return (1);
+		indx++;	
+	}
+	return (0);
+}
+
 int main(void)
 {
-    t_node *head = ft_lstnew (91);
-	head->next = ft_lstnew (17);
-	head->next->next = ft_lstnew (3);
+    t_node *head = ft_lstnew (3);
+	head->position = 0;
+	head->next = ft_lstnew (7);
+	head->next->position = 1;
+	head->next->next = ft_lstnew (14);
+	head->next->next->position = 2;
 	head->next->next->next =  ft_lstnew (84);
+	head->next->next->next->position = 4;
 	head->next->next->next->next = ft_lstnew (95);
-	t_node *stack;
-	push_to_stack (&head, &stack);
-	printf ("\n\t%d\n\n", head->data);
+	head->next->next->next->next->position = 3;
+	// t_node *stack;
+	// push_to_stack (&head, &stack);
+	printf ("\n\t%d\n\n", finally_sorted (&head));
 }

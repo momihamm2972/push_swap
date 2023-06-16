@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 06:32:41 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:00:53 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct parss
 t_node	*ft_lstnew(int content);
 t_node *ft_lstlast(t_node *lst);
 t_node	*before_the_last(t_node **stack);
+void    first_trys (t_parss *my_sc, t_node **stack);
 void position01_nodes (t_parss *my_sc, t_node *stack);
 void	push_to_stack(t_node **stack_0, t_node **stack_1);
 void	swap_2_elements(t_node *stack);
@@ -56,6 +57,7 @@ void	free_all(char **s, int ptrs);
 void	*ft_memcpy(void *to, const void *from, size_t len);
 void    parssing (t_parss *my_struct);
 void    sort_an_arr (int *arr, int len);
+int finally_sorted (t_node **stack);
 int		*position00_nodes (int len_of_arr, t_node *stack);
 int sipared_arg (char *str);
 int ft_double(t_node **stack, int data);
