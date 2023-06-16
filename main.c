@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/15 03:55:51 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/16 06:10:46 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,17 +97,6 @@ void	swap_2_elements(t_node *stack)
 	stack->next->data =	swaper;
 }
 
-void	push_to_stack(t_node *stack_0, t_node **stack_1)
-{
-	t_node *tmp;
-	
-	if (!stack_0)
-	{
-		printf ("kmi o tkma o 3ref ach kayen tma\n");
-		return ;
-	}
-	ft_lstadd_front(stack_1, ft_lstnew(stack_0->data));
-}
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
@@ -235,19 +224,27 @@ int sorted (t_node **stack)
 	return (0);
 }
 
+void	push_to_stack(t_node **stack_0, t_node **stack_1)
+{
+	t_node *tmp;
+	t_node *fri;
+	
+	if (!(*stack_0))
+		return ;
+	ft_lstadd_front(stack_1, ft_lstnew((*stack_0)->data));
+	fri = (*stack_0);
+	(*stack_0) = (*stack_0)->next;
+	free (fri);
+}
+
 int main(void)
 {
-    t_node *head = ft_lstnew (0);
+    t_node *head = ft_lstnew (91);
 	head->next = ft_lstnew (17);
 	head->next->next = ft_lstnew (3);
 	head->next->next->next =  ft_lstnew (84);
 	head->next->next->next->next = ft_lstnew (95);
-	// print_nodes (&head);
-	printf ("\n\t%d\n\n", sorted (&head));
-	// print_nodes (&head);
-	// int a,b;
-	// a = 1;
-	// b = 2;
-	// if (a < b)
-	// 	printf ("john snow!");
+	t_node *stack;
+	push_to_stack (&head, &stack);
+	printf ("\n\t%d\n\n", head->data);
 }

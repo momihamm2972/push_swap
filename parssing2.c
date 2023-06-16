@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/14 01:40:44 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/16 05:08:03 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ void    print_nodes(t_node **stack)
         return;
     key_of_list = 0;
     tmp = (*stack);
-    printf ("node=>%d==========>data==%d\n",key_of_list, tmp->data);
+    printf ("node=>%d==========>data==%d>>>>>>>>>Position%d\n",key_of_list, tmp->data, tmp->position);
     while (tmp->next)
     {
         key_of_list++;
-        printf ("node=>%d==========>data==%d\n",key_of_list, tmp->next->data);
+        printf ("node=>%d==========>data==%d>>>>>>>>>Position%d\n",key_of_list, tmp->next->data, tmp->next->position);
         tmp = tmp->next;
     }
 }
