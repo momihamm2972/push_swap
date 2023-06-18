@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 11:42:28 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:42:19 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void    first_trys (t_parss *my_sc, t_node **stack)
         printf ("%d  %d",(*stack)->data, (*stack)->next->data);
     }
     else if (my_sc->len_of_arr == 3)
-    {
-        
+    {           
     }
 }
 
