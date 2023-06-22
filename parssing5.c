@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 11:35:32 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/22 11:52:41 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void position01_nodes (t_parss *my_sc, t_node *stack)
 		while (indx < my_sc->len_of_arr)
 		{
 			if (my_sc->beforsorted[indx] == ptr->data)
-				ptr->position = indx;
+				ptr->position = indx + 1;
 			indx++;
 		}
 		ptr = ptr->next;
@@ -87,7 +87,11 @@ void    parssing (t_parss *my_struct)
 		my_struct->beforsorted = position00_nodes (my_struct->len_of_arr, head);
 		sort_an_arr (my_struct->beforsorted, my_struct->len_of_arr);
 		position01_nodes (my_struct, head);
+        my_struct->sizeof_stack = ft_lstsize (head);
+		printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>>>%d\n",my_struct->sizeof_stack);
+		// first_trys (my_struct, &head);
         first_trys (my_struct, &head);
-        // print_nodes (&head);//hna ***********************;
+        print_nodes (&head);//hna ********************************************************************;
+        // printf ("%d",)
 }
 

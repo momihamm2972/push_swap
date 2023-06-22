@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/14 04:04:54 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/18 22:55:41 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,16 @@ void ft_lstadd_front(t_node **lst, t_node *new)
 
 int ft_lstsize(t_node *lst)
 {
-	int i;
+	t_node	*ptr;
+	int		i;
 
+	ptr = lst;
 	i = 0;
-	while (lst->next)
+	while (ptr)
 	{
 		i++;
-		lst->next = lst->next->next;
+		ptr = ptr->next;
 	}
-	i++;
 	return (i);
 }
 

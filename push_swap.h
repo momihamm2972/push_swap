@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 13:00:53 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:07:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct parss
 	int		indx;
 	int		indxarg;
 	int		len_of_arr;
+	int		sizeof_stack;
 }t_parss;
 /*##################################################################*/
 
@@ -42,7 +43,7 @@ t_node	*before_the_last(t_node **stack);
 void    first_trys (t_parss *my_sc, t_node **stack);
 void position01_nodes (t_parss *my_sc, t_node *stack);
 void	push_to_stack(t_node **stack_0, t_node **stack_1);
-void	swap_2_elements(t_node *stack);
+void	swap_2_elements(t_node **stack);
 void    print_nodes(t_node **stack);
 void	rotate (t_node **stack);
 void rev_rotate (t_node **stack);
@@ -53,6 +54,8 @@ void ft_lstadd_back(t_node **lst, t_node *new);
 void ft_lstadd_front(t_node **lst, t_node *new);
 void	*ft_calloc(size_t count, size_t size);
 void	free_all(char **s, int ptrs);
+void    first_trys (t_parss *my_sc, t_node **stack);
+void    ft_tree (t_parss *my_sc, t_node **stack);
 // void check_duble(long long *arr, int num);
 void	*ft_memcpy(void *to, const void *from, size_t len);
 void    parssing (t_parss *my_struct);

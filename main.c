@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:55:38 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/16 12:59:14 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/19 00:48:51 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,17 @@ void ft_lstadd_front(t_node **lst, t_node *new)
 
 int ft_lstsize(t_node *lst)
 {
-	int i;
+	t_node	*ptr;
+	int		i;
 
+	ptr = lst;
 	i = 0;
-	while (lst->next)
+	while (ptr)
 	{
 		i++;
-		lst->next = lst->next->next;
+		ptr = ptr->next;
 	}
-	i++;
+	i++;    
 	return (i);
 }
 
@@ -274,5 +276,14 @@ int main(void)
 	head->next->next->next->next->position = 3;
 	// t_node *stack;
 	// push_to_stack (&head, &stack);
-	printf ("\n\t%d\n\n", finally_sorted (&head));
+	// printf ("\n\t%d\n\n", finally_sorted (&head));
+	print_nodes (&head);
+	printf ("||||||||||||||||||||||||||||||||||||||\n");
+	rev_rotate (&head);
+	printf ("||||||||||||||||||||||||||||||||||||||\n");
+	print_nodes (&head);
+	printf ("||||||||||||||||||||||||||||||||||||||\n");
+	swap_2_elements (head);
+	print_nodes (&head);
+	// print_nodes (&head);
 }
