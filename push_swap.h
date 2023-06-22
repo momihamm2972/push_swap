@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/22 13:07:56 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:34:31 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void ft_lstadd_front(t_node **lst, t_node *new);
 void	*ft_calloc(size_t count, size_t size);
 void	free_all(char **s, int ptrs);
 void    first_trys (t_parss *my_sc, t_node **stack);
-void    ft_tree (t_parss *my_sc, t_node **stack);
+void    ft_tree (t_node **stack);
+void	ft_tree_complet (t_node **stack);
 // void check_duble(long long *arr, int num);
 void	*ft_memcpy(void *to, const void *from, size_t len);
 void    parssing (t_parss *my_struct);
