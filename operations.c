@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/06/22 13:09:23 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/09 03:32:20 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	swap_2_elements(t_node **stack)
 	swaper = (*stack)->data;
 	(*stack)->data = (*stack)->next->data;
 	(*stack)->next->data =	swaper;
+	swaper = (*stack)->position;
+	(*stack)->position = (*stack)->next->position;
+	(*stack)->next->position =	swaper;
 }
 
 
