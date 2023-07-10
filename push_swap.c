@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/10 19:27:40 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:52:31 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void    stack_five (t_node **stack, t_parss *my_sc, int small, int scnd)
 {
     t_node  **stack_1;
     // (void) scnd;
-    (void) small;
+    // (void) small;
+    printf ("\n\n\n\nsmall = %d                          scnd = %d\n\n\n\n\n",small,scnd);
 // printf ("%p%p%d\n\n",stack,my_sc,small);
     stack_1 = malloc (sizeof (t_node));
     make_the_scnd_in_top (my_sc, stack, scnd);
@@ -88,13 +89,13 @@ void    stack_five (t_node **stack, t_parss *my_sc, int small, int scnd)
     print_nodes (stack_1);
     printf ("|||||||||||||\n");
     ft_tree_posi_exat (stack);
-    // ft_tree_posi_exat (stack);
-    // printf ("\n||||||||%d||||||||||||%d||||||||\n",(*stack_1)->data,(*stack_1)->position);
     ft_tree_posi_exat (stack);
+    // // printf ("\n||||||||%d||||||||||||%d||||||||\n",(*stack_1)->data,(*stack_1)->position);
+    // ft_tree_posi_exat (stack);
     ft_tree (stack);
-    // swap_2_elements (stack_1);
+    // // swap_2_elements (stack_1);
     
-    // stack_for (stack, my_sc);
+    // // stack_for (stack, my_sc);
     push_to_stack (stack_1, stack);
     printf("\n\n");
     print_nodes (stack_1);
@@ -108,6 +109,7 @@ void    first_trys (t_parss *my_sc, t_node **stack)
 {
     t_node *small = find_the_small_position (stack);
     t_node *scnd = find_the_scnd_small_position (stack);
+    printf ("\n\n\n%d    --->    %d\n%d     ------>       %d\n\n\n",small->data, small->position,scnd->data,scnd->position);
     // t_node *ptr = (*stack);
     // int indx = find_the_index_of_the_node (stack, my_sc, small->data);
     

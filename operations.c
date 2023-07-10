@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 22:27:09 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:49:43 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ void    make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small)
        while (1)
         {
             indx = find_the_index_of_the_node (stack, my_sc, small);
-            if (indx == 4)
+            if (indx == 5)
                 return ;
-            else if (indx == 1)
+            else if (indx == 2)
             {
                 rev_rotate (stack);
                 return ;
             }
-            else if (indx == 3)
+            else if (indx == 4)
             {
                 swap_2_elements (stack);
                 return ;
