@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 16:06:01 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/09 21:04:11 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ t_node	*ft_lstnew(int content);
 t_node *ft_lstlast(t_node *lst);
 t_node	*before_the_last(t_node **stack);
 t_node *find_the_small_position(t_node **stack);
+t_node *find_the_scnd_small_position(t_node **stack);
+void    make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small);
 void    first_trys (t_parss *my_sc, t_node **stack);
 void position01_nodes (t_parss *my_sc, t_node *stack);
 void	push_to_stack(t_node **stack_0, t_node **stack_1);
@@ -64,7 +66,7 @@ void    parssing (t_parss *my_struct);
 void    sort_an_arr (int *arr, int len);
 void    ft_orederfor_stack_for (t_parss *my_struc, t_node **stack);
 void    ft_tree_posi_exat (t_node **stack);
-void    stack_five (t_node **stack, t_parss *my_sc, int small);
+void    stack_five (t_node **stack, t_parss *my_sc, int small, int scnd);
 int finally_sorted (t_node **stack);
 int		*position00_nodes (int len_of_arr, t_node *stack);
 int sipared_arg (char *str);

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:38:47 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 16:05:46 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:52:04 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ t_node *find_the_small_position(t_node **stack)
 	}
 	return (NULL);
 }
+
+t_node *find_the_scnd_small_position(t_node **stack)
+{
+	t_node *ptr;
+
+	ptr = (*stack);
+	while (ptr)
+	{
+		if (ptr->position == 2)
+			return (ptr);
+		ptr = ptr->next;
+	}
+	return (NULL);
+}
+
 
 int find_the_index_of_the_node (t_node **stack, t_parss *my_stru, int value)
 {
