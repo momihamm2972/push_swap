@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/10 19:49:43 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/13 01:50:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_2_elements(t_node **stack)
+void	swap_2_elements(t_node **stack, int delta)
 {
 	int swaper;
 
@@ -24,16 +24,21 @@ void	swap_2_elements(t_node **stack)
 	swaper = (*stack)->position;
 	(*stack)->position = (*stack)->next->position;
 	(*stack)->next->position =	swaper;
+	if (delta == 0)
+		write (1, "sa\n", 3);
+	else if (delta == 1)
+		write (1, "sb\n", 3);
 }
 
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
-	swap_2_elements(stack_a);
-	swap_2_elements(stack_b);
+	swap_2_elements(stack_a, 2);
+	swap_2_elements(stack_b, 2);
+	write (1, "ss\n", 3);
 }
 
-void	push_to_stack(t_node **stack_0, t_node **stack_1)
+void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 {
 	// t_node *tmp;
 	t_node *fri;
@@ -41,12 +46,17 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1)
 	if (!(*stack_0))
 		return ;
 	ft_lstadd_front(stack_1, ft_lstnew((*stack_0)->data));
+	(*stack_1)->position = (*stack_0)->position;
 	fri = (*stack_0);
 	(*stack_0) = (*stack_0)->next;
 	free (fri);
+	if (delta == 0)
+		write (1, "pa\n", 3);
+	else
+		write (1, "pb\n", 3);
 }
 
-void	rotate (t_node **stack)
+void	rotate (t_node **stack, int delta)
 {
 	// t_node *tmp;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 	t_node *last;
@@ -58,36 +68,20 @@ void	rotate (t_node **stack)
 	last->next = (*stack);
 	(*stack) = (*stack)->next;
 	last->next->next = NULL;
+	if (delta == 0)
+		write (1, "ra\n", 3);
+	else if (delta == 1)
+		write (1, "rb\n", 3);
 }
 
 void	rr (t_node **stack_a, t_node **stack_b)
 {
-	rotate (stack_a);
-	rotate (stack_b);
+	rotate (stack_a, 2);
+	rotate (stack_b, 2);
+	write (1, "rr\n", 3);
 }
 
-void    make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small)
-{
-    int indx;
-       while (1)
-        {
-            indx = find_the_index_of_the_node (stack, my_sc, small);
-            if (indx == 5)
-                return ;
-            else if (indx == 2)
-            {
-                rev_rotate (stack);
-                return ;
-            }
-            else if (indx == 4)
-            {
-                swap_2_elements (stack);
-                return ;
-            }
-            else
-                rev_rotate (stack);
-        }
-}
+
 
 // int main ()
 // {

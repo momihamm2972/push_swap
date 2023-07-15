@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 02:46:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:31:26 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,28 +70,21 @@ int*	position00_nodes (int len_of_arr, t_node *stack)
 
 void    parssing (t_parss *my_struct)
 {
-    t_node *head;
-
-    head = malloc (sizeof (t_node));
+    my_struct->head = malloc (sizeof (t_node));
     my_struct->arg2 = ft_split (my_struct->arg1, '$');
     my_struct->len_of_arr = 0;
     my_struct->indx = 0;
-    head->data = ft_atoi (my_struct->arg2[my_struct->indx]);
+    my_struct->head->data = ft_atoi (my_struct->arg2[my_struct->indx]);
     while (my_struct->arg2[++my_struct->indx])
         {
-            ft_lstadd_back(&head, ft_lstnew (ft_atoi(my_struct->arg2[my_struct->indx])));
-            ft_double (&head, ft_atoi(my_struct->arg2[my_struct->indx]));
+            ft_lstadd_back(&my_struct->head, ft_lstnew (ft_atoi(my_struct->arg2[my_struct->indx])));
+            ft_double (&my_struct->head, ft_atoi(my_struct->arg2[my_struct->indx]));
         }
-        my_struct->len_of_arr = my_struct->indx;
-        sorted (&head);
-		my_struct->beforsorted = position00_nodes (my_struct->len_of_arr, head);
-		sort_an_arr (my_struct->beforsorted, my_struct->len_of_arr);
-		position01_nodes (my_struct, head);
-        my_struct->sizeof_stack = ft_lstsize (head);
-		printf (">>>>>>>>>>>>>>>>>&>>>>>>>>>>>>%d\n",my_struct->sizeof_stack);
-		// first_trys (my_struct, &head);
-        first_trys (my_struct, &head);
-        print_nodes (&head);//hna ********************************************************************;
-        // printf ("%d",)
+    my_struct->len_of_arr = my_struct->indx;
+    sorted (&my_struct->head);
+	my_struct->beforsorted = position00_nodes (my_struct->len_of_arr, my_struct->head);
+	sort_an_arr (my_struct->beforsorted, my_struct->len_of_arr);
+	position01_nodes (my_struct, my_struct->head);
+    my_struct->sizeof_stack = ft_lstsize (my_struct->head);
 }
 

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 21:04:11 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:41:30 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct node
 /*#################### struct of parssing ##########################*/
 typedef struct parss
 {
+	t_node	*head;
 	char	*arg1;
 	char	**arg2;
 	int		*beforsorted;
@@ -45,11 +46,11 @@ t_node *find_the_scnd_small_position(t_node **stack);
 void    make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small);
 void    first_trys (t_parss *my_sc, t_node **stack);
 void position01_nodes (t_parss *my_sc, t_node *stack);
-void	push_to_stack(t_node **stack_0, t_node **stack_1);
-void	swap_2_elements(t_node **stack);
+void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
+void	swap_2_elements(t_node **stack, int delta);
 void    print_nodes(t_node **stack);
-void	rotate (t_node **stack);
-void rev_rotate (t_node **stack);
+void	rotate (t_node **stack, int delta);
+void rev_rotate (t_node **stack, int delta);
 void	rrr (t_node **stack_a, t_node **stack_b);
 void	rr (t_node **stack_a, t_node **stack_b);
 void	ss(t_node **stack_a, t_node **stack_b);
@@ -67,6 +68,7 @@ void    sort_an_arr (int *arr, int len);
 void    ft_orederfor_stack_for (t_parss *my_struc, t_node **stack);
 void    ft_tree_posi_exat (t_node **stack);
 void    stack_five (t_node **stack, t_parss *my_sc, int small, int scnd);
+void    stack_one_h (t_node **stack, t_parss *my_stc);
 int finally_sorted (t_node **stack);
 int		*position00_nodes (int len_of_arr, t_node *stack);
 int sipared_arg (char *str);
@@ -87,6 +89,7 @@ int empty_arg (char *str);
 int sing_of_arg (char *str);
 int istheargincowt (char *str);
 int find_the_index_of_the_node (t_node **stack, t_parss *my_stru, int value);
+int    check_if_stil_node_of_chanck (t_node **stack, int range);
 char	*ft_strjoin(char const *s1, char const *s2);
 // char *split_the_str(char *str);
 char	*arg_v_r(char *str);

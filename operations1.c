@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:38:47 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 20:52:04 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/12 23:15:29 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rev_rotate (t_node **stack)
+void rev_rotate (t_node **stack, int delta)
 {
 	t_node *the_last;
 	t_node *new_last;
@@ -24,61 +24,20 @@ void rev_rotate (t_node **stack)
 	the_last->next = (*stack);
 	(*stack) = new_last->next;
 	new_last->next = NULL;
+	if (delta == 0)
+		write (1, "rra\n", 4);
+	else if (delta == 1)
+		write (1, "rrb\n", 4);
 }
 
 void	rrr (t_node **stack_a, t_node **stack_b)
 {
-	rev_rotate (stack_a);
-	rev_rotate (stack_b);
-}
-
-t_node *find_the_small_position(t_node **stack)
-{
-	t_node *ptr;
-
-	ptr = (*stack);
-	while (ptr)
-	{
-		if (ptr->position == 1)
-			return (ptr);
-		ptr = ptr->next;
-	}
-	return (NULL);
-}
-
-t_node *find_the_scnd_small_position(t_node **stack)
-{
-	t_node *ptr;
-
-	ptr = (*stack);
-	while (ptr)
-	{
-		if (ptr->position == 2)
-			return (ptr);
-		ptr = ptr->next;
-	}
-	return (NULL);
+	rev_rotate (stack_a, 2);
+	rev_rotate (stack_b, 2);
+	write (1, "rrr\n", 4);
 }
 
 
-int find_the_index_of_the_node (t_node **stack, t_parss *my_stru, int value)
-{
-	t_node *ptr;
-	int size;
-
-	ptr = (*stack);
-	size = my_stru->sizeof_stack;
-	if (ptr->data == value)
-		return (size);
-	while (ptr)
-	{
-		size--;
-		ptr = ptr->next;
-		if (ptr != NULL && ptr->data == value)
-			return (size);
-	}
-	return (-1);
-}
 
 // int main ()
 // {

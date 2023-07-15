@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:27 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/09 03:41:30 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/12 23:57:24 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,38 +56,37 @@ void    ft_orederfor_stack_for (t_parss *my_struc, t_node **stack)
     int     node_indx;
 
     small = find_the_small_position (stack);
-        printf ("the small data is (%d)\n",small->data);
     node_indx = find_the_index_of_the_node (stack, my_struc, small->data);
         if (node_indx == 4)
             printf ("GOOD\n");
         else if (node_indx >= 2)
         {
-            rotate (stack);
+            rotate (stack, 0);
             if (node_indx == 2)
-                swap_2_elements (stack);
+                swap_2_elements (stack, 0);
         }
         else
-            rev_rotate (stack);
+            rev_rotate (stack, 0);
 }
 
 void    ft_tree (t_node **stack)
 {
     if ((*stack)->position == 2 && (*stack)->next->position == 1)
 	{
-        swap_2_elements (stack);
+        swap_2_elements (stack, 0);
 		return ;
 	}
     if ((*stack)->next->next->position == 1 && (*stack)->next->position == 2
     && (*stack)->position == 3)
     {
-        swap_2_elements (stack);
-        rev_rotate (stack);
+        swap_2_elements (stack, 0);
+        rev_rotate (stack, 0);
 		return ;
     }
     if ((*stack)->next->position == 1 && (*stack)->next->next->position == 2
     && (*stack)->position == 3)
 	{
-        rotate (stack);
+        rotate (stack, 0);
 		return ;
 	}
 	else
@@ -99,14 +98,14 @@ void	ft_tree_complet (t_node **stack)
     if ((*stack)->position == 1 && (*stack)->next->position == 3
     && (*stack)->next->next->position == 2)
 	{
-        swap_2_elements (stack);
-        rotate (stack);
+        swap_2_elements (stack, 0);
+        rotate (stack, 0);
 		return ;
     }
 	if ((*stack)->position == 2 && (*stack)->next->position == 3
 	&& (*stack)->next->next->position == 1)
 	{
-		rev_rotate (stack);
+		rev_rotate (stack, 0);
 		return ;
 	}
 }

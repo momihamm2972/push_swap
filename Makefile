@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/06/19 00:39:54 by momihamm         ###   ########.fr        #
+#    Updated: 2023/07/15 03:46:40 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = push_swap
 CC = cc
 FLAGS = -Wall -Werror -Wextra
 FILES = push_swap.c\
-		excution0.c\
 		excution1.c\
 		excution2.c\
 		excution3.c\
