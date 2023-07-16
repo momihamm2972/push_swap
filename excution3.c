@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:34 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:56:10 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 06:02:13 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,38 @@ int    check_if_stil_node_of_chanck (t_node **stack, int range)
     return (0);
 }
 
-// void    stack_one_h (t_node **stack, t_parss *my_stc)
-// {
-//     t_node **stack_b;
+void    stack_one_h (t_node **stack, t_parss *my_stc)
+{
+    t_node **stack_b;
+    int     devision;
+    int     mid;
+    int     push;
 
-//     stack_b = malloc (sizeof (t_node));
-// }
+    stack_b = malloc (sizeof (t_node));
+    devision = my_stc->sizeof_stack / 5;
+    mid = 0;
+    push = 0;
+    while (1)
+    {
+        if (check_if_stil_node_of_chanck (stack, devision) == 0 && devision <= my_stc->sizeof_stack)
+        {
+            mid = 10;
+            devision += my_stc->sizeof_stack / 5;
+        }
+        if ((*stack)->position <= devision)
+        {
+            push_to_stack (stack, stack_b, 1);
+            push++;
+            if ((*stack_b)->position <= ((devision / 2) + mid))
+                rotate (stack_b, 1);
+            if (push == my_stc->sizeof_stack)
+                break;
+        }
+        else
+            rotate (stack, 0);
+    }
+    print_nodes (stack_b);
+}
 
 void    first_trys (t_parss *my_sc, t_node **stack)
 {
@@ -103,7 +129,5 @@ void    first_trys (t_parss *my_sc, t_node **stack)
     else if (my_sc->sizeof_stack == 5)
         stack_five (stack, my_sc, small->data, scnd->data);   
     else if (my_sc->sizeof_stack > 5 && my_sc->sizeof_stack <= 100)
-    {
-        // stack_one_h (stack, my_sc);
-    }
+        stack_one_h (stack, my_sc);
 }

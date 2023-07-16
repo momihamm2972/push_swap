@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:57:55 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 04:41:28 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,66 +38,60 @@ typedef struct parss
 }t_parss;
 /*##################################################################*/
 
-t_node	*ft_lstnew(int content);
-t_node *ft_lstlast(t_node *lst);
-t_node	*before_the_last(t_node **stack);
-t_node *find_the_small_position(t_node **stack);
-t_node *find_the_scnd_small_position(t_node **stack);
-void    make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small);
-void    first_trys (t_parss *my_sc, t_node **stack);
-void position01_nodes (t_parss *my_sc, t_node *stack);
-void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
-void	swap_2_elements(t_node **stack, int delta);
-void    print_nodes(t_node **stack);
-void	rotate (t_node **stack, int delta);
-void rev_rotate (t_node **stack, int delta);
-void	rrr (t_node **stack_a, t_node **stack_b);
-void	rr (t_node **stack_a, t_node **stack_b);
-void	ss(t_node **stack_a, t_node **stack_b);
-void ft_lstadd_back(t_node **lst, t_node *new);
-void ft_lstadd_front(t_node **lst, t_node *new);
-void	*ft_calloc(size_t count, size_t size);
-void	free_all(char **s, int ptrs);
-void    first_trys (t_parss *my_sc, t_node **stack);
-void    ft_tree (t_node **stack);
-void	ft_tree_complet (t_node **stack);
-// void check_duble(long long *arr, int num);
-void	*ft_memcpy(void *to, const void *from, size_t len);
-void    parssing (t_parss *my_struct);
-void    sort_an_arr (int *arr, int len);
-void    ft_orederfor_stack_for (t_parss *my_struc, t_node **stack);
-void    ft_tree_posi_exat (t_node **stack);
-void    stack_five (t_node **stack, t_parss *my_sc, int small, int scnd);
-void    stack_one_h (t_node **stack, t_parss *my_stc);
-int finally_sorted (t_node **stack);
-int		*position00_nodes (int len_of_arr, t_node *stack);
-int sipared_arg (char *str);
-int ft_double(t_node **stack, int data);
-// int ft_lstsize(t_node *lst);
-int sorted (t_node **stack);
-int	ft_lstsize(t_node *head);
-// int ft_check_if_str_has_wrong_char(char *str, char c);
-int ft_strlen(char *str);
-int	num_of_word(char *s, char c);
-int	ft_isalpha(int c);
-int ft_isdigit(char *str);
-int ft_isdigit_atoi(int c);
-// int check_the_arg_(char *str);
-// int sing_in_str(char *str);
-int	error_msg(void);
-int empty_arg (char *str);
-int sing_of_arg (char *str);
-int istheargincowt (char *str);
-int find_the_index_of_the_node (t_node **stack, t_parss *my_stru, int value);
-int    check_if_stil_node_of_chanck (t_node **stack, int range);
-char	*ft_strjoin(char const *s1, char const *s2);
-// char *split_the_str(char *str);
-char	*arg_v_r(char *str);
-char	**ft_split(char *s, char c);
-char	*ft_substr(char *s, int start, int len);
-char	*ft_strdup(char *s1);
-char *make_the_str_can_splited (char *str);
-char *finale_char (char *str);
-long long ft_atoi (char *str);
+t_node		*ft_lstnew(int content);
+t_node		*ft_lstlast(t_node *lst);
+t_node		*before_the_last(t_node **stack);
+t_node		*find_the_small_position(t_node **stack);
+t_node		*find_the_scnd_small_position(t_node **stack);
+void		make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small);
+void		first_trys (t_parss *my_sc, t_node **stack);
+void		position01_nodes (t_parss *my_sc, t_node *stack);
+void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
+void		swap_2_elements(t_node **stack, int delta);
+void   		print_nodes(t_node **stack);
+void		rotate (t_node **stack, int delta);
+void		rev_rotate (t_node **stack, int delta);
+void		rrr (t_node **stack_a, t_node **stack_b);
+void		rr (t_node **stack_a, t_node **stack_b);
+void		ss(t_node **stack_a, t_node **stack_b);
+void		ft_lstadd_back(t_node **lst, t_node *new);
+void		ft_lstadd_front(t_node **lst, t_node *new);
+void		*ft_calloc(size_t count, size_t size);
+void		free_all(char **s, int ptrs);
+void   		first_trys (t_parss *my_sc, t_node **stack);
+void   		ft_tree (t_node **stack);
+void		ft_tree_complet (t_node **stack);
+void		*ft_memcpy(void *to, const void *from, size_t len);
+void   		parssing (t_parss *my_struct);
+void   		sort_an_arr (int *arr, int len);
+void   		ft_orederfor_stack_for (t_parss *my_struc, t_node **stack);
+void   		ft_tree_posi_exat (t_node **stack);
+void   		stack_five (t_node **stack, t_parss *my_sc, int small, int scnd);
+void   		stack_one_h (t_node **stack, t_parss *my_stc);
+int			finally_sorted (t_node **stack);
+int			*position00_nodes (int len_of_arr, t_node *stack);
+int			sipared_arg (char *str);
+int			ft_double(t_node **stack, int data);
+int			sorted (t_node **stack);
+int			ft_lstsize(t_node *head);
+int			ft_strlen(char *str);
+int			num_of_word(char *s, char c);
+int			ft_isalpha(int c);
+int			ft_isdigit(char *str);
+int			ft_isdigit_atoi(int c);
+int			error_msg(void);
+int			empty_arg (char *str);
+int			sing_of_arg (char *str);
+int			istheargincowt (char *str);
+int			find_the_index_of_the_node (t_node **stack, t_parss *my_stru, int value);
+int  		check_if_stil_node_of_chanck (t_node **stack, int range);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*arg_v_r(char *str);
+char		**ft_split(char *s, char c);
+char		*ft_substr(char *s, int start, int len);
+char		*ft_strdup(char *s1);
+char 		*make_the_str_can_splited (char *str);
+char 		*finale_char (char *str);
+long long	ft_atoi (char *str);
 
 #endif
