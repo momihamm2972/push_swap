@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 04:41:28 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 10:07:53 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct node
 typedef struct parss
 {
 	t_node	*head;
+	t_node  **stack_b;
 	char	*arg1;
 	char	**arg2;
 	int		*beforsorted;
@@ -44,7 +45,7 @@ t_node		*before_the_last(t_node **stack);
 t_node		*find_the_small_position(t_node **stack);
 t_node		*find_the_scnd_small_position(t_node **stack);
 void		make_the_scnd_in_top (t_parss *my_sc, t_node **stack, int small);
-void		first_trys (t_parss *my_sc, t_node **stack);
+// void		first_trys (t_parss *my_sc, t_node **stack);
 void		position01_nodes (t_parss *my_sc, t_node *stack);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
@@ -58,7 +59,7 @@ void		ft_lstadd_back(t_node **lst, t_node *new);
 void		ft_lstadd_front(t_node **lst, t_node *new);
 void		*ft_calloc(size_t count, size_t size);
 void		free_all(char **s, int ptrs);
-void   		first_trys (t_parss *my_sc, t_node **stack);
+void		first_trys (t_parss *my_sc, t_node **stack);
 void   		ft_tree (t_node **stack);
 void		ft_tree_complet (t_node **stack);
 void		*ft_memcpy(void *to, const void *from, size_t len);
@@ -67,7 +68,9 @@ void   		sort_an_arr (int *arr, int len);
 void   		ft_orederfor_stack_for (t_parss *my_struc, t_node **stack);
 void   		ft_tree_posi_exat (t_node **stack);
 void   		stack_five (t_node **stack, t_parss *my_sc, int small, int scnd);
-void   		stack_one_h (t_node **stack, t_parss *my_stc);
+void		stack_one_h (t_node **stack, t_parss *my_stc);
+void    	stack_one_hund (t_node **stack, int devision, int mid);
+void    scond_trys (t_parss *my_stc, t_node **stack_a, t_node **stack_b);
 int			finally_sorted (t_node **stack);
 int			*position00_nodes (int len_of_arr, t_node *stack);
 int			sipared_arg (char *str);
