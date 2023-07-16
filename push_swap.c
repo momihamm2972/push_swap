@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 10:38:35 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 11:03:28 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int main (int ac, char **av)
         first_trys (pars, &pars->head);
         if (pars->sizeof_stack > 5)
             scond_trys (pars, &pars->head, pars->stack_b);
-        print_nodes (&pars->head);
-        printf ("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
-        print_nodes (pars->stack_b);
+        // print_nodes (&pars->head);
+        // printf ("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
+        // print_nodes (pars->stack_b);
+        print_num (&pars->head);
     }
 }

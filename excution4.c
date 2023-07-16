@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 10:44:04 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 10:53:34 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void    first_trys (t_parss *my_sc, t_node **stack)
     else if (my_sc->sizeof_stack == 5)
         stack_five (stack, my_sc, small->data, scnd->data); 
     else if (my_sc->sizeof_stack > 5 && my_sc->sizeof_stack <= 100)
-        stack_one_h (stack, my_sc);
+        stack_one_h (stack, my_sc, 5);
+    else if (my_sc->sizeof_stack > 100 && my_sc->sizeof_stack <= 500)
+        stack_one_h (stack, my_sc, 10);
 
 }

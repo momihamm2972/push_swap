@@ -89,7 +89,7 @@ void    stack_one_hund (t_node **stack, int devision, int mid)
     print_nodes (stack_b);
 }
 
-void    stack_one_h (t_node **stack, t_parss *my_stc)
+void    stack_one_h (t_node **stack, t_parss *my_stc, int chunck)
 {
     // t_node **stack_b;
     int     devision;
@@ -97,7 +97,7 @@ void    stack_one_h (t_node **stack, t_parss *my_stc)
     int     push;
 
     my_stc->stack_b = malloc (sizeof (t_node));
-    devision = my_stc->sizeof_stack / 5;
+    devision = my_stc->sizeof_stack / chunck;
     mid = 0;
     push = 0;
     while (1)
@@ -105,7 +105,7 @@ void    stack_one_h (t_node **stack, t_parss *my_stc)
         if (check_if_stil_node_of_chanck (stack, devision) == 0 && devision <= my_stc->sizeof_stack)
         {
             mid = 10;
-            devision += my_stc->sizeof_stack / 5;
+            devision += my_stc->sizeof_stack / chunck;
         }
         if ((*stack)->position <= devision)
         {

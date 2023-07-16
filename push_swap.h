@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 10:07:53 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 10:58:46 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,10 @@ void   		sort_an_arr (int *arr, int len);
 void   		ft_orederfor_stack_for (t_parss *my_struc, t_node **stack);
 void   		ft_tree_posi_exat (t_node **stack);
 void   		stack_five (t_node **stack, t_parss *my_sc, int small, int scnd);
-void		stack_one_h (t_node **stack, t_parss *my_stc);
+void		stack_one_h (t_node **stack, t_parss *my_stc, int chunck);
 void    	stack_one_hund (t_node **stack, int devision, int mid);
 void    scond_trys (t_parss *my_stc, t_node **stack_a, t_node **stack_b);
+void print_num (t_node **stack);
 int			finally_sorted (t_node **stack);
 int			*position00_nodes (int len_of_arr, t_node *stack);
 int			sipared_arg (char *str);

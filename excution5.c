@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 10:38:21 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 11:04:34 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,18 @@ void    scond_trys (t_parss *my_stc, t_node **stack_a, t_node **stack_b)
             rotate (stack_b, 1);
         if (max == 0)
             break;
+    }
+}
+
+void print_num (t_node **stack)
+{
+    t_node *ptr;
+
+    ptr = (*stack);
+    // printf ("%d ",ptr->data);
+    while (ptr)
+    {
+        printf ("%d ",ptr->data);
+        ptr = ptr->next;
     }
 }
