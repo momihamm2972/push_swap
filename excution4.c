@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 10:25:08 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/16 10:44:04 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,29 +72,14 @@ void    first_trys (t_parss *my_sc, t_node **stack)
     scnd = find_the_scnd_small_position (stack);
     my_sc->sizeof_stack = ft_lstsize ((*stack));
     if (my_sc->sizeof_stack == 2)
-    {
-        printf ("1>>>>>>>\n");
         swap_2_elements (stack, 0);
-        return;
-    }
     else if (my_sc->sizeof_stack == 3)
-    {
-        printf ("2>>>>>>>\n");
         ft_tree (stack);
-    }
     else if (my_sc->sizeof_stack == 4)
-    {
-        printf ("3>>>>>>>\n");
         stack_for (stack, my_sc);
-    }
     else if (my_sc->sizeof_stack == 5)
-    {
-        printf ("4>>>>>>>\n");
         stack_five (stack, my_sc, small->data, scnd->data); 
-    }  
     else if (my_sc->sizeof_stack > 5 && my_sc->sizeof_stack <= 100)
-    {
-        printf ("5>>>>>\n");
         stack_one_h (stack, my_sc);
-    }
+
 }
