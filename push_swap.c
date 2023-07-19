@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/19 08:37:59 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/19 09:24:11 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,23 @@ int main (int ac, char **av)
 {
     if (ac >= 2)
     {
+        (void) av;
         t_parss *pars;
         char    *ptr;
+        char    *ptr1;
 
         pars = malloc (sizeof (t_parss));
         pars->arg1 = malloc (1);
         ptr = pars->arg1;
         pars->indxarg = 0;
         while (av[++pars->indxarg])
-            pars->arg1 = ft_strjoin (pars->arg1, finale_char (av[pars->indxarg]));
+        {
+            ptr1 = finale_char (av[pars->indxarg]);
+            pars->arg1 = ft_strjoin (pars->arg1, ptr1/*finale_char (av[pars->indxarg])*/);
+            // printf ("{%s}\n",ptr1);
+            // free (ptr);
+        }
+        // printf ("{%s}",pars->arg1);
         parssing (pars);
         /*+++excution+++*/
         first_trys (pars, &pars->head);
@@ -40,6 +48,7 @@ int main (int ac, char **av)
         // print_nodes (pars->stack_b);
         print_num (&pars->head);
         free (ptr);
+        free (pars);
     }
     atexit (mr);
 }

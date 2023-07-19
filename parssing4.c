@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:02 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:57:26 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/19 09:23:48 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,16 @@ char    *arg_v_r(char *str)
 char *finale_char (char *str)
 {
     char *final;
+    char *ptr;
 
     final = malloc (1);
+    ptr = final;
     str = arg_v_r (str);
     final = ft_strjoin (final, str);
+    free (ptr);
+    // ptr = final;
     final = ft_strjoin (final, "$$");
+    // free (ptr);
     return (final);
 }
 
@@ -100,3 +105,8 @@ int sorted (t_node **stack)
 	}
 	return (0);
 }
+
+// int main(void)
+// {
+//     printf ("%s",finale_char ("0    52  -1 82 -66            522"));
+// }
