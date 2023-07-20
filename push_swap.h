@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 10:58:46 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/20 10:32:08 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,4 @@ char		*ft_strdup(char *s1);
 char 		*make_the_str_can_splited (char *str);
 char 		*finale_char (char *str);
 long long	ft_atoi (char *str);
-
 #endif

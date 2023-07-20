@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:58:01 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/20 10:31:45 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ char *ft_strjoin(char const *s1, char const *s2)
 	buff[indx] = '\0';
 	return (buff);
 }
-
 int ft_isdigit_atoi(int c)
 {
 	if (c >= '0' && c <= '9')

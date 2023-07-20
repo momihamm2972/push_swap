@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:02 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/19 09:23:48 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/20 10:31:55 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,15 @@ char *finale_char (char *str)
     char *final;
     char *ptr;
 
-    final = malloc (1);
+    final = ft_strdup("");
     ptr = final;
     str = arg_v_r (str);
-    final = ft_strjoin (final, str);
+    final = ft_strjoin(final, str);
+    free(str);
     free (ptr);
-    // ptr = final;
-    final = ft_strjoin (final, "$$");
-    // free (ptr);
+    ptr = final;
+    final = ft_strjoin(final, "$$");
+    free (ptr);
     return (final);
 }
 
