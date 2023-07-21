@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/20 10:31:45 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:02:13 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 	while (indx < (ft_strlen(str1) + ft_strlen(str2)))
 		buff[indx++] = str2[indx_of_conca++];
 	buff[indx] = '\0';
+	// free ((char *)s1);
 	return (buff);
 }
 int ft_isdigit_atoi(int c)
