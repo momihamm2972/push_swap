@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:57:31 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:33:23 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,19 @@ int*	position00_nodes (int len_of_arr, t_node *stack)
 	return (arr_of_int);
 }
 
+void    free_matrix (char **matrix)
+{
+    int indx;
+
+    indx = 0;
+    while (matrix[indx])
+    {
+        free (matrix[indx]);
+        indx++;
+    }
+    free (matrix);
+}
+
 void    parssing (t_parss *my_struct)
 {
     my_struct->head = malloc (sizeof (t_node));
@@ -75,6 +88,7 @@ void    parssing (t_parss *my_struct)
     my_struct->len_of_arr = 0;
     my_struct->indx = 0;
     my_struct->head->data = ft_atoi (my_struct->arg2[my_struct->indx]);
+    my_struct->head->next = NULL;
     while (my_struct->arg2[++my_struct->indx])
         {
             ft_lstadd_back(&my_struct->head, ft_lstnew (ft_atoi(my_struct->arg2[my_struct->indx])));
@@ -86,5 +100,7 @@ void    parssing (t_parss *my_struct)
 	sort_an_arr (my_struct->beforsorted, my_struct->len_of_arr);
 	position01_nodes (my_struct, my_struct->head);
     my_struct->sizeof_stack = ft_lstsize (my_struct->head);
+    // free_matrix (my_struct->arg2);
+    // free (my_struct->beforsorted);
 }
 

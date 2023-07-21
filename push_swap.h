@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/20 10:32:08 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:36:04 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct parss
 /*##################################################################*/
 
 t_node		*ft_lstnew(int content);
+void    free_matrix (char **matrix);
 t_node		*ft_lstlast(t_node *lst);
 t_node		*before_the_last(t_node **stack);
 t_node		*find_the_small_position(t_node **stack);
