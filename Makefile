@@ -6,13 +6,13 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/07/16 10:17:08 by momihamm         ###   ########.fr        #
+#    Updated: 2023/07/23 11:26:34 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 FILES = push_swap.c\
 		excution1.c\
 		excution2.c\

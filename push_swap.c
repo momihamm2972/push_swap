@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/21 16:38:51 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/23 11:26:58 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void    free_struct (t_parss *my_struct)
 
 int main (int ac, char **av)
 {
-    atexit (mr);
+    // atexit (mr);
     if (ac >= 2)
     {
         (void) av;
@@ -54,7 +54,7 @@ int main (int ac, char **av)
             // printf ("{%s}\n",ptr1);
             free (ptr1);
         }
-        printf ("{%s}",pars->arg1);
+        // printf ("{%s}\n",pars->arg1);
         parssing (pars);
         /*+++excution+++*/
         first_trys (pars, &pars->head);
@@ -63,8 +63,8 @@ int main (int ac, char **av)
         // print_nodes (&pars->head);
         // printf ("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
         // print_nodes (pars->stack_b);
-        printf ("\n\n\n\n\n\n\n\n\n");
-        print_num (&pars->head);
+        // printf ("\n\n\n\n\n\n\n\n\n");
+        // print_num (&pars->head);
         // free (pars);
         free(pars->arg1);
     }

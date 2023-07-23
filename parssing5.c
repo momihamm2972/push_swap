@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/21 16:33:23 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/07/23 11:28:06 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void    sort_an_arr (int *arr, int len)
     indx = 0;
     while (indx < len)
     {
-        if ((arr[indx] > arr[indx + 1]) && (indx + 1 < len))
+        if ((indx + 1 < len) && (arr[indx] > arr[indx + 1]) && (indx + 1 < len))
         {
             swap = arr[indx];
             arr[indx] = arr[indx + 1];
@@ -57,7 +57,7 @@ int*	position00_nodes (int len_of_arr, t_node *stack)
     int     indx;
 
 	ptr = stack;
-	arr_of_int = (int *) malloc (4 * len_of_arr);
+	arr_of_int = (int *) malloc (sizeof (int) * len_of_arr);
     indx = 0;
     while (indx < len_of_arr)
     {
