@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
+#    By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/07/23 11:26:34 by momihamm         ###   ########.fr        #
+#    Updated: 2023/08/04 15:37:41 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -g #-fsanitize=address
 FILES = push_swap.c\
 		excution1.c\
 		excution2.c\
