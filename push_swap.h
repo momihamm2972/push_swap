@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/08/04 15:49:51 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/01 07:40:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void		ft_lstadd_back(t_node **lst, t_node *new);
 void		ft_lstadd_front(t_node **lst, t_node *new);
 void		*ft_calloc(size_t count, size_t size);
 void		*ft_memcpy(void *to, const void *from, size_t len);
+void		make_args_usefull (t_parss *my_struct);
 int			sipared_arg (char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -65,6 +66,7 @@ int			error_msg(void);
 int			empty_arg (char *str);
 int			sing_of_arg (char *str);
 int			istheargincowt (char *str);
+int			only_sing(char *str);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);

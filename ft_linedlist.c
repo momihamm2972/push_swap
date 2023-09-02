@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_linedlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:56:57 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/08/21 20:56:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void ft_lstadd_back(t_node **lst, t_node *new)
 
 // int main(void)
 // {
-// 	t_node *head;
+// 	t_node *head = ft_lstnew (91);
 // 	// head->next = ft_lstnew(20);
 // 	// head->next->next = ft_lstnew (30);
 // 	// ft_lstadd_back(&head, ft_lstnew(100));
