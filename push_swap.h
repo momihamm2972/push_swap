@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/01 07:40:56 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:42:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ typedef struct node
 /*#################### struct of parssing ##########################*/
 typedef struct parss
 {
-	t_node	*head;
+	t_node	**stack_a;
 	t_node  **stack_b;
 	char	*arg1;
+	char	*ptr;
+	char	*ptr1;
 	char	**arg2;
 	int		*beforsorted;
 	int		indx;
@@ -55,6 +57,8 @@ void		ft_lstadd_front(t_node **lst, t_node *new);
 void		*ft_calloc(size_t count, size_t size);
 void		*ft_memcpy(void *to, const void *from, size_t len);
 void		make_args_usefull (t_parss *my_struct);
+void	ft_free_a_stack (t_node **stack);
+void	ft_double (t_node **stack, int num);
 int			sipared_arg (char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/08/21 20:56:56 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:21:45 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,37 @@ void ft_lstadd_back(t_node **lst, t_node *new)
 	the_last->next = new;
 }
 
+void	ft_free_a_stack (t_node **stack)
+{
+	t_node *ptr0;
+	t_node *ptr1;
+
+	ptr0 = (*stack);
+	while (ptr0)
+	{
+		ptr1 = ptr0->next;
+		free (ptr0);
+		ptr0 = ptr1;
+	}
+	free (stack);
+}
+
 // int main(void)
 // {
-// 	t_node *head = ft_lstnew (91);
-// 	// head->next = ft_lstnew(20);
-// 	// head->next->next = ft_lstnew (30);
+// 	t_node **head = malloc (sizeof (t_node *));
+// 	(*head) = ft_lstnew (91);
+// 	(*head)->next = ft_lstnew(20);
+// 	(*head)->next->next = ft_lstnew (30);
 // 	// ft_lstadd_back(&head, ft_lstnew(100));
 // 	// head->next->next->next->next->next = ft_lst
 // 	// printf ("nadi \n");>?
 // 	// t_node *last = ft_lstlast (head);
 // 	// printf ("candi\n")?;
-// 	printf ("%d",head->data);
+// 	printf ("%d\t%d\t%d",(*head)->data, (*head)->next->data, (*head)->next->next->data);
+// 	free ((*head)->next->next);
+// 	free ((*head)->next);
+// 	free ((*head));
+// 	free (head);
+// 	// ft_free_a_stack (head);
+	
 // }

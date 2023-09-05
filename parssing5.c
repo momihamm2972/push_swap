@@ -6,11 +6,28 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/01 07:59:04 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:45:59 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_double (t_node **stack, int num)
+{
+	t_node	*ptr;
+	int		doub;
+
+	ptr = (*stack);
+	doub = 0;
+	while (ptr)
+	{
+		if (ptr->data == num)
+			doub++;
+		if (doub > 1)
+			exit (error_msg ());
+		ptr = ptr->next;
+	}
+}
 
 int only_sing(char *str)
 {
@@ -21,18 +38,22 @@ int only_sing(char *str)
 
 void    make_args_usefull (t_parss *my_struct)
 {
+	int num;
+	int indx;
+	
+    indx = 0;
+	num = 0;
+    my_struct->stack_a = malloc (sizeof (t_node *));
     my_struct->arg2 = ft_split (my_struct->arg1, '$');
-    int i = 0;
-    while (my_struct->arg2[i])
-        printf ("%s\n",my_struct->arg2[i++]);
-    int j= 0;
-    my_struct->beforsorted = (int *) ft_calloc (i, sizeof (int));
-    while (j < i)
-    {
-        
-        my_struct->beforsorted[j] = ft_atoi (my_struct->arg2[j]);
-        printf ("NUM <%d>\n",my_struct->beforsorted[j]);
-        j++;
-    }
+    (*my_struct->stack_a) = ft_lstnew (ft_atoi (my_struct->arg2[indx]));
+    while (my_struct->arg2[++indx])
+	{
+		num = ft_atoi (my_struct->arg2[indx]);
+        ft_lstadd_back (my_struct->stack_a, ft_lstnew (num));
+		ft_double (my_struct->stack_a, num); 
+	}
+    print_nodes (my_struct->stack_a);
+    free (my_struct->arg1);
 }
+
 

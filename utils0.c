@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils0.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/21 16:02:13 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:29:38 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,31 +59,29 @@ int ft_isdigit_atoi(int c)
 
 long long	ft_atoi(char *str)
 {
-	long long i_r_s [4];
+    long long i_r_s[3];
 
-	i_r_s [0] = -1;
-	i_r_s [1] = 0;
-	i_r_s [2] = 1;
-	i_r_s [3] = -2147483648;
-
-	while (str[++i_r_s [0]] != '\0')
-	{
-		while (str[i_r_s [0]] == 32 || (str[i_r_s [0]] >= 9 && str[i_r_s [0]] <= 13))
-			i_r_s [0]++;
-		if (str[i_r_s [0]] == '-' || str[i_r_s [0]] == '+')
-		{
-			if (str[i_r_s [0]] == '-')
-				i_r_s [2] = -1;
-			i_r_s [0]++;
-		}
-		if (!ft_isdigit_atoi(str[i_r_s [0]]))
-			exit (error_msg ());
-		i_r_s [1] = (i_r_s [1] * 10) + str[i_r_s [0]] - '0';
-	}
-	if (i_r_s [1] * i_r_s [2] > 2147483647
-		|| i_r_s [1] * i_r_s [2] < i_r_s [3])
-		exit(error_msg());
-	return (i_r_s [1] * i_r_s [2]);
+    i_r_s[0] = 0;
+    i_r_s[1] = 0;
+    i_r_s[2] = 1;
+    while (str[i_r_s[0]] != '\0')
+    {
+        while (str[i_r_s[0]] == 32 || (str[i_r_s[0]] >= 9 && str[i_r_s[0]] <= 13))
+            i_r_s[0]++;
+        if (str[i_r_s[0]] == '-' || str[i_r_s[0]] == '+' )
+        {
+            if (str[i_r_s[0]] == '-' )
+                i_r_s[2] = -1;
+            i_r_s[0]++;
+        }
+        if (!(str[i_r_s[0]] >= '0' && str[i_r_s[0]] <= '9'))
+            return (0);
+        i_r_s[1] = (i_r_s[1] * 10) + str[i_r_s[0]] - '0';
+        if (i_r_s[1] > 2147483648 || i_r_s[1] < -2147483649)
+          exit (error_msg ());
+        i_r_s[0]++;
+    }
+    return (i_r_s[1] * i_r_s[2]);
 }
 
 char *ft_substr(char *s, int start, int len)
