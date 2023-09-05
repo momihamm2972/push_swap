@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/05 16:42:56 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:27:43 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_node		*ft_lstlast(t_node *lst);
 t_node		*before_the_last(t_node **stack);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
-void   		print_nodes(t_node **stack);
+void   	print_nodes(t_node **stack);
 void		rotate (t_node **stack, int delta);
 void		rev_rotate (t_node **stack, int delta);
 void		rrr (t_node **stack_a, t_node **stack_b);
