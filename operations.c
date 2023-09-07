@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/08/05 16:33:06 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:54:20 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	swap_2_elements(t_node **stack, int delta)
 	swaper = (*stack)->data;
 	(*stack)->data = (*stack)->next->data;
 	(*stack)->next->data =	swaper;
-	swaper = (*stack)->position;
-	(*stack)->position = (*stack)->next->position;
-	(*stack)->next->position =	swaper;
+	swaper = (*stack)->indx_of_stack;
+	(*stack)->indx_of_stack = (*stack)->next->indx_of_stack;
+	(*stack)->next->indx_of_stack =	swaper;
 	// if (delta == 0)
 	// 	write (1, "sa\n", 3);
 	// else if (delta == 1)
@@ -48,7 +48,7 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 	if (!(*stack_0))
 		return ;
 	ft_lstadd_front(stack_1, ft_lstnew((*stack_0)->data));
-	(*stack_1)->position = (*stack_0)->position;
+	(*stack_1)->indx_of_stack = (*stack_0)->indx_of_stack;
 	fri = (*stack_0);
 	(*stack_0) = (*stack_0)->next;
 	free (fri);
@@ -67,7 +67,7 @@ void	rotate (t_node **stack, int delta)
 	if (!(*stack))
 		return ;
 	// tmp = (*stack);
-	last = ft_lstlast ((*stack));
+	last = ft_lstlast (stack);
 	last->next = (*stack);
 	(*stack) = (*stack)->next;
 	last->next->next = NULL;

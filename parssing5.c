@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/05 16:45:59 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:14:58 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ void    make_args_usefull (t_parss *my_struct)
         ft_lstadd_back (my_struct->stack_a, ft_lstnew (num));
 		ft_double (my_struct->stack_a, num); 
 	}
-    print_nodes (my_struct->stack_a);
+    // print_nodes (my_struct->stack_a);
+	// t_node *lasss = ft_lstlast ((*my_struct->stack_a));
+	// printf (">>>>>>>>>>>%p",lasss->prev);
     free (my_struct->arg1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/05 14:21:45 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:44:36 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_node *ft_lstnew(int content)
 
 	head = malloc (sizeof (t_node));
 	head->data = content;
+	head->prev = NULL;
 	head->next = NULL;
 	return (head);
 }
@@ -47,15 +48,15 @@ int ft_lstsize(t_node *lst)
 	return (i);
 }
 
-t_node *ft_lstlast(t_node *lst)
+t_node *ft_lstlast(t_node **lst)
 {
 	t_node *ptr;
 
-	if (!lst)
+	if (!(*lst))
 		return (NULL);
-	if (lst->next == NULL)
-		return (lst);
-	ptr = lst;
+	if ((*lst)->next == NULL)
+		return ((*lst));
+	ptr = (*lst);
     while (ptr->next)
     {
         if (ptr->next->next == NULL)
@@ -69,8 +70,9 @@ void ft_lstadd_back(t_node **lst, t_node *new)
 {
 	t_node *the_last;
 
-	the_last = ft_lstlast((*lst));
+	the_last = ft_lstlast(lst);
 	the_last->next = new;
+	new->prev = the_last;
 }
 
 void	ft_free_a_stack (t_node **stack)
@@ -93,17 +95,20 @@ void	ft_free_a_stack (t_node **stack)
 // 	t_node **head = malloc (sizeof (t_node *));
 // 	(*head) = ft_lstnew (91);
 // 	(*head)->next = ft_lstnew(20);
-// 	(*head)->next->next = ft_lstnew (30);
+// 	(*head)->next->prev = (*head);
+// 	(*head)->next->next = ft_lstnew (330);
+// 	(*head)->next->next->prev = (*head)->next;
+// 	t_node *last = ft_lstlast (head);
 // 	// ft_lstadd_back(&head, ft_lstnew(100));
 // 	// head->next->next->next->next->next = ft_lst
 // 	// printf ("nadi \n");>?
 // 	// t_node *last = ft_lstlast (head);
 // 	// printf ("candi\n")?;
-// 	printf ("%d\t%d\t%d",(*head)->data, (*head)->next->data, (*head)->next->next->data);
-// 	free ((*head)->next->next);
-// 	free ((*head)->next);
-// 	free ((*head));
-// 	free (head);
-// 	// ft_free_a_stack (head);
+// 	printf ("%d",last->prev->data);
+// 	// free ((*head)->next->next);
+// 	// free ((*head)->next);
+// 	// free ((*head));
+// 	// free (head);
+// 	ft_free_a_stack (head);
 	
 // }
