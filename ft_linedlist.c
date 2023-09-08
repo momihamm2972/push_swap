@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/07 17:44:36 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/08 15:33:27 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,15 @@ void	ft_free_a_stack (t_node **stack)
 {
 	t_node *ptr0;
 	t_node *ptr1;
+	void* bebe = (void*)0xbebebebebebebebe;
 
 	ptr0 = (*stack);
 	while (ptr0)
 	{
 		ptr1 = ptr0->next;
 		free (ptr0);
+		if (ptr1 == bebe)
+			ptr1 = NULL;
 		ptr0 = ptr1;
 	}
 	free (stack);

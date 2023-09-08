@@ -6,39 +6,56 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:27 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/07 18:52:17 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/08 18:37:55 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void    print_the_lis (t_node **stack, int length)
-// {
-//     t_node **head= malloc (sizeof (t_node *));
-//     t_node *ptr;
-//     int     num;
+void    print_the_lis (t_node **stack, int length)
+{
+    t_node **head= malloc (sizeof (t_node *));
+    t_node *ptr;
+    int     num;
     
-//     ptr = ft_lstlast (stack);
-//     num = length;
-//     while (ptr)
-//     {
-//         if (ptr->length == num)
-//         {
-//             ft_lstadd_front (head, ft_lstnew (ptr->data));
-//             printf ("^_%d_^\t",ptr->data);
-//             num--;
-//         }
-//         ptr = ptr->prev;
-//         if (ptr == NULL)
-//         {
-//             printf ("**NULL**\n");
-//             break;
-//         }
-//     }
-//     printf ("ana hna\n");
-//     // print_lis (head);
-//     // ft_free_a_stack (head);
-// }
+    ptr = ft_lstlast (stack);
+    num = length;
+    while (ptr)
+    {
+        if (ptr->length == num)
+        {
+            ft_lstadd_front (head, ft_lstnew (ptr->data));
+            num--;
+        }
+        ptr = ptr->prev;
+        if (ptr == NULL)
+            break;
+    }
+    print_lis (head);
+    // printf ("ana hna2\n");
+    // print_nodes (head);
+    // printf ("ana hna\n");
+    ft_free_a_stack (head);
+    // printf ("ana hna1\n");
+}
+
+void    check_the_lis_are_in (t_node **stack, int length)
+{
+    t_node *ptr;
+    int num;
+
+    ptr = ft_lstlast(stack);
+    num = length;
+    while (ptr)
+    {
+        if (ptr->length == num)
+        {
+            ptr->are_in = 0;
+            num--;
+        }
+        ptr = ptr->prev;
+    }
+}
 
 int     find_the_big_length (t_node **stacka)
 {
@@ -67,6 +84,7 @@ void    make_the_length_one (t_parss *length)
     {
         // printf ("|||||%d||||||||||||\t",ptr->length);
         ptr->length = 1;
+        ptr->are_in = 1;
         ptr->indx_of_stack = indx;
         // printf ("|||||%d||||||||||||\n",ptr->length);
         ptr = ptr->next;
@@ -77,20 +95,24 @@ void    make_the_length_one (t_parss *length)
 void print_lis (t_node **stacka)
 {
     t_node *ptr;
-
+    void* bebe = (void*)0xbebebebebebebebe;
     ptr = (*stacka);
     while (ptr)
     {
         printf ("$%d\t",ptr->data);
         ptr = ptr->next;
+        if (ptr == bebe)
+            ptr = NULL;
     }
     ptr = (*stacka);
     printf ("\n");
-    while (ptr)
-    {
-        printf ("*%d\t",ptr->length);
-        ptr = ptr->next;
-    }
+    // while (ptr)
+    // {
+    //     printf ("*%d*\t",ptr->length);
+    //     ptr = ptr->next;
+    //     if (ptr == bebe)
+    //         ptr = NULL;
+    // }
 }
 
 void    lis (t_parss *lewandowski)

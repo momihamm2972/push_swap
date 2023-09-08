@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/07 17:54:20 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:37:08 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,16 @@ void    print_nodes(t_node **stack)
         return;
     key_of_list = 0;
     tmp = (*stack);
-    printf ("node=>%d===|==>data==   %d    >>indx_of_stack%d>>length<%d>\n",key_of_list, tmp->data, tmp->indx_of_stack, tmp->length);
-    while (tmp->next)
+    while (tmp)
     {
-        key_of_list++;
-        printf ("node=>%d==>data==   %d   >>>indx_of_stack%d>>length<%d>\n",key_of_list, tmp->next->data, tmp->next->indx_of_stack, tmp->length);
+        printf ("node %d\t",key_of_list);
+		printf ("data %d\t",tmp->data);
+		printf ("lent %d\t",tmp->length);
+		printf ("arei %d\n",tmp->are_in);
+		key_of_list++;
         tmp = tmp->next;
     }
+	// printf("\n\n\n\t%p",tmp);
 }
 
 void	*ft_memcpy(void *to, const void *from, size_t len)

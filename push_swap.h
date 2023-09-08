@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/07 18:26:07 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/08 18:24:05 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void    make_the_length_one (t_parss *length);
 void    lis (t_parss *lewandowski);
 void print_lis (t_node **stacka);
 void    print_the_lis (t_node **stack, int length);
+void    check_the_lis_are_in (t_node **stack, int length);
+void    make_the_lis_in_a (t_parss *fcbayern);
 int			sipared_arg (char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -79,6 +81,7 @@ int			sing_of_arg (char *str);
 int			istheargincowt (char *str);
 int			only_sing(char *str);
 int     find_the_big_length (t_node **stacka);
+int check_if_lis_in_a (t_node **stack);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);
