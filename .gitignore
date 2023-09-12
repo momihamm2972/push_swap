@@ -1,3 +1,4 @@
 kmi.c
 a.out
 *.o
+.gitignore
