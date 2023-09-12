@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/05 16:29:38 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:19:07 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,10 @@ long long	ft_atoi(char *str)
         if (!(str[i_r_s[0]] >= '0' && str[i_r_s[0]] <= '9'))
             return (0);
         i_r_s[1] = (i_r_s[1] * 10) + str[i_r_s[0]] - '0';
-        if (i_r_s[1] > 2147483648 || i_r_s[1] < -2147483649)
-          exit (error_msg ());
+        if ((i_r_s[1] * i_r_s[2]) > 2147483647)
+          exit (printf ("kmya\n"));
+		if ((i_r_s[1] * i_r_s[2]) < -2147483648)
+			exit (printf ("dave\n"));
         i_r_s[0]++;
     }
     return (i_r_s[1] * i_r_s[2]);

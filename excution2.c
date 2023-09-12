@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:31 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/12 16:43:25 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:39:39 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,28 @@ int check_if_lis_in_a (t_node **stack)
 void    make_the_lis_in_a (t_parss *fcbayern)
 {
     (void) fcbayern;
-    t_node *ptr;
-    int i=0;
-    ptr = (*fcbayern->stack_a);
-    fcbayern->stack_b = malloc (sizeof (t_node *));
-    while (1)
-    {
-        if (check_if_lis_in_a (fcbayern->stack_a) == 0)
-            break;
-        // printf ("in %d are%d    %d\n",ptr->are_in,i,ptr->next->are_in);
-        if (ptr->are_in == 1)
-        {
-            push_to_stack (fcbayern->stack_a, fcbayern->stack_b,0);
-            printf ("\n\tpush\n");
-        }
-        if (ptr->are_in == 0)
-        {
-            rotate (fcbayern->stack_a,0);
-            printf ("\n\trotate\n");
-        }
-        // printf ("%d\n",ptr->are_in);
-        // ptr = ptr->next;
-        i++;
-        if (i == 13)
-            break;
-    }
-    printf ("i=%d\n",i);
-    // printf ("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
     print_nodes (fcbayern->stack_a);
-    // printf ("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n");
-    // print_nodes (fcbayern->stack_b);
-    
+    t_node *ptr = (*fcbayern->stack_a);
+    fcbayern->stack_b = malloc (sizeof (t_node *));
+    (*fcbayern->stack_b) = ft_lstnew (91);
+    (void)ptr;
+    // while (1)
+    // {
+    //     if (ptr->are_in == 0)
+    //     {
+    //         // push_to_stack (fcbayern->stack_a,fcbayern->stack_b,0);
+    //         printf ("push\n");
+    //     }
+    //     else
+    //         rotate (fcbayern->stack_a,0);
+    //     // printf ("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
+    //     // print_nodes (fcbayern->stack_a);
+    //     // printf ("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n");
+    //     // print_nodes (fcbayern->stack_b);
+    // }
+    printf ("kmi\n");
+    push_to_stack (fcbayern->stack_a,fcbayern->stack_b,0);
 }
+mazal 3endi mochkil fach katkone stackBB khawya == SEV ;
+khasni nkhedem 3ela nkheli lis f stackAA;
+chi SEV bano 3end mo3ad;
