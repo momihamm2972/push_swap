@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/15 17:18:42 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/16 17:50:12 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void    excution (t_parss *excution)
     printf ("\nthe big is %d\n",big);
     // print_the_lis (excution->stack_a, big);
     check_the_lis_are_in (excution->stack_a, big);
-    print_nodes (excution->stack_a);
-    // make_the_lis_in_a (excution);
+    // print_nodes (excution->stack_a);
+    make_the_lis_in_a (excution);
 }
 
 int main (int ac, char **av)
