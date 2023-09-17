@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/16 17:58:07 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/17 01:39:57 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void    push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
     (*stack_1) = tmp;
     (*stack_0) = (*stack_0)->next;
     (*stack_1)->next = NULL;
-    printf ("dk************************8hel\n");
+    // printf ("dk************************8hel\n");
   }
   else
   {
