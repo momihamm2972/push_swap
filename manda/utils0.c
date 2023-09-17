@@ -6,15 +6,15 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:41:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/13 20:17:07 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/17 23:09:46 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -22,13 +22,13 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str1;
-	char *str2;
-	char *buff;
-	int indx_of_conca;
-	int indx;
+	char	*str1;
+	char	*str2;
+	char	*buff;
+	int		indx_of_conca;
+	int		indx;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -47,10 +47,10 @@ char *ft_strjoin(char const *s1, char const *s2)
 	while (indx < (ft_strlen(str1) + ft_strlen(str2)))
 		buff[indx++] = str2[indx_of_conca++];
 	buff[indx] = '\0';
-	// free ((char *)s1);
 	return (buff);
 }
-int ft_isdigit_atoi(int c)
+
+int	ft_isdigit_atoi(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -59,39 +59,39 @@ int ft_isdigit_atoi(int c)
 
 long long	ft_atoi(char *str)
 {
-    long long i_r_s[3];
+	long long	i_r_s[3];
 
-    i_r_s[0] = 0;
-    i_r_s[1] = 0;
-    i_r_s[2] = 1;
-    while (str[i_r_s[0]] != '\0')
-    {
-        while (str[i_r_s[0]] == 32 || (str[i_r_s[0]] >= 9 && str[i_r_s[0]] <= 13))
-            i_r_s[0]++;
-        if (str[i_r_s[0]] == '-' || str[i_r_s[0]] == '+' )
-        {
-            if (str[i_r_s[0]] == '-' )
-                i_r_s[2] = -1;
-            i_r_s[0]++;
-        }
-        if (!(str[i_r_s[0]] >= '0' && str[i_r_s[0]] <= '9'))
-            return (0);
-        i_r_s[1] = (i_r_s[1] * 10) + str[i_r_s[0]] - '0';
-        if ((i_r_s[1] * i_r_s[2]) > 2147483647)
-          exit (error_msg ());
+	i_r_s[0] = -1;
+	i_r_s[1] = 0;
+	i_r_s[2] = 1;
+	while (str[++i_r_s[0]] != '\0')
+	{
+		while (str[i_r_s[0]] == 32
+			|| (str[i_r_s[0]] >= 9 && str[i_r_s[0]] <= 13))
+			i_r_s[0]++;
+		if (str[i_r_s[0]] == '-' || str[i_r_s[0]] == '+' )
+		{
+			if (str[i_r_s[0]] == '-' )
+				i_r_s[2] = -1;
+			i_r_s[0]++;
+		}
+		if (!(str[i_r_s[0]] >= '0' && str[i_r_s[0]] <= '9'))
+			return (0);
+		i_r_s[1] = (i_r_s[1] * 10) + str[i_r_s[0]] - '0';
+		if ((i_r_s[1] * i_r_s[2]) > 2147483647)
+			exit (error_msg ());
 		if ((i_r_s[1] * i_r_s[2]) < -2147483648)
 			exit (error_msg ());
-        i_r_s[0]++;
-    }
-    return (i_r_s[1] * i_r_s[2]);
+	}
+	return (i_r_s[1] * i_r_s[2]);
 }
 
-char *ft_substr(char *s, int start, int len)
+char	*ft_substr(char *s, int start, int len)
 {
-	char *alloc_adds;
-	int str_len;
-	int indx;
-	int end;
+	char	*alloc_adds;
+	int		str_len;
+	int		indx;
+	int		end;
 
 	if (!s)
 		return (NULL);
@@ -109,4 +109,3 @@ char *ft_substr(char *s, int start, int len)
 		alloc_adds[indx++] = s[start++];
 	return (alloc_adds);
 }
-

@@ -6,18 +6,18 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:38:47 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/07 17:54:20 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/17 22:08:38 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rev_rotate (t_node **stack, int delta)
+void	rev_rotate (t_node **stack, int delta)
 {
-	t_node *the_last;
+	t_node	*the_last;
+	t_node	*new_last;
+
 	(void)delta;
-	t_node *new_last;
-	
 	if (!(*stack))
 		return ;
 	the_last = ft_lstlast (stack);
@@ -37,8 +37,6 @@ void	rrr (t_node **stack_a, t_node **stack_b)
 	rev_rotate (stack_b, 2);
 	// write (1, "rrr\n", 4);
 }
-
-
 
 // int main ()
 // {

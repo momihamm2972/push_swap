@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 02:36:32 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/17 22:15:09 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,39 @@
 
 t_node	*before_the_last(t_node **stack)
 {
-		t_node *ptr;
+	t_node	*ptr;
 
 	if (!(*stack))
 		return (NULL);
 	ptr = (*stack);
-    while (ptr->next)
-    {
-        if (ptr->next->next->next == NULL)
-            return (ptr->next);
-        ptr = ptr->next;
-    }
-    return (NULL);
+	while (ptr->next)
+	{
+		if (ptr->next->next->next == NULL)
+			return (ptr->next);
+		ptr = ptr->next;
+	}
+	return (NULL);
 }
 
-void    print_nodes(t_node **stack)
+void	print_nodes(t_node **stack)
 {
-    int key_of_list;
-    t_node *tmp;
+	t_node	*tmp;
+	int		key_of_list;
 
-    if (!(*stack))
-        return;
-    key_of_list = 0;
-    tmp = (*stack);
-    while (tmp)
-    {
-        printf ("node %d\t",key_of_list);
+	if (!(*stack))
+		return ;
+	key_of_list = 0;
+	tmp = (*stack);
+	while (tmp)
+	{
+		printf ("node %d\t",key_of_list);
 		printf ("data %d\t",tmp->data);
 		printf ("lent %d\t",tmp->length);
 		printf ("arei %d\t",tmp->are_in);
 		printf ("next %p\n",tmp->next);
-			key_of_list++                ;
-        tmp = tmp->next;
-    }
-	// printf("\n\n\n\t%p",tmp);
+		key_of_list++;
+		tmp = tmp->next;
+	}
 }
 
 void	*ft_memcpy(void *to, const void *from, size_t len)

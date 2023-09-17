@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parssing1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:53 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:57:16 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/17 22:10:43 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	num_of_word(char *s, char c)
 	return (len);
 }
 
-char **ft_split(char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**spl;
 	int		r_s_e_c[4];
@@ -92,6 +92,7 @@ char **ft_split(char *s, char c)
 	}
 	return (spl);
 }
+
 int	error_msg(void)
 {
 	write (2, "Error 404!!\n", 12);

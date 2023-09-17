@@ -3,11 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   excution6.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/07/16 02:56:51 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/17 23:23:17 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
