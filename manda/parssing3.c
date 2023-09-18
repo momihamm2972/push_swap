@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:59 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 22:23:21 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:56:31 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	istheargincowt (char *str)
+int	istheargincowt(char *str)
 {
 	int	indx;
 
@@ -26,7 +26,7 @@ int	istheargincowt (char *str)
 	return (0);
 }
 
-int	sing_of_arg (char *str)
+int	sing_of_arg(char *str)
 {
 	int	indx;
 
@@ -43,7 +43,7 @@ int	sing_of_arg (char *str)
 	return (0);
 }
 
-int	ft_isdigit (char *str)
+int	ft_isdigit(char *str)
 {
 	int	indx;
 
@@ -59,7 +59,7 @@ int	ft_isdigit (char *str)
 	return (0);
 }
 
-char	*make_the_str_can_splited (char *str)
+char	*make_the_str_can_splited(char *str)
 {
 	int		indx;
 	char	*dup;
@@ -75,7 +75,7 @@ char	*make_the_str_can_splited (char *str)
 	return (dup);
 }
 
-int	empty_arg (char *str)
+int	empty_arg(char *str)
 {
 	int	indx;
 

@@ -6,13 +6,27 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 22:33:14 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:55:54 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_double (t_node **stack, int num)
+void	ft_are_sorted(t_node **stack)
+{
+	t_node	*ptr;
+
+	ptr = (*stack);
+	while (ptr)
+	{
+		if ((ptr->next != NULL) && ptr->data > ptr->next->data)
+			return ;
+		ptr = ptr->next;
+	}
+	exit (error_msg ());
+}
+
+void	ft_double(t_node **stack, int num)
 {
 	t_node	*ptr;
 	int		doub;
@@ -36,7 +50,7 @@ int	only_sing(char *str)
 	return (0);
 }
 
-void	make_args_usefull (t_parss *my_struct)
+void	make_args_usefull(t_parss *my_struct)
 {
 	int	num;
 	int	indx;
@@ -52,5 +66,6 @@ void	make_args_usefull (t_parss *my_struct)
 		ft_lstadd_back (my_struct->stack_a, ft_lstnew (num));
 		ft_double (my_struct->stack_a, num);
 	}
+	ft_are_sorted (my_struct->stack_a);
 	free (my_struct->arg1);
 }

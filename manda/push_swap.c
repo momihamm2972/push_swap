@@ -6,18 +6,18 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 23:21:32 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:56:46 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	mr (void)
+void	mr(void)
 {
 	system ("leaks push_swap");
 }
 
-void	excution (t_parss *excution)
+void	excution(t_parss *excution)
 {
 	int	big;
 
@@ -29,7 +29,7 @@ void	excution (t_parss *excution)
 	make_the_lis_in_a (excution);
 }
 
-int	main (int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_parss	*pars;
 

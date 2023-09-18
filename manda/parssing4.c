@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:02 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 22:29:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:56:12 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sipared_arg (char *str)
+int	sipared_arg(char *str)
 {
 	if (str[0] == '+' || str[0] == '-')
 		return (1);
@@ -47,7 +47,7 @@ char	*arg_v_r(char *str)
 	return (str);
 }
 
-char	*finale_char (char *str)
+char	*finale_char(char *str)
 {
 	char	*final;
 	char	*ptr;
@@ -82,7 +82,7 @@ char	*finale_char (char *str)
 //     return (0);
 // }
 
-int	sorted (t_node **stack)
+int	sorted(t_node **stack)
 {
 	t_node	*ptr;
 	int		checker;

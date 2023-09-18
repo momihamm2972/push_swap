@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 04:34:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 21:53:15 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:04:50 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,4 @@ void	ft_lstadd_back(t_node **lst, t_node *new)
 // 	// free ((*head));
 // 	// free (head);
 // 	ft_free_a_stack (head);
-// }
+// }	

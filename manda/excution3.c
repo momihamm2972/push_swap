@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 23:13:15 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 23:19:25 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:55:49 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_a_stack (t_node **stack)
+void	ft_free_a_stack(t_node **stack)
 {
 	t_node	*ptr0;
 	t_node	*ptr1;
@@ -27,7 +27,7 @@ void	ft_free_a_stack (t_node **stack)
 	free (stack);
 }
 
-void	print_lis (t_node **stacka)
+void	print_lis(t_node **stacka)
 {
 	t_node	*ptr;
 	void	*bebe;

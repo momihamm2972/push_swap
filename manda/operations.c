@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 22:06:58 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:56:49 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 	}
 }
 
-void	rotate (t_node **stack, int delta)
+void	rotate(t_node **stack, int delta)
 {
 	t_node	*last;
 
@@ -78,7 +78,7 @@ void	rotate (t_node **stack, int delta)
 	// 	write (1, "rb\n", 3);
 }
 
-void	rr (t_node **stack_a, t_node **stack_b)
+void	rr(t_node **stack_a, t_node **stack_b)
 {
 	rotate (stack_a, 2);
 	rotate (stack_b, 2);

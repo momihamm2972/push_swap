@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:31 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 21:37:12 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:55:36 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	make_a_in_oredre (t_node **stack)
+void	make_a_in_oredre(t_node **stack)
 {
 	while (1)
 	{
@@ -23,7 +23,7 @@ void	make_a_in_oredre (t_node **stack)
 	}
 }
 
-int	check_if_lis_in_a (t_node **stack)
+int	check_if_lis_in_a(t_node **stack)
 {
 	t_node	*ptr;
 
@@ -37,7 +37,7 @@ int	check_if_lis_in_a (t_node **stack)
 	return (0);
 }
 
-void	make_the_lis_in_a (t_parss *fcbayern)
+void	make_the_lis_in_a(t_parss *fcbayern)
 {
 	t_node	**ptr;
 

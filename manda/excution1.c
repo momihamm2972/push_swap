@@ -6,13 +6,13 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:27 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/17 23:19:29 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:55:13 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_the_lis (t_node **stack, int length)
+void	print_the_lis(t_node **stack, int length)
 {
 	t_node	**head;
 	t_node	*ptr;
@@ -36,7 +36,7 @@ void	print_the_lis (t_node **stack, int length)
 	ft_free_a_stack (head);
 }
 
-void	check_the_lis_are_in (t_node **stack, int length)
+void	check_the_lis_are_in(t_node **stack, int length)
 {
 	t_node	*ptr;
 	int		num;
@@ -54,7 +54,7 @@ void	check_the_lis_are_in (t_node **stack, int length)
 	}
 }
 
-int	find_the_big_length (t_node **stacka)
+int	find_the_big_length(t_node **stacka)
 {
 	t_node	*ptr;
 	int		big;
@@ -70,7 +70,7 @@ int	find_the_big_length (t_node **stacka)
 	return (big);
 }
 
-void	make_the_length_one (t_parss *length)
+void	make_the_length_one(t_parss *length)
 {
 	t_node	*ptr;
 	int		indx;
@@ -105,7 +105,7 @@ void	make_the_length_one (t_parss *length)
 // 	printf ("\n");
 // }
 
-void	lis (t_parss *lewandowski)
+void	lis(t_parss *lewandowski)
 {
 	t_node	*ptr_i;
 	t_node	*ptr_j;
