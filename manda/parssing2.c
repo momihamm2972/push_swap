@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/18 19:58:10 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:24:30 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,21 @@ t_node	*before_the_last(t_node **stack)
 void	print_nodes(t_node **stack)
 {
 	t_node	*tmp;
-	int		key_of_list;
+	// int		key_of_list;
 
 	if (!(*stack))
 		return ;
-	key_of_list = 0;
+	// key_of_list = 0;
 	tmp = (*stack);
 	while (tmp)
 	{
-		printf ("node %d\t",key_of_list);
+		printf ("node %d\t",tmp->indx_of_node);
 		printf ("data %d\t",tmp->data);
 		printf ("lent %d\t",tmp->length);
 		printf ("arei %d\t",tmp->are_in);
+		printf ("movb %d\t",tmp->moves_b);
 		printf ("next %p\n",tmp->next);
-		key_of_list++;
+		// key_of_list++;
 		tmp = tmp->next;
 	}
 }

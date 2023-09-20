@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:31 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/18 19:55:36 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:27:18 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,8 @@ void	make_the_lis_in_a(t_parss *fcbayern)
 			rotate (fcbayern->stack_a, 0);
 	}
 	make_a_in_oredre (fcbayern->stack_a);
-	print_nodes (fcbayern->stack_a);
-	printf ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
-	print_nodes(fcbayern->stack_b);
+	indxy_stack (fcbayern->stack_a);
+	indxy_stack (fcbayern->stack_b);
 }
 // chi SEV bano 3end mo3ad;
 // tap;
