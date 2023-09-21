@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:58:05 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/20 17:51:27 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/20 23:31:24 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_are_sorted(t_node **stack)
 			return ;
 		ptr = ptr->next;
 	}
-	exit (error_msg ());
+	exit (0);
 }
 
 void	ft_double(t_node **stack, int num)

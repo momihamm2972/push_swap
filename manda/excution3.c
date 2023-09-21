@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 23:13:15 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/20 18:22:44 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/21 04:28:00 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void	print_lis(t_node **stacka)
 	printf ("\n");
 }
 
-int	min_value_in_the_stack (t_node **stack)
+int	min_value(t_node **stack)
 {
-	t_node *ptr;
-	int min;
+	t_node	*ptr;
+	int		min;
 
 	ptr = (*stack);
 	min = 0;
@@ -76,35 +76,27 @@ void	indxy_stack(t_node **stack)
 	}
 }
 
-void	Calculator_moves_min_b(t_node **stack, int min)
+void	calculator_moves_min_b(t_parss *no7i, int min)
 {
 	t_node	*ptr;
-	// int		moves;
 
-	ptr = (*stack);
+	ptr = (*no7i->stack_b);
 	while (ptr)
 	{
 		if (ptr->data == min)
 		{
-			if ((ft_lstsize ((*stack)) / 2) > ptr->indx_of_node)
-			{
+			if ((ft_lstsize ((*no7i->stack_b)) / 2) > ptr->indx_of_node)
 				ptr->moves_b = ptr->indx_of_node;
-			}
-			if ((ft_lstsize ((*stack)) / 2) < ptr->indx_of_node)
+			if ((ft_lstsize ((*no7i->stack_b)) / 2) < ptr->indx_of_node)
 			{
-				ptr->moves_b = ft_lstsize ((*stack)) - ptr->indx_of_node;
+				ptr->moves_b = ft_lstsize ((*no7i->stack_b));
+				ptr->moves_b -= ptr->indx_of_node;
 				ptr->moves_b *= -1;
 			}
 		}
 		ptr = ptr->next;
 	}
-	
+	ptr = an_node ((no7i->stack_b), min);
+	make_it_top ((no7i->stack_b), min, ptr->moves_b);
+	push_to_stack (no7i->stack_b, no7i->stack_a, 1);
 }
-
-// void	what_if_the_min_value_in_stackb(t_node **stack_a, t_node **stack_b)
-// {
-// 	if (min_value_in_the_stack (stack_b) < min_value_in_the_stack (stack_a))
-// 	{
-		
-// 	}
-// }
