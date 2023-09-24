@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/21 04:02:04 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/22 01:25:06 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	swap_2_elements(t_node **stack, int delta)
 	// 	write (1, "sa\n", 3);
 	// else if (delta == 1)
 	// 	write (1, "sb\n", 3);
+	indxy_stack (stack);
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
@@ -63,6 +64,8 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 	// 	write (1, "pa\n", 3);
 	// else if (delta == 1)
 	// 	write (1, "pb\n", 3);
+	indxy_stack (stack_0);
+	indxy_stack (stack_1);
 }
 
 void	rotate(t_node **stack, int delta)
@@ -80,6 +83,7 @@ void	rotate(t_node **stack, int delta)
 	// 	write (1, "ra\n", 3);
 	// else if (delta == 1)
 	// 	write (1, "rb\n", 3);
+	indxy_stack (stack);
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)

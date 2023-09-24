@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 23:13:15 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/21 05:09:43 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/24 05:19:56 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	print_lis(t_node **stacka)
 	printf ("\n");
 }
 
-int	min_value_in_the_stack (t_node **stack)
+int	min_value(t_node **stack)
 {
 	t_node *ptr;
 	int min;
 
 	ptr = (*stack);
-	min = 0;
+	min = ptr->data;
 	while (ptr)
 	{
 		if (min > ptr->data)
@@ -59,6 +59,22 @@ int	min_value_in_the_stack (t_node **stack)
 		ptr = ptr->next;
 	}
 	return (min);
+}
+
+int	big_value(t_node **stack)
+{
+	t_node	*ptr;
+	int		big;
+
+	ptr = (*stack);
+	big = ptr->data;
+	while (ptr)
+	{
+		if (ptr->data > big)
+			big = ptr->data;
+		ptr = ptr->next;
+	}
+	return (big);
 }
 
 void	indxy_stack(t_node **stack)
@@ -75,36 +91,3 @@ void	indxy_stack(t_node **stack)
 		ptr = ptr->next;
 	}
 }
-
-void	calculator_moves_min_b(t_node **stack, int min)
-{
-	t_node	*ptr;
-	// int		moves;
-
-	ptr = (*stack);
-	while (ptr)
-	{
-		if (ptr->data == min)
-		{
-			if ((ft_lstsize ((*stack)) / 2) > ptr->indx_of_node)
-			{
-				ptr->moves_b = ptr->indx_of_node;
-			}
-			if ((ft_lstsize ((*stack)) / 2) < ptr->indx_of_node)
-			{
-				ptr->moves_b = ft_lstsize ((*stack)) - ptr->indx_of_node;
-				ptr->moves_b *= -1;
-			}
-		}
-		ptr = ptr->next;
-	}
-	
-}
-
-// void	what_if_the_min_value_in_stackb(t_node **stack_a, t_node **stack_b)
-// {
-// 	if (min_value_in_the_stack (stack_b) < min_value_in_the_stack (stack_a))
-// 	{
-		
-// 	}
-// }

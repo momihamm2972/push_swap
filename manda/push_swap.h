@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/21 05:09:48 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/24 05:44:10 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ void		make_the_lis_in_a(t_parss *fcbayern);
 void		make_a_in_oredre(t_node **stack);
 void		ft_are_sorted(t_node **stack);
 void		indxy_stack(t_node **stack);
-void		calculator_moves_min_b(t_node **stack, int min);
+void	if_min_max_in_b (t_parss *azalim);
+void	an_node (t_node **stack, int info);
+void    cont_the_best_b (t_node **stack);
+void    make_top (t_node **stack, int info);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -90,7 +93,8 @@ int			istheargincowt(char *str);
 int			only_sing(char *str);
 int			find_the_big_length(t_node **stacka);
 int			check_if_lis_in_a(t_node **stack);
-int			min_value_in_the_stack (t_node **stack);
+int			min_value(t_node **stack);
+int	big_value(t_node **stack);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:38:47 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/18 19:57:00 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/22 01:25:30 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	rev_rotate(t_node **stack, int delta)
 	// 	write (1, "rra\n", 4);
 	// else if (delta == 1)
 	// 	write (1, "rrb\n", 4);
+	indxy_stack (stack);
 }
 
 void	rrr(t_node **stack_a, t_node **stack_b)
