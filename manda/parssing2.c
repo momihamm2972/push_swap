@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/20 23:50:23 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/25 19:33:14 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	print_nodes(t_node **stack)
 		printf ("arei %d\t",tmp->are_in);
 		printf ("mova %d\t",tmp->moves_a);
 		printf ("movb %d\t",tmp->moves_b);
+		printf ("tmov %d\t",tmp->total_moves);
 		printf ("next %p\n",tmp->next);
 		// key_of_list++;
 		tmp = tmp->next;

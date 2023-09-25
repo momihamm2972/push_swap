@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/24 05:44:10 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:59:34 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,14 @@ void		make_the_lis_in_a(t_parss *fcbayern);
 void		make_a_in_oredre(t_node **stack);
 void		ft_are_sorted(t_node **stack);
 void		indxy_stack(t_node **stack);
-void	if_min_max_in_b (t_parss *azalim);
-void	an_node (t_node **stack, int info);
-void    cont_the_best_b (t_node **stack);
-void    make_top (t_node **stack, int info);
+void		if_min_max_in_b (t_parss *azalim);
+void		an_node (t_node **stack, int info);
+void   		cont_the_best_b (t_node **stack);
+void		make_top (t_node **stack, int info);
+void	make_it_top (t_parss *munchen, int info);
+void	best_move_in_b (t_parss *djaja);
+void	best_move_in_a (t_parss *jwan);
+void	total_of_a_b (t_parss *tamawayet);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -103,4 +107,5 @@ char		*ft_strdup(char *s1);
 char		*make_the_str_can_splited(char *str);
 char		*finale_char(char *str);
 long long	ft_atoi(char *str);
+
 #endif
