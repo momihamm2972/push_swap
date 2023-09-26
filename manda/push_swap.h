@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/25 20:59:34 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/26 07:20:25 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ typedef struct parss
 t_node		*ft_lstnew(int content);
 t_node		*ft_lstlast(t_node **lst);
 t_node		*before_the_last(t_node **stack);
+t_node  *at_least (t_node **stack);
+t_node  *second_node (t_node **stack, int info);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
 void		print_nodes(t_node **stack);
@@ -83,6 +85,9 @@ void	make_it_top (t_parss *munchen, int info);
 void	best_move_in_b (t_parss *djaja);
 void	best_move_in_a (t_parss *jwan);
 void	total_of_a_b (t_parss *tamawayet);
+void	rev_or (t_node **stack);
+void	keep_it (t_parss *speed);
+void    ft_all_most (t_parss *sane);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -99,6 +104,7 @@ int			find_the_big_length(t_node **stacka);
 int			check_if_lis_in_a(t_node **stack);
 int			min_value(t_node **stack);
 int	big_value(t_node **stack);
+int	how_may_move (t_parss *kane, int info);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);

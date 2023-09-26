@@ -6,75 +6,87 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/25 20:46:26 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/26 07:06:34 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	best_move_in_b (t_parss *djaja)
-// {
-// 	t_node	*ptr;
+void	if_min_max_in_b (t_parss *azalim)
+{
+	if (min_value (azalim->stack_b) < min_value (azalim->stack_a))
+	{
+		an_node (azalim->stack_b, min_value (azalim->stack_b));
+		make_it_top (azalim, min_value (azalim->stack_b));
+		push_to_stack (azalim->stack_b, azalim->stack_a, 1);
+	}
+	if (big_value (azalim->stack_b) > big_value (azalim->stack_a))
+	{
+		an_node (azalim->stack_b, big_value (azalim->stack_b));
+		make_it_top (azalim,big_value (azalim->stack_b));
+		push_to_stack (azalim->stack_b, azalim->stack_a, 1);
+		rotate (azalim->stack_a, 0);
+	}         
+}
 
-// 	ptr = (*djaja->stack_b);
-// 	while (ptr)
-// 	{
-// 		if (ptr->indx_of_node <= (ft_lstsize ((*djaja->stack_b)) / 2))
-// 		{
-// 			ptr->moves_b = ptr->indx_of_node;
-// 		}
-// 		else if (ptr->indx_of_node >= (ft_lstsize ((*djaja->stack_b)) / 2))
-// 		{
-// 			ptr->moves_b = ft_lstsize ((*djaja->stack_b)) - ptr->indx_of_node;
-// 			ptr->moves_b *= -1;
-// 		}
-// 		ptr = ptr->next;
-// 	}
-// }
+void	rev_or (t_node **stack)
+{
+	t_node	*ptr;
 
-// void	best_move_in_a (t_parss *jwan)
-// {
-// 	t_node	*ptr_a;
-// 	t_node	*ptr_b;
+	ptr = (*stack);
+	while (ptr)
+	{
+		if (ptr->indx_of_node < (ft_lstsize ((*stack)) / 2))
+			ptr->moves_b = ptr->indx_of_node;
+		else if (ptr->indx_of_node >= (ft_lstsize ((*stack)) / 2))
+		{
+			ptr->moves_b = ft_lstsize ((*stack)) - ptr->indx_of_node;
+			ptr->moves_b *= -1;
+		}
+		ptr = ptr->next;
+	}
+}
 
-// 	// ptr_a = (*jwan->stack_a);
-// 	ptr_b = (*jwan->stack_b);
-// 	while (ptr_b)
-// 	{
-// 		ptr_a = (*jwan->stack_a);
-// 		while (ptr_a)
-// 		{
-// 			if (ptr_b->data < ptr_a->data)
-// 			{
-// 				if (ptr_a->indx_of_node <= (ft_lstsize ((*jwan->stack_a)) / 2))
-// 					ptr_a->moves_a = ptr_b->indx_of_node;
-// 				else if (ptr_a->indx_of_node >= (ft_lstsize ((*jwan->stack_a)) / 2))
-// 				{
-// 					ptr_a->moves_a = ft_lstsize ((*jwan->stack_a)) - ptr_a->indx_of_node;
-// 					ptr_a->moves_a *= -1;
-// 				}
-// 			}
-// 			ptr_a = ptr_a->next;
-// 		}
-// 		ptr_b = ptr_b->next;
-// 	}
-// }
+int	how_may_move (t_parss *kane, int info)
+{
+	t_node	*ptr;
+	int		cont;
 
-// void	total_of_a_b (t_parss *tamawayet)
-// {
-// 	t_node	*ptr;
-// 	int		p_value;
+	ptr = (*kane->stack_a);
+	while (ptr)
+	{
+		if (ptr->data > info)
+		{
+			if (ptr->moves_b < 0)
+				cont = ptr->moves_b * (-1);
+			else if (ptr->moves_b > 0)
+				cont = ptr->moves_b;
+			return (cont);
+		}
+		ptr = ptr->next;
+	}
+	return (0);
+}
 
-// 	ptr = (*tamawayet->stack_b);
-// 	while (ptr)
-// 	{
-// 		if (ptr->moves_b < 0)
-// 		{
-// 			p_value = ptr->moves_b * (-1);
-// 			ptr->total_moves = ptr->moves_a + p_value + 1;
-// 		}
-// 		else
-// 			ptr->total_moves = ptr->moves_a + ptr->moves_b + 1;
-// 		ptr = ptr->next;
-// 	}
-// }
+void	keep_it (t_parss *speed)
+{
+	best_move_in_b (speed);
+	best_move_in_a (speed);
+	total_of_a_b (speed);
+	rev_or (speed->stack_a);
+}
+
+void    ft_all_most (t_parss *sane)
+{
+    t_node  *ptr_a;
+    // t_node  *ptr_b;
+
+    ptr_a = (*sane->stack_a);
+    // ptr_b = (*sane->stack_b);
+	while (ptr_a)
+	{
+		keep_it (sane);
+		ptr_a = ptr_a->next;
+		// ptr_b = ptr_b->next;
+	}
+}
