@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 04:43:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:10:52 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ t_node	*before_the_last(t_node **stack)
 	if (!(*stack))
 		return (NULL);
 	ptr = (*stack);
-	while (ptr->next)
+	while (ptr)
 	{
-		if (ptr->next->next->next == NULL)
-			return (ptr->next);
+		if (ptr && ptr->next && ptr->next->next == NULL)
+			return (ptr);
 		ptr = ptr->next;
 	}
 	return (NULL);

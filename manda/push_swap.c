@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 07:23:57 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:30:45 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,19 +102,20 @@ void	excution(t_parss *excution)
 	check_the_lis_are_in (excution->stack_a, big);
 	make_the_lis_in_a (excution);
 	if_min_max_in_b (excution);
-	// best_move_in_b (excution);
-	// best_move_in_a (excution);
-	// total_of_a_b (excution);
-	ft_all_most (excution);
+	best_move_in_b (excution);
+	best_move_in_a (excution);
+	total_of_a_b (excution);
+	// ft_all_most (excution);
+	// keep_it (excution);
 	print_nodes (excution->stack_a);
 	printf ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
 	print_nodes(excution->stack_b);
 	printf ("minA=%d\n",min_value(excution->stack_a));
 	printf ("minB=%d\n",min_value(excution->stack_b));
 	printf ("sizeA=%d\nsizeB=%d\n",ft_lstsize ((*excution->stack_a)),ft_lstsize ((*excution->stack_b)));
-	int m =13;
-	t_node *ptr= second_node (excution->stack_a, m);
-	printf ("#############  %d ##\n",ptr->data);
+	// int m =13;
+	// t_node *ptr= second_node (excution->stack_a, m);
+	// printf ("#############  %d ##\n",ptr->data);
 }
 
 // void	conti_nue (t_parss *cotinu)
@@ -126,7 +127,6 @@ int	main(int ac, char **av)
 {
 	t_parss	*pars;
 
-	// atexit (mr);
 	if (ac >= 2)
 	{
 		pars = malloc (sizeof (t_parss));
@@ -148,5 +148,6 @@ int	main(int ac, char **av)
 		// print_nodes (pars->stack_a);
 		// free(pars->arg1);
 	}
+	// atexit (mr);
 	exit(0);
 }

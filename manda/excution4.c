@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 07:04:54 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:43:32 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ void	total_of_a_b (t_parss *tamawayet)
 		if (ptr->moves_b < 0)
 		{
 			p_value = ptr->moves_b * (-1);
-			ptr->total_moves = ptr->moves_a + p_value + 1 + how_may_move (tamawayet, ptr->data);
+			ptr->total_moves = ptr->moves_a + p_value + 1 ;//+ how_may_move (tamawayet, ptr->data);
 		}
 		else
-			ptr->total_moves = ptr->moves_a + ptr->moves_b + 1 + how_may_move (tamawayet, ptr->data);
+			ptr->total_moves = ptr->moves_a + ptr->moves_b + 1 ;//+ how_may_move (tamawayet, ptr->data);
 		ptr = ptr->next;
 	}
 }
@@ -112,6 +112,11 @@ void	make_it_top (t_parss *munchen, int info)
 			}
 			else if (ptr->moves_b < 0)
 			{
+				// print_nodes (munchen->stack_b);
+				// rev_rotate (munchen->stack_b, 1);
+				// printf ("$$$$$$$$$$\n");
+				// print_nodes (munchen->stack_b);
+				// exit (0);
 				while ((*munchen->stack_b)->data != info)
 					rev_rotate (munchen->stack_b, 1);
 			}

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:38:47 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/25 19:17:39 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:11:11 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,12 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 
 // int main ()
 // {
-// 	t_node *head =  ft_lstnew (32);
-// 	head->indx_of_stack = 2;
-// 	head->next = ft_lstnew (33);
-// 	head->next->indx_of_stack = 1;
-// 	head->next->next = ft_lstnew (12);
-// 	head->next->next->indx_of_stack = 3;
-// 	head->next->next->next = ft_lstnew (43);
-// 	head->next->next->next->indx_of_stack = 4;
-// 	t_node *ptr = find_the_small_indx_of_stack(&head);
-// 	printf ("%d",ptr->data);
+// 	t_node **stack= malloc (sizeof (t_node *));
+// 	(*stack) = ft_lstnew (1982);
+// 	(*stack)->next = ft_lstnew (1);
+// 	// rev_rotate (stack, 1);
+// 	t_node *last = ft_lstlast (stack);
+// 	t_node *befo= before_the_last (stack);
+// 	printf ("last = %d  befor = %d\n",last->data,befo->data);
+// 	ft_free_a_stack (stack);
 // }

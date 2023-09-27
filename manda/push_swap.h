@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 07:20:25 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:39:31 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	total_of_a_b (t_parss *tamawayet);
 void	rev_or (t_node **stack);
 void	keep_it (t_parss *speed);
 void    ft_all_most (t_parss *sane);
+void    node_of_top (t_node **stack, int info, int name_of_inst, int type_of);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);

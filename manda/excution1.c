@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:27 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 00:39:32 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:33:05 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	make_the_length_one(t_parss *length)
 	{
 		ptr->length = 1;
 		ptr->are_in = 1;
+		// ptr->total_moves = 0;
 		ptr->indx_of_stack = indx;
 		ptr = ptr->next;
 		indx++;

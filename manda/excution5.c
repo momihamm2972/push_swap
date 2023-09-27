@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 07:06:34 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/26 20:47:16 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	keep_it (t_parss *speed)
 void    ft_all_most (t_parss *sane)
 {
     t_node  *ptr_a;
+	// t_node	*less;
     // t_node  *ptr_b;
 
     ptr_a = (*sane->stack_a);
@@ -86,6 +87,10 @@ void    ft_all_most (t_parss *sane)
 	while (ptr_a)
 	{
 		keep_it (sane);
+		// less = at_least (sane->stack_b);
+		// if ("")
+		// printf ("               %d          %d          \n",less->data,less->moves_b);
+		break;
 		ptr_a = ptr_a->next;
 		// ptr_b = ptr_b->next;
 	}

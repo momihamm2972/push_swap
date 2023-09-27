@@ -6,16 +6,25 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 07:19:57 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/26 20:34:48 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void    node_of_top (t_node **stack, int info)
-// {
-    
-// }
+void    node_of_top (t_node **stack, int info, int name_of_inst, int type_of)
+{
+    if (type_of > 0)
+	{
+		while ((*stack)->data != info)
+			rotate (stack, name_of_inst);
+	}
+	else if (type_of < 0)
+	{
+		while ((*stack)->data != info)
+			rev_rotate (stack, name_of_inst);
+	}
+}
 
 t_node  *second_node (t_node **stack, int info)
 {
@@ -38,6 +47,8 @@ t_node  *at_least (t_node **stack)
     int     min;
 
     ptr = (*stack);
+	if (!ptr)
+		return (NULL);
     min = ptr->moves_b;
     while (ptr)
     {
