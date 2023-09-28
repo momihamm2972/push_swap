@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 20:47:16 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/28 23:13:35 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,24 @@ void	rev_or (t_node **stack)
 int	how_may_move (t_parss *kane, int info)
 {
 	t_node	*ptr;
-	int		cont;
+	int		cont=0;
 
 	ptr = (*kane->stack_a);
 	while (ptr)
 	{
 		if (ptr->data > info)
 		{
-			if (ptr->moves_b < 0)
-				cont = ptr->moves_b * (-1);
-			else if (ptr->moves_b > 0)
+			if (ptr->moves_b >= 0)
+			{
 				cont = ptr->moves_b;
+				// printf ("l3alamyaaaaaaaaaaaaaaaaaaaa  %d                  **\n",cont);
+			}
+			else if (ptr->moves_b < 0)
+			{
+				cont = ptr->moves_b * (-1);
+				printf ("kmi %d                                 **\n",cont);
+			}
+			// printf ("!!!!!!!!!!!!!!!!!!!!!!!!!!  %d  !!!!!!!!!!!!!!!!!!!!!\n",cont);
 			return (cont);
 		}
 		ptr = ptr->next;
@@ -70,6 +77,7 @@ int	how_may_move (t_parss *kane, int info)
 
 void	keep_it (t_parss *speed)
 {
+	if_min_max_in_b (speed);
 	best_move_in_b (speed);
 	best_move_in_a (speed);
 	total_of_a_b (speed);
@@ -78,20 +86,56 @@ void	keep_it (t_parss *speed)
 
 void    ft_all_most (t_parss *sane)
 {
-    t_node  *ptr_a;
+    t_node  *ptr_a=NULL;
+	t_node	*min_ista=NULL;
+	t_node	*next_min=NULL;
 	// t_node	*less;
     // t_node  *ptr_b;
+	int i=0;
 
     ptr_a = (*sane->stack_a);
     // ptr_b = (*sane->stack_b);
 	while (ptr_a)
 	{
 		keep_it (sane);
-		// less = at_least (sane->stack_b);
-		// if ("")
-		// printf ("               %d          %d          \n",less->data,less->moves_b);
-		break;
-		ptr_a = ptr_a->next;
-		// ptr_b = ptr_b->next;
+		min_ista = min_instractions (sane->stack_b);
+		// make_money (s)
+		if (!min_ista)
+			return;
+		// printf ("ministra      ===>%d<====\n",min_ista->data);
+		next_min = next_of_num_sicondo (sane->stack_a, min_ista->data);
+		// printf ("nextof min      >>>>>>>|>>>>%d<<<<<<<\n",next_min->data);
+		if ((*sane->stack_a)->data != next_min->data && (*sane->stack_b)->data != min_ista->data)
+		{
+			if (next_min->moves_b < 0 && min_ista->moves_b < 0)
+			{
+				while ((*sane->stack_a)->data != next_min->data || (*sane->stack_b)->data != min_ista->data)
+				{
+					rrr (sane->stack_a, sane->stack_b);
+					if ((*sane->stack_a)->data == next_min->data || (*sane->stack_b)->data == min_ista->data)
+						break;
+				}
+			}
+			else if (next_min->moves_b > 0 && min_ista->moves_b > 0)
+			{
+				while ((*sane->stack_a)->data != next_min->data || (*sane->stack_b)->data != min_ista->data)
+				{
+					printf ("stacka %d p_a %d  stackb %d  p_b %d \n",(*sane->stack_a)->data ,next_min->data, (*sane->stack_b)->data ,min_ista->data);
+					rr (sane->stack_a, sane->stack_b);
+					if ((*sane->stack_a)->data == next_min->data || (*sane->stack_b)->data == min_ista->data)
+						break;
+				}
+			}
+		}
+		else
+		{
+			make_money_a (sane->stack_a, next_min, next_min->data);
+			make_money_b (sane->stack_b, min_ista, min_ista->data);
+		}
+		push_to_stack (sane->stack_b, sane->stack_a, 1);
+		i++;
+		if (i >= 700)
+			break;
+		// ptr_a = ptr_a->next;
 	}
 }

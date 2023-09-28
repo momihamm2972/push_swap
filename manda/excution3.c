@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 23:13:15 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/26 05:05:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:56:24 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ void	print_lis(t_node **stacka)
 	t_node	*ptr;
 	void	*bebe;
 
-	printf ("bebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebe\n");
+	// printf ("bebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebebe\n");
 	bebe = (void *)0xbebebebebebebebe;
 	ptr = (*stacka);
 	while (ptr)
 	{
-		printf ("$%d\t",ptr->data);
+		// printf ("$%d\t",ptr->data);
 		ptr = ptr->next;
 		if (ptr == bebe)
 			ptr = NULL;
 	}
 	ptr = (*stacka);
-	printf ("\n");
+	// printf ("\n");
 }
 
 int	min_value(t_node **stack)
@@ -70,6 +70,8 @@ int	big_value(t_node **stack)
 	int		big;
 
 	ptr = (*stack);
+	if (!ptr)
+		return (-2147483648);
 	big = ptr->data;
 	while (ptr)
 	{

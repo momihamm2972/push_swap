@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/27 20:43:32 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/28 04:07:46 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,13 @@ void	best_move_in_a (t_parss *jwan)
 		{
 			if (ptr_b->data < ptr_a->data)
 			{
-				ptr_b->moves_a = ptr_a->indx_of_node;
+				if (ptr_a->indx_of_node <= (ft_lstsize ((*jwan->stack_a)) / 2))
+					ptr_b->moves_a = ptr_a->indx_of_node;
+				else if (ptr_a->indx_of_node >= (ft_lstsize ((*jwan->stack_a)) / 2))
+				{
+					ptr_b->moves_a = ft_lstsize ((*jwan->stack_a)) - ptr_a->indx_of_node;
+					ptr_b->moves_a *= -1;
+				}
 				break;
 			}
 			ptr_a = ptr_a->next;
@@ -57,18 +63,24 @@ void	best_move_in_a (t_parss *jwan)
 void	total_of_a_b (t_parss *tamawayet)
 {
 	t_node	*ptr;
-	int		p_value;
+	int		p_val_a;
+	int		p_val_b;
 
 	ptr = (*tamawayet->stack_b);
 	while (ptr)
 	{
-		if (ptr->moves_b < 0)
+		if (ptr->moves_b < 0 || ptr->moves_a < 0)
 		{
-			p_value = ptr->moves_b * (-1);
-			ptr->total_moves = ptr->moves_a + p_value + 1 ;//+ how_may_move (tamawayet, ptr->data);
+			p_val_a = ptr->moves_a;
+			p_val_b = ptr->moves_b;
+			if (ptr->moves_a < 0)
+				p_val_a = ptr->moves_a * (-1);
+			if (ptr->moves_b < 0)
+				p_val_b = ptr->moves_b * (-1);
+			ptr->total_moves = p_val_a + p_val_b + 1;
 		}
 		else
-			ptr->total_moves = ptr->moves_a + ptr->moves_b + 1 ;//+ how_may_move (tamawayet, ptr->data);
+			ptr->total_moves = ptr->moves_a + ptr->moves_b + 1;
 		ptr = ptr->next;
 	}
 }
