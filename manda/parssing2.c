@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 02:28:58 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 01:35:32 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	print_nodes(t_node **stack)
 		printf ("inod %d\t",tmp->indx_of_node);
 		printf ("data %d\t",tmp->data);
 		// printf ("lent %d\t",tmp->length);
-		// printf ("arei %d\t",tmp->are_in);
+		printf ("arei %d\t",tmp->are_in);
 		printf ("mova %d\t",tmp->moves_a);
 		printf ("movb %d\t",tmp->moves_b);
 		printf ("tmov %d\n",tmp->total_moves);

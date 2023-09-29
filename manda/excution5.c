@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 23:13:35 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 02:23:02 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void    ft_all_most (t_parss *sane)
 	t_node	*next_min=NULL;
 	// t_node	*less;
     // t_node  *ptr_b;
-	int i=0;
+	// int i=0;
 
     ptr_a = (*sane->stack_a);
     // ptr_b = (*sane->stack_b);
@@ -101,7 +101,10 @@ void    ft_all_most (t_parss *sane)
 		min_ista = min_instractions (sane->stack_b);
 		// make_money (s)
 		if (!min_ista)
+		{
+			printf ("kmi\n");
 			return;
+		}
 		// printf ("ministra      ===>%d<====\n",min_ista->data);
 		next_min = next_of_num_sicondo (sane->stack_a, min_ista->data);
 		// printf ("nextof min      >>>>>>>|>>>>%d<<<<<<<\n",next_min->data);
@@ -127,15 +130,18 @@ void    ft_all_most (t_parss *sane)
 				}
 			}
 		}
-		else
-		{
-			make_money_a (sane->stack_a, next_min, next_min->data);
-			make_money_b (sane->stack_b, min_ista, min_ista->data);
-		}
+		// else
+		// {
+		make_money_a (sane->stack_a, next_min, next_min->data);
+		make_money_b (sane->stack_b, min_ista, min_ista->data);
+		// }
 		push_to_stack (sane->stack_b, sane->stack_a, 1);
-		i++;
-		if (i >= 700)
+		// i++;
+		if ((*sane->stack_b) == NULL)
+		{
+			printf ("7wi\n");
 			break;
+		}
 		// ptr_a = ptr_a->next;
 	}
 }

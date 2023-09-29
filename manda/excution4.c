@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 04:07:46 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 02:15:59 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	best_move_in_b (t_parss *djaja)
 	ptr = (*djaja->stack_b);
 	while (ptr)
 	{
-		if (ptr->indx_of_node < (ft_lstsize ((*djaja->stack_b)) / 2))
+		if (ptr->indx_of_node <= (ft_lstsize ((*djaja->stack_b)) / 2))
 		{
 			ptr->moves_b = ptr->indx_of_node;
 		}
-		else if (ptr->indx_of_node >= (ft_lstsize ((*djaja->stack_b)) / 2))
+		else if (ptr->indx_of_node > (ft_lstsize ((*djaja->stack_b)) / 2))
 		{
 			ptr->moves_b = ft_lstsize ((*djaja->stack_b)) - ptr->indx_of_node;
 			ptr->moves_b *= -1;
@@ -47,7 +47,7 @@ void	best_move_in_a (t_parss *jwan)
 			{
 				if (ptr_a->indx_of_node <= (ft_lstsize ((*jwan->stack_a)) / 2))
 					ptr_b->moves_a = ptr_a->indx_of_node;
-				else if (ptr_a->indx_of_node >= (ft_lstsize ((*jwan->stack_a)) / 2))
+				else if (ptr_a->indx_of_node > (ft_lstsize ((*jwan->stack_a)) / 2))
 				{
 					ptr_b->moves_a = ft_lstsize ((*jwan->stack_a)) - ptr_a->indx_of_node;
 					ptr_b->moves_a *= -1;

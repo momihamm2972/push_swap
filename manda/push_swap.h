@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 21:20:12 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 02:33:20 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_node  *second_node (t_node **stack, int info);
 t_node  *next_of_num (t_node **stack, int info);
 t_node  *min_instractions(t_node **stack);
 t_node  *next_of_num_sicondo (t_node **stack, int info);
+t_node *min_value_in (t_node **stack);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
 void		print_nodes(t_node **stack);

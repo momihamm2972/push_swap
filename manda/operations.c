@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 22:55:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 01:47:05 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	rr(t_node **stack_a, t_node **stack_b)
 {
 	rotate (stack_a, 2);
 	rotate (stack_b, 2);
-	write (1, "rr\n", 3);
+	// write (1, "rr\n", 3);
 }
 
 // int main ()

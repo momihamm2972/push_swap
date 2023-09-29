@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 18:27:33 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 02:35:41 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,26 @@ void	mr(void)
 	system ("leaks push_swap");
 }
 
+t_node *min_value_in (t_node **stack)
+{
+	t_node *ptr;
+	t_node *node;
+	int min;
+
+	ptr = (*stack);
+	min = ptr->data;
+	while (ptr)
+	{
+		if (ptr->data < min)
+		{
+			min = ptr->data;
+			node = ptr;
+		}
+		ptr = ptr->next;
+	}
+	return (node);
+}
+
 void	excution(t_parss *excution)
 {
 	int	big;
@@ -107,9 +127,23 @@ void	excution(t_parss *excution)
 	// total_of_a_b (excution);
 	// rev_or (excution->stack_a);
 	ft_all_most (excution);
-
+	rev_or (excution->stack_a);
+	int m= min_value (excution->stack_a);
+	printf ("$$$$$$$$$ mekkez%d\n",m);
+	t_node *p=min_value_in (excution->stack_a);
+	if (p->moves_b > 0)
+	{
+		while ((*excution->stack_a)->data != m)
+			rotate (excution->stack_a, 0);
+	}
+	else if (p->moves_b < 0)
+	{
+		while ((*excution->stack_a)->data != m)
+			rev_rotate (excution->stack_a, 0);
+	}
 	
 	// keep_it (excution);
+	
 	print_nodes (excution->stack_a);
 	printf ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
 	print_nodes(excution->stack_b);
