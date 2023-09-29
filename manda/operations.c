@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 02:46:48 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 03:19:25 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 		(*stack_1)->next = tmp;
 	}
 	if (delta == 0)
-		write (1, "pa\n", 3);
-	else if (delta == 1)
 		write (1, "pb\n", 3);
+	else if (delta == 1)
+		write (1, "pa\n", 3);
 	indxy_stack (stack_0);
 	indxy_stack (stack_1);
 }

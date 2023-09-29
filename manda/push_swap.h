@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 02:33:20 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 21:40:52 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ t_node  *next_of_num (t_node **stack, int info);
 t_node  *min_instractions(t_node **stack);
 t_node  *next_of_num_sicondo (t_node **stack, int info);
 t_node *min_value_in (t_node **stack);
+t_node	*less_of_lis (t_node **stack);
+t_node	*how_is_next (t_node **stack);
+t_node	*first_go (t_node **stack);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
 void		print_nodes(t_node **stack);
@@ -95,6 +98,10 @@ void    ft_all_most (t_parss *sane);
 void    node_of_top (t_node **stack, int info, int name_of_inst, int type_of);
 void    make_money_a(t_node **stack, t_node *place, int info);
 void    make_money_b(t_node **stack, t_node *place, int info);
+// void	lis_moves (t_parss *lana);
+void	make_lis_top (t_node **stack, int info, int up_down);
+// void	to_be_move (t_node **my_stack);
+void	moves_befor (t_node **stack);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -114,7 +121,10 @@ int	big_value(t_node **stack);
 int	how_may_move (t_parss *kane, int info);
 int	big_than (t_node **stack, int info);
 int	is_it (t_node **stack, int info, int min);
+int	only_lis (t_node **stack);
 // int min_instractions(t_node **stack);
+// int	first_of (t_node **stack);
+int	stil_ther (t_node **kmya);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);
