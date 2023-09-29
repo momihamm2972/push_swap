@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 02:23:02 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/29 02:45:05 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	how_may_move (t_parss *kane, int info)
 			else if (ptr->moves_b < 0)
 			{
 				cont = ptr->moves_b * (-1);
-				printf ("kmi %d                                 **\n",cont);
+				// printf ("kmi %d                                 **\n",cont);
 			}
 			// printf ("!!!!!!!!!!!!!!!!!!!!!!!!!!  %d  !!!!!!!!!!!!!!!!!!!!!\n",cont);
 			return (cont);
@@ -102,7 +102,7 @@ void    ft_all_most (t_parss *sane)
 		// make_money (s)
 		if (!min_ista)
 		{
-			printf ("kmi\n");
+			// printf ("kmi\n");
 			return;
 		}
 		// printf ("ministra      ===>%d<====\n",min_ista->data);
@@ -123,7 +123,7 @@ void    ft_all_most (t_parss *sane)
 			{
 				while ((*sane->stack_a)->data != next_min->data || (*sane->stack_b)->data != min_ista->data)
 				{
-					printf ("stacka %d p_a %d  stackb %d  p_b %d \n",(*sane->stack_a)->data ,next_min->data, (*sane->stack_b)->data ,min_ista->data);
+					// printf ("stacka %d p_a %d  stackb %d  p_b %d \n",(*sane->stack_a)->data ,next_min->data, (*sane->stack_b)->data ,min_ista->data);
 					rr (sane->stack_a, sane->stack_b);
 					if ((*sane->stack_a)->data == next_min->data || (*sane->stack_b)->data == min_ista->data)
 						break;
@@ -139,7 +139,7 @@ void    ft_all_most (t_parss *sane)
 		// i++;
 		if ((*sane->stack_b) == NULL)
 		{
-			printf ("7wi\n");
+			// printf ("7wi\n");
 			break;
 		}
 		// ptr_a = ptr_a->next;
