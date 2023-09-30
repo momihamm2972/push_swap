@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/28 22:57:16 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 07:42:13 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,12 +189,12 @@ void    make_money_a(t_node **stack, t_node *place, int info)
 {
 	if (!(*stack))
 		return ;
-    if (place->total_moves < 0)
+    if (place->moves_b < 0)
     {
         while ((*stack)->data != info)
             rev_rotate (stack, 0);
     }
-    else if (place->total_moves > 0)
+    else if (place->moves_b > 0)
     {
         while ((*stack)->data != info)
             rotate (stack, 0);
@@ -205,7 +205,7 @@ void    make_money_b(t_node **stack, t_node *place, int info)
 {
 	if (!(*stack))
 		return ;
-    if (place->total_moves < 0)
+    if (place->moves_b < 0)
     {
         while ((*stack)->data != info)
 		{
@@ -213,7 +213,7 @@ void    make_money_b(t_node **stack, t_node *place, int info)
             rev_rotate (stack, 1);
 		}
     }
-    else if (place->total_moves > 0)
+    else if (place->moves_b > 0)
     {
         while ((*stack)->data != info)
 		{

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 01:40:09 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 09:18:05 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_node *min_value_in (t_node **stack);
 t_node	*less_of_lis (t_node **stack);
 t_node	*how_is_next (t_node **stack);
 t_node	*first_go (t_node **stack);
+t_node  *at_least_of_to (t_node **stack);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
 void		print_nodes(t_node **stack);
@@ -91,7 +92,7 @@ void		make_top (t_node **stack, int info);
 void	make_it_top (t_parss *munchen, int info);
 void	best_move_in_b (t_parss *djaja);
 void	best_move_in_a (t_parss *jwan);
-void	total_of_a_b (t_parss *tamawayet);
+// void	total_of_a_b (t_parss *tamawayet);
 void	rev_or (t_node **stack);
 void	keep_it (t_parss *speed);
 void    ft_all_most (t_parss *sane);
@@ -102,6 +103,13 @@ void    make_money_b(t_node **stack, t_node *place, int info);
 void	make_lis_top (t_node **stack, int info, int up_down);
 // void	to_be_move (t_node **my_stack);
 void	moves_befor (t_node **stack);
+void	total_of_moves (t_parss *tamawayet);
+void	p_move (t_parss *meekz, t_node *boss);
+void n_move(t_parss *dave, t_node *boss);
+void porn(t_parss *cee, t_node *boss);
+void	a_stro (t_parss *drake, t_node *boss);
+void	b_stro (t_parss *pnl, t_node *boss);
+void what_is_it(t_parss *gang, t_node *boss);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);

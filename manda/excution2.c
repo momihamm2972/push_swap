@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:31 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 22:09:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 07:49:13 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void moves_befor(t_node **stack)
 			if (ptr->indx_of_node <= ft_lstsize((*stack)) / 2)
 			{
 				ptr->moves_b = ptr->indx_of_node;
-				ptr->total_moves = ptr->moves_b + 1;
+				ptr->total_moves = ptr->moves_b;
 			}
 			else if (ptr->indx_of_node > ft_lstsize((*stack)) / 2)
 			{
@@ -76,7 +76,7 @@ void moves_befor(t_node **stack)
 				ptr->moves_b *= -1;
 				ptr->total_moves = ptr->moves_b;
 				ptr->total_moves *= -1;
-				ptr->total_moves += 1;
+				// ptr->total_moves += 1;
 			}
 		}
 		ptr = ptr->next;
@@ -105,6 +105,8 @@ t_node *next_to_go(t_node **stack)
 
 	ptr = (*stack);
 	node = first_go(stack);
+	// if (!node)
+	// 	return (NULL);
 	min = node->total_moves;
 	while (ptr)
 	{
@@ -139,7 +141,7 @@ void make_the_lis_in_a(t_parss *fcbayern)
 {
 	// t_node	**ptr;
 	t_node *go;
-
+	// int i = 0;
 	// ptr = fcbayern->stack_a;
 	fcbayern->stack_b = malloc(sizeof(t_node *));
 	(*fcbayern->stack_b) = NULL;
@@ -149,18 +151,14 @@ void make_the_lis_in_a(t_parss *fcbayern)
 		if (stil_ther (fcbayern->stack_a) == 0)
 			break;
 		moves_befor(fcbayern->stack_a);
+		// i++;
+		// if (i >= 15)
+		// 	break;
 		go = next_to_go(fcbayern->stack_a);
 		// printf("awera %d\n", go->data);
 		make_money_a(fcbayern->stack_a, go, go->data);
 		push_to_stack(fcbayern->stack_a, fcbayern->stack_b, 0);
 	}
-
-	// moves_befor(fcbayern->stack_a);
-	// go = next_to_go(fcbayern->stack_a);
-	// printf ("awera %d\n", go->data);
-	// make_money_a(fcbayern->stack_a, go, go->data);
-	// push_to_stack(fcbayern->stack_a, fcbayern->stack_b, 0);
-
 	make_a_in_oredre (fcbayern->stack_a);
 	// print_nodes(fcbayern->stack_a);
 	// printf("$$$$$$$$$$$$$$$$$$$$\n");

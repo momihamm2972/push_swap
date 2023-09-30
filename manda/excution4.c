@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 01:52:52 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 08:11:30 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,20 @@ int	big_to_int (int a, int b)
 	return (b);
 }
 
-void	total_of_a_b (t_parss *tamawayet)
+void	total_of_moves (t_parss *tamawayet)
 {
 	t_node	*ptr;
 	int		p_val_a;
 	int		p_val_b;
-
 	ptr = (*tamawayet->stack_b);
 	while (ptr)
 	{
 		if (ptr->moves_a == ptr->moves_b)
+		{
 			ptr->total_moves = ptr->moves_a;
+			if (ptr->total_moves < 0)
+				ptr->total_moves *= -1;
+		}
 		else if (ptr->moves_a >= 0 && ptr->moves_b >= 0)
 			ptr->total_moves = big_to_int (ptr->moves_a, ptr->moves_b);
 		else if (ptr->moves_a < 0 && ptr->moves_b < 0)
@@ -106,11 +109,11 @@ void	an_node (t_node **stack, int info)
 	{
 		if (ptr->data == info)
 		{
-			if (ptr->indx_of_node < (ft_lstsize ((*stack)) / 2))
+			if (ptr->indx_of_node <= (ft_lstsize ((*stack)) / 2))
 			{
 				ptr->moves_b = ptr->indx_of_node;
 			}
-			else if (ptr->indx_of_node >= (ft_lstsize ((*stack)) / 2))
+			else if (ptr->indx_of_node > (ft_lstsize ((*stack)) / 2))
 			{
 				ptr->moves_b = ft_lstsize ((*stack)) - ptr->indx_of_node;
 				ptr->moves_b *= -1;
@@ -136,11 +139,6 @@ void	make_it_top (t_parss *munchen, int info)
 			}
 			else if (ptr->moves_b < 0)
 			{
-				// print_nodes (munchen->stack_b);
-				// rev_rotate (munchen->stack_b, 1);
-				// printf ("$$$$$$$$$$\n");
-				// print_nodes (munchen->stack_b);
-				// exit (0);
 				while ((*munchen->stack_b)->data != info)
 					rev_rotate (munchen->stack_b, 1);
 			}

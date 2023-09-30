@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 01:24:47 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 09:22:28 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ void	if_min_max_in_b (t_parss *azalim)
 {
 	if (min_value (azalim->stack_b) < min_value (azalim->stack_a))
 	{
+		// indxy_stack(azalim->stack_a);
+		// indxy_stack(azalim->stack_b);
 		an_node (azalim->stack_b, min_value (azalim->stack_b));
 		make_it_top (azalim, min_value (azalim->stack_b));
 		push_to_stack (azalim->stack_b, azalim->stack_a, 1);
 	}
 	if (big_value (azalim->stack_b) > big_value (azalim->stack_a))
 	{
+		// indxy_stack (azalim->stack_a);
+		// indxy_stack (azalim->stack_b);
 		an_node (azalim->stack_b, big_value (azalim->stack_b));
 		make_it_top (azalim,big_value (azalim->stack_b));
 		push_to_stack (azalim->stack_b, azalim->stack_a, 1);
+		// return ;
 		rotate (azalim->stack_a, 0);
 	}         
 }
@@ -77,71 +82,21 @@ int	how_may_move (t_parss *kane, int info)
 
 void	keep_it (t_parss *speed)
 {
+	// indxy_stack (speed->stack_a);
+	// indxy_stack (speed->stack_b);
 	if_min_max_in_b (speed);
 	best_move_in_b (speed);
 	best_move_in_a (speed);
-	total_of_a_b (speed);
+	total_of_moves (speed);
 	// rev_or (speed->stack_a);
 }
 
 void    ft_all_most (t_parss *sane)
 {
-    t_node  *ptr_a=NULL;
-	t_node	*min_ista=NULL;
-	t_node	*next_min=NULL;
-	// t_node	*less;
-    // t_node  *ptr_b;
-	// int i=0;
+	t_node	*small;
 
-    ptr_a = (*sane->stack_a);
-    // ptr_b = (*sane->stack_b);
-	while (ptr_a)
-	{
-		keep_it (sane);
-		min_ista = min_instractions (sane->stack_b);
-		// make_money (s)
-		if (!min_ista)
-		{
-			// printf ("kmi\n");
-			return;
-		}
-		// printf ("ministra      ===>%d<====\n",min_ista->data);
-		next_min = next_of_num_sicondo (sane->stack_a, min_ista->data);
-		// printf ("nextof min      >>>>>>>|>>>>%d<<<<<<<\n",next_min->data);
-		if ((*sane->stack_a)->data != next_min->data && (*sane->stack_b)->data != min_ista->data)
-		{
-			if (next_min->moves_b < 0 && min_ista->moves_b < 0)
-			{
-				while ((*sane->stack_a)->data != next_min->data || (*sane->stack_b)->data != min_ista->data)
-				{
-					rrr (sane->stack_a, sane->stack_b);
-					if ((*sane->stack_a)->data == next_min->data || (*sane->stack_b)->data == min_ista->data)
-						break;
-				}
-			}
-			else if (next_min->moves_b > 0 && min_ista->moves_b > 0)
-			{
-				while ((*sane->stack_a)->data != next_min->data || (*sane->stack_b)->data != min_ista->data)
-				{
-					// printf ("stacka %d p_a %d  stackb %d  p_b %d \n",(*sane->stack_a)->data ,next_min->data, (*sane->stack_b)->data ,min_ista->data);
-					rr (sane->stack_a, sane->stack_b);
-					if ((*sane->stack_a)->data == next_min->data || (*sane->stack_b)->data == min_ista->data)
-						break;
-				}
-			}
-		}
-		// else
-		// {
-		make_money_a (sane->stack_a, next_min, next_min->data);
-		make_money_b (sane->stack_b, min_ista, min_ista->data);
-		// }
-		push_to_stack (sane->stack_b, sane->stack_a, 1);
-		// i++;
-		if ((*sane->stack_b) == NULL)
-		{
-			// printf ("7wi\n");
-			break;
-		}
-		// ptr_a = ptr_a->next;
-	}
+	keep_it (sane);
+	small = at_least_of_to (sane->stack_b);
+	printf ("%d a%d b%d t%d\n",small->data, small->moves_a,small->moves_b,small->total_moves);
+	// what_is_it (sane, small);
 }
