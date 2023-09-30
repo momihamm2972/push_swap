@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 12:13:43 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 20:19:48 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,8 @@ int	main(int ac, char **av)
 {
 	t_parss	*pars;
 
+	// if (ac == 1)
+	// 	exit (error_msg ());
 	if (ac >= 2)
 	{
 		pars = malloc (sizeof (t_parss));

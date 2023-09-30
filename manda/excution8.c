@@ -6,7 +6,122 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:17:58 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/21 21:17:59 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 00:41:15 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+int	*bubble(int *arr, int size)
+{
+	int indx;
+	int	swap;
+
+	indx = 0;
+	while (indx < size)
+	{
+		if (indx + 1 < size && arr[indx] > arr[indx + 1])
+		{
+			swap = arr[indx];
+			arr[indx] = arr[indx + 1];
+			arr[indx + 1] = swap;
+			indx = -1;
+		}
+		indx++;
+	}
+	return (arr);
+}
+
+int	find_position(int *arr, int nb)
+{
+	int	indx;
+
+	indx = 0;
+	while (indx < 3)
+	{
+		if (arr[indx] == nb)
+			return (indx);
+		indx++;
+	}
+	return (-1);
+}
+
+void	ft_tree_complet(t_node **stack)
+{
+	if ((*stack)->position == 1 && (*stack)->next->position == 0
+		&& (*stack)->next->next->position == 2)
+		swap_2_elements (stack, 0);
+	else if ((*stack)->position == 2 && (*stack)->next->position == 1
+		&& (*stack)->next->next->position == 0)
+	{
+		swap_2_elements (stack, 0);
+		rev_rotate (stack, 0);
+	}
+	else if ((*stack)->position == 2 && (*stack)->next->position == 0
+		&& (*stack)->next->next->position == 1)
+		rotate (stack, 0);
+	else if ((*stack)->position == 0 && (*stack)->next->position == 2
+		&& (*stack)->next->next->position == 1)
+	{
+		swap_2_elements (stack, 0);
+		rotate (stack, 0);
+	}
+	else if ((*stack)->position == 1 && (*stack)->next->position == 2
+		&& (*stack)->next->next->position == 0)
+		rev_rotate (stack, 0);
+}
+
+void	ft_tree(t_node	**stack)
+{
+	t_node	*ptr;
+	int		*arr;
+	int		indx;
+
+	ptr = (*stack);
+	arr = (int *) malloc (sizeof (int) * 3);
+	indx = 0;
+	while (ptr)
+	{
+		arr[indx] = ptr->data;
+		indx++;
+		ptr = ptr->next;
+	}
+	arr = bubble (arr, 3);
+	ptr = (*stack);
+	indx = 0;
+	while (ptr)
+	{
+		ptr->position = find_position (arr, ptr->data);
+		ptr = ptr->next;
+	}
+	free (arr);
+	ft_tree_complet (stack);
+}
+
+void	five(t_parss *airbag)
+{
+	if (ft_lstsize ((*airbag->stack_a)) == 2)
+	{
+		// printf ("2\n");
+		swap_2_elements ((airbag->stack_a), 0);
+		print_nodes (airbag->stack_a);
+		exit (0);
+	}
+	else if (ft_lstsize ((*airbag->stack_a)) == 3)
+	{
+		ft_tree (airbag->stack_a);
+		// printf ("3\n");
+		exit (0);
+	}
+	else if (ft_lstsize ((*airbag->stack_a)) == 4)
+	{
+		ft_for (airbag);
+		// print_nodes
+		printf ("4\n");
+		exit(0);
+	}
+	else if (ft_lstsize ((*airbag->stack_a)) == 5)
+	{
+		printf ("5\n");
+	}
+}

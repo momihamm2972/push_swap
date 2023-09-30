@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 09:18:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 00:54:01 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct node
 	int				moves_b;
 	int				total_moves;
 	int				indx_of_node;
+	int				position;
 	struct node		*prev;
 	struct node		*next;
 }t_node;
@@ -110,6 +111,11 @@ void porn(t_parss *cee, t_node *boss);
 void	a_stro (t_parss *drake, t_node *boss);
 void	b_stro (t_parss *pnl, t_node *boss);
 void what_is_it(t_parss *gang, t_node *boss);
+void	five(t_parss *airbag);
+void	ft_tree (t_node	**stack);
+void	ft_tree_complet(t_node **stack);
+void	ft_for(t_parss *sherin);
+void	moveto(t_node **stack, int min);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -134,6 +140,7 @@ int	only_lis (t_node **stack);
 // int	first_of (t_node **stack);
 int	stil_ther (t_node **kmya);
 int	big_to_int (int a, int b);
+int	*bubble(int *arr, int size);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);
