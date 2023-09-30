@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 08:03:10 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 10:25:05 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,13 @@ void	excution(t_parss *excution)
 	// printf ("\nthe big is %d\n",big);
 	check_the_lis_are_in (excution->stack_a, big);
 	make_the_lis_in_a (excution);
-	// if_min_max_in_b (excution);
+	if_min_max_in_b (excution);
 	// best_move_in_b (excution);
 	// best_move_in_a (excution);
-	// total_of_a_b (excution);
+	// total_of_moves (excution);
+	// rev_rotate (excution->stack_a,0);
+	// rev_rotate (excution->stack_a,0);
+	// rev_rotate (excution->stack_a,0);
 	// rev_or (excution->stack_a);
 	ft_all_most (excution);
 	// rev_or (excution->stack_a);

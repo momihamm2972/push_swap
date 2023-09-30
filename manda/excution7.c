@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:17:49 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 09:21:44 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 10:40:23 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	a_stro (t_parss *drake, t_node *boss)
 			boss->moves_b++;
 		}
 	}
+	push_to_stack(drake->stack_b, drake->stack_a, 1);
 }
 
 void	b_stro (t_parss *pnl, t_node *boss)
@@ -134,34 +135,40 @@ void	b_stro (t_parss *pnl, t_node *boss)
 			boss->moves_a++;
 		}
 	}
+	push_to_stack(pnl->stack_b, pnl->stack_a, 1);
 }
 
 void what_is_it(t_parss *gang, t_node *boss)
 {
-	printf ("weselt\n");
+	// printf ("weselt%d\n",boss->data);
 	if (boss->moves_a > 0 && boss->moves_b > 0)
 	{
 		p_move(gang, boss);
-		printf ("italia\n");
+		// printf ("italia\n");
 	}
 	else if (boss->moves_a < 0 && boss->moves_b < 0)
 	{
 		n_move(gang, boss);
-		printf ("zetla\n");
+		// printf ("zetla\n");
 	}
 	else if ((boss->moves_a > 0 && boss->moves_b < 0) || (boss->moves_a < 0 && boss->moves_b > 0))
 	{
 		porn(gang, boss);
-		printf ("albizi\n");
+		// printf ("albizi\n");
 	}
 	else if (boss->moves_a == 0 && boss->moves_b != 0)
 	{
 		a_stro (gang, boss);
-		printf ("madafack\n");
+		// printf ("madafack\n");
 	}
 	else if (boss->moves_b == 0 && boss->moves_a != 0)
 	{
 		b_stro (gang, boss);
-		printf ("lean\n");
+		// printf ("lean\n");
+	}
+	else if (boss->moves_a == 0 && boss->moves_b == 0)
+	{
+		push_to_stack (gang->stack_b,gang->stack_a,1);
+		// printf ("sherin\n");
 	}
 }

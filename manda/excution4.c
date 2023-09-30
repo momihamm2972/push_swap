@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 08:11:30 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 10:49:02 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,13 @@ void	best_move_in_b (t_parss *djaja)
 	}
 }
 
-void	best_move_in_a (t_parss *jwan)
+void	
+
+best_move_in_a (t_parss *jwan)
 {
 	t_node	*ptr_a;
 	t_node	*ptr_b;
+	int		check;
 
 	ptr_b = (*jwan->stack_b);
 	while (ptr_b)
@@ -43,7 +46,7 @@ void	best_move_in_a (t_parss *jwan)
 		ptr_a = (*jwan->stack_a);
 		while (ptr_a)
 		{
-			if (ptr_b->data < ptr_a->data)
+			if (ptr_a->data > ptr_b->data)
 			{
 				if (ptr_a->indx_of_node <= (ft_lstsize ((*jwan->stack_a)) / 2))
 					ptr_b->moves_a = ptr_a->indx_of_node;
