@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 10:45:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:11:50 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,11 @@ void ft_all_most(t_parss *sane)
 		// 	break;
 		keep_it(sane);
 		i++;
-		if (i >= 3)
-			break;
+		// if (i >= 14)
+		// 	break;
 		small = at_least_of_to(sane->stack_b);
+		if (!small)
+			return;
 		// printf("%d a%d b%d t%d\n", small->data, small->moves_a, small->moves_b, small->total_moves);
 		what_is_it(sane, small);
 	}

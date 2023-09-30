@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 10:25:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:13:43 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,26 +130,34 @@ void	excution(t_parss *excution)
 	// rev_rotate (excution->stack_a,0);
 	// rev_or (excution->stack_a);
 	ft_all_most (excution);
-	// rev_or (excution->stack_a);
-	// int m= min_value (excution->stack_a);
-	// // printf ("$$$$$$$$$ mekkez%d\n",m);
-	// t_node *p=min_value_in (excution->stack_a);
-	// if (p->moves_b > 0)
-	// {
-	// 	while ((*excution->stack_a)->data != m)
-	// 		rotate (excution->stack_a, 0);
-	// }
-	// else if (p->moves_b < 0)
-	// {
-	// 	while ((*excution->stack_a)->data != m)
-	// 		rev_rotate (excution->stack_a, 0);
-	// }
+	rev_or (excution->stack_a);
+	int m= min_value (excution->stack_a);
+	// printf ("$$$$$$$$$ mekkez%d\n",m);
+	t_node *p=min_value_in (excution->stack_a);
+	// printf ("%dkmi%d\n",p->data,p->moves_b);
+	if (!p)
+	{
+	// 	print_nodes (excution->stack_a);
+	// printf ("$$$$$$$$$$$$$AAA$$$$$$$$$$$$$$$$\n");
+	// print_nodes(excution->stack_b);
+		return;
+	}
+	if (p->moves_b > 0)
+	{
+		while ((*excution->stack_a)->data != m)
+			rotate (excution->stack_a, 0);
+	}
+	else if (p->moves_b < 0)
+	{
+		while ((*excution->stack_a)->data != m)
+			rev_rotate (excution->stack_a, 0);
+	}
 	
 	// keep_it (excution);
 	
-	print_nodes (excution->stack_a);
-	printf ("$$$$$$$$$$$$$AAA$$$$$$$$$$$$$$$$\n");
-	print_nodes(excution->stack_b);
+	// print_nodes (excution->stack_a);
+	// printf ("$$$$$$$$$$$$$AAA$$$$$$$$$$$$$$$$\n");
+	// print_nodes(excution->stack_b);
 	// printf ("minA=%d\n",min_value(excution->stack_a));
 	// printf ("minB=%d\n",min_value(excution->stack_b));
 	// printf ("sizeA=%d\nsizeB=%d\n",ft_lstsize ((*excution->stack_a)),ft_lstsize ((*excution->stack_b)));

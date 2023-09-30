@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 00:38:47 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 10:39:30 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:06:28 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	rev_rotate(t_node **stack, int delta)
 	the_last->next = (*stack);
 	(*stack) = new_last->next;
 	new_last->next = NULL;
-	// if (delta == 0)
-	// 	write (1, "rra\n", 4);
-	// else if (delta == 1)
-	// 	write (1, "rrb\n", 4);
+	if (delta == 0)
+		write (1, "rra\n", 4);
+	else if (delta == 1)
+		write (1, "rrb\n", 4);
 	indxy_stack (stack);
 }
 
@@ -36,7 +36,7 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 {
 	rev_rotate (stack_a, 2);
 	rev_rotate (stack_b, 2);
-	// write (1, "rrr\n", 4);
+	write (1, "rrr\n", 4);
 }
 
 // int main ()

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 10:39:20 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:06:19 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	swap_2_elements(t_node **stack, int delta)
 	swaper = (*stack)->indx_of_stack;
 	(*stack)->indx_of_stack = (*stack)->next->indx_of_stack;
 	(*stack)->next->indx_of_stack = swaper;
-	// if (delta == 0)
-	// 	write (1, "sa\n", 3);
-	// else if (delta == 1)
-	// 	write (1, "sb\n", 3);
+	if (delta == 0)
+		write (1, "sa\n", 3);
+	else if (delta == 1)
+		write (1, "sb\n", 3);
 	indxy_stack (stack);
 }
 
@@ -36,7 +36,7 @@ void	ss(t_node **stack_a, t_node **stack_b)
 {
 	swap_2_elements(stack_a, 2);
 	swap_2_elements(stack_b, 2);
-	// write (1, "ss\n", 3);
+	write (1, "ss\n", 3);
 }
 
 void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
@@ -60,10 +60,10 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 		(*stack_0) = (*stack_0)->next;
 		(*stack_1)->next = tmp;
 	}
-	// if (delta == 0)
-	// 	write (1, "pb\n", 3);
-	// else if (delta == 1)
-	// 	write (1, "pa\n", 3);
+	if (delta == 0)
+		write (1, "pb\n", 3);
+	else if (delta == 1)
+		write (1, "pa\n", 3);
 	indxy_stack (stack_0);
 	indxy_stack (stack_1);
 }
@@ -79,10 +79,10 @@ void	rotate(t_node **stack, int delta)
 	last->next = (*stack);
 	(*stack) = (*stack)->next;
 	last->next->next = NULL;
-	// if (delta == 0)
-	// 	write (1, "ra\n", 3);
-	// else if (delta == 1)
-	// 	write (1, "rb\n", 3);
+	if (delta == 0)
+		write (1, "ra\n", 3);
+	else if (delta == 1)
+		write (1, "rb\n", 3);
 	indxy_stack (stack);
 }
 
@@ -90,7 +90,7 @@ void	rr(t_node **stack_a, t_node **stack_b)
 {
 	rotate (stack_a, 2);
 	rotate (stack_b, 2);
-	// write (1, "rr\n", 3);
+	write (1, "rr\n", 3);
 }
 
 // int main ()

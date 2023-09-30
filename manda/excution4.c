@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 10:49:02 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:00:54 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,35 +34,35 @@ void	best_move_in_b (t_parss *djaja)
 
 void	
 
-best_move_in_a (t_parss *jwan)
+best_move_in_a(t_parss *jwan)
 {
-	t_node	*ptr_a;
-	t_node	*ptr_b;
-	int		check;
+    t_node *ptr_a;
+    t_node *ptr_b;
+    int check;
 
-	ptr_b = (*jwan->stack_b);
-	while (ptr_b)
-	{
-		ptr_a = (*jwan->stack_a);
-		while (ptr_a)
-		{
-			if (ptr_a->data > ptr_b->data)
-			{
-				if (ptr_a->indx_of_node <= (ft_lstsize ((*jwan->stack_a)) / 2))
-					ptr_b->moves_a = ptr_a->indx_of_node;
-				else if (ptr_a->indx_of_node > (ft_lstsize ((*jwan->stack_a)) / 2))
-				{
-					ptr_b->moves_a = ft_lstsize ((*jwan->stack_a)) - ptr_a->indx_of_node;
-					ptr_b->moves_a *= -1;
-				}
-				break;
-			}
-			ptr_a = ptr_a->next;
-		}
-		ptr_b = ptr_b->next;
-	}
+    ptr_b = (*jwan->stack_b);
+    while (ptr_b)
+    {
+        ptr_a = (*jwan->stack_a);
+        check = ptr_b->data;
+        while (ptr_a)
+        {
+            if (ptr_a->data > ptr_b->data && (check == ptr_b->data || ptr_a->data < check))
+            {
+                check = ptr_a->data;
+                if (ptr_a->indx_of_node <= (ft_lstsize((*jwan->stack_a)) / 2))
+                    ptr_b->moves_a = ptr_a->indx_of_node;
+                else if (ptr_a->indx_of_node > (ft_lstsize((*jwan->stack_a)) / 2))
+                {
+                    ptr_b->moves_a = ft_lstsize((*jwan->stack_a)) - ptr_a->indx_of_node;
+                    ptr_b->moves_a *= -1;
+                }
+            }
+            ptr_a = ptr_a->next;
+        }
+        ptr_b = ptr_b->next;
+    }
 }
-
 int	big_to_int (int a, int b)
 {
 	if (a > b)
