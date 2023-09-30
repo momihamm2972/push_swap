@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 21:40:52 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 01:40:09 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ int	only_lis (t_node **stack);
 // int min_instractions(t_node **stack);
 // int	first_of (t_node **stack);
 int	stil_ther (t_node **kmya);
+int	big_to_int (int a, int b);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);

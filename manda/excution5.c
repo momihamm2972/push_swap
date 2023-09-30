@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:41 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 02:45:05 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 01:24:47 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	keep_it (t_parss *speed)
 	best_move_in_b (speed);
 	best_move_in_a (speed);
 	total_of_a_b (speed);
-	rev_or (speed->stack_a);
+	// rev_or (speed->stack_a);
 }
 
 void    ft_all_most (t_parss *sane)

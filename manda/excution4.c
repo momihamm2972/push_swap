@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 05:31:57 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 01:52:52 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ void	best_move_in_a (t_parss *jwan)
 	}
 }
 
+int	big_to_int (int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
 void	total_of_a_b (t_parss *tamawayet)
 {
 	t_node	*ptr;
@@ -69,18 +76,23 @@ void	total_of_a_b (t_parss *tamawayet)
 	ptr = (*tamawayet->stack_b);
 	while (ptr)
 	{
-		if (ptr->moves_b < 0 || ptr->moves_a < 0)
+		if (ptr->moves_a == ptr->moves_b)
+			ptr->total_moves = ptr->moves_a;
+		else if (ptr->moves_a >= 0 && ptr->moves_b >= 0)
+			ptr->total_moves = big_to_int (ptr->moves_a, ptr->moves_b);
+		else if (ptr->moves_a < 0 && ptr->moves_b < 0)
+			ptr->total_moves = big_to_int (ptr->moves_a * -1, ptr->moves_b * -1);
+		else
 		{
 			p_val_a = ptr->moves_a;
 			p_val_b = ptr->moves_b;
-			if (ptr->moves_a < 0)
-				p_val_a = ptr->moves_a * (-1);
-			if (ptr->moves_b < 0)
-				p_val_b = ptr->moves_b * (-1);
-			ptr->total_moves = p_val_a + p_val_b + 1;
+			if (p_val_a < 0)
+				p_val_a *= -1;
+			if (p_val_b < 0)
+				p_val_b *= -1;
+			ptr->total_moves = p_val_a + p_val_b;
+				
 		}
-		else
-			ptr->total_moves = ptr->moves_a + ptr->moves_b + 1;
 		ptr = ptr->next;
 	}
 }

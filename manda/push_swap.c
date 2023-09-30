@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 22:05:07 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/09/30 01:20:12 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,38 +121,28 @@ void	excution(t_parss *excution)
 	// // printf ("\nthe big is %d\n",big);
 	check_the_lis_are_in (excution->stack_a, big);
 	make_the_lis_in_a (excution);
-	// // if_min_max_in_b (excution);
-	// // best_move_in_b (excution);
-	// // best_move_in_a (excution);
-	// // total_of_a_b (excution);
-	// // rev_or (excution->stack_a);
-	ft_all_most (excution);
-	rev_or (excution->stack_a);
-	int m= min_value (excution->stack_a);
-	// // printf ("$$$$$$$$$ mekkez%d\n",m);
-	t_node *p=min_value_in (excution->stack_a);
-	if (p->moves_b > 0)
-	{
-		while ((*excution->stack_a)->data != m)
-			rotate (excution->stack_a, 0);
-	}
-	else if (p->moves_b < 0)
-	{
-		while ((*excution->stack_a)->data != m)
-			rev_rotate (excution->stack_a, 0);
-	}
+	keep_it (excution);
+	// ft_all_most (excution);
+	// rev_or (excution->stack_a);
+	// int m= min_value (excution->stack_a);
+	// // // printf ("$$$$$$$$$ mekkez%d\n",m);
+	// t_node *p=min_value_in (excution->stack_a);
+	// if (p->moves_b > 0)
+	// {
+	// 	while ((*excution->stack_a)->data != m)
+	// 		rotate (excution->stack_a, 0);
+	// }
+	// else if (p->moves_b < 0)
+	// {
+	// 	while ((*excution->stack_a)->data != m)
+	// 		rev_rotate (excution->stack_a, 0);
+	// }
 	
-	// keep_it (excution);
+
 	
-	// print_nodes (excution->stack_a);
-	// printf ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
-	// print_nodes(excution->stack_b);
-	// printf ("minA=%d\n",min_value(excution->stack_a));
-	// printf ("minB=%d\n",min_value(excution->stack_b));
-	// printf ("sizeA=%d\nsizeB=%d\n",ft_lstsize ((*excution->stack_a)),ft_lstsize ((*excution->stack_b)));
-	// int m =13;
-	// t_node *ptr= second_node (excution->stack_a, m);
-	// printf ("#############  %d ##\n",ptr->data);
+	print_nodes (excution->stack_a);
+	printf ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+	print_nodes(excution->stack_b);
 }
 
 // void	conti_nue (t_parss *cotinu)
