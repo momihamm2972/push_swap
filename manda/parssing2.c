@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parssing2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/29 19:35:37 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 08:11:36 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ t_node	*before_the_last(t_node **stack)
 void	print_nodes(t_node **stack)
 {
 	t_node	*tmp;
-	// int		key_of_list;
 
 	if (!(*stack))
 		return ;
-	// key_of_list = 0;
 	tmp = (*stack);
 	while (tmp)
 	{
@@ -46,8 +44,6 @@ void	print_nodes(t_node **stack)
 		printf ("mova %d\t",tmp->moves_a);
 		printf ("movb %d\t",tmp->moves_b);
 		printf ("tmov %d\n",tmp->total_moves);
-		// printf ("next %p\n",tmp->next);
-		// key_of_list++;
 		tmp = tmp->next;
 	}
 }

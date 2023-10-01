@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   excution4.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:37 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 12:00:54 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 07:00:57 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	best_move_in_b (t_parss *djaja)
+void	best_move_in_b(t_parss *djaja)
 {
 	t_node	*ptr;
 
@@ -32,49 +32,49 @@ void	best_move_in_b (t_parss *djaja)
 	}
 }
 
-void	
-
-best_move_in_a(t_parss *jwan)
+void	best_move_in_a(t_parss *j)
 {
-    t_node *ptr_a;
-    t_node *ptr_b;
-    int check;
+	t_node	*_a;
+	t_node	*_b;
+	int		check;
 
-    ptr_b = (*jwan->stack_b);
-    while (ptr_b)
-    {
-        ptr_a = (*jwan->stack_a);
-        check = ptr_b->data;
-        while (ptr_a)
-        {
-            if (ptr_a->data > ptr_b->data && (check == ptr_b->data || ptr_a->data < check))
-            {
-                check = ptr_a->data;
-                if (ptr_a->indx_of_node <= (ft_lstsize((*jwan->stack_a)) / 2))
-                    ptr_b->moves_a = ptr_a->indx_of_node;
-                else if (ptr_a->indx_of_node > (ft_lstsize((*jwan->stack_a)) / 2))
-                {
-                    ptr_b->moves_a = ft_lstsize((*jwan->stack_a)) - ptr_a->indx_of_node;
-                    ptr_b->moves_a *= -1;
-                }
-            }
-            ptr_a = ptr_a->next;
-        }
-        ptr_b = ptr_b->next;
-    }
+	_b = (*j->stack_b);
+	while (_b)
+	{
+		_a = (*j->stack_a);
+		check = _b->data;
+		while (_a)
+		{
+			if (_a->data > _b->data && (check == _b->data || _a->data < check))
+			{
+				check = _a->data;
+				if (_a->indx_of_node <= (ft_lstsize((*j->stack_a)) / 2))
+					_b->moves_a = _a->indx_of_node;
+				else if (_a->indx_of_node > (ft_lstsize((*j->stack_a)) / 2))
+				{
+					_b->moves_a = (ft_lstsize(*j->stack_a) - _a->indx_of_node);
+					_b->moves_a *= -1;
+				}
+			}
+			_a = _a->next;
+		}
+		_b = _b->next;
+	}
 }
-int	big_to_int (int a, int b)
+
+int	big_to_int(int a, int b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-void	total_of_moves (t_parss *tamawayet)
+void	total_of_moves(t_parss *tamawayet)
 {
 	t_node	*ptr;
 	int		p_val_a;
 	int		p_val_b;
+
 	ptr = (*tamawayet->stack_b);
 	while (ptr)
 	{
@@ -97,13 +97,12 @@ void	total_of_moves (t_parss *tamawayet)
 			if (p_val_b < 0)
 				p_val_b *= -1;
 			ptr->total_moves = p_val_a + p_val_b;
-				
 		}
 		ptr = ptr->next;
 	}
 }
 
-void	an_node (t_node **stack, int info)
+void	an_node(t_node **stack, int info)
 {
 	t_node	*ptr;
 
@@ -126,7 +125,7 @@ void	an_node (t_node **stack, int info)
 	}
 }
 
-void	make_it_top (t_parss *munchen, int info)
+void	make_it_top(t_parss *munchen, int info)
 {
 	t_node	*ptr;
 

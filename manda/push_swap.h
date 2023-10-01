@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/01 00:54:01 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 08:27:12 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ typedef struct parss
 t_node		*ft_lstnew(int content);
 t_node		*ft_lstlast(t_node **lst);
 t_node		*before_the_last(t_node **stack);
-t_node  *at_least (t_node **stack);
-t_node  *second_node (t_node **stack, int info);
-t_node  *next_of_num (t_node **stack, int info);
-t_node  *min_instractions(t_node **stack);
-t_node  *next_of_num_sicondo (t_node **stack, int info);
-t_node *min_value_in (t_node **stack);
-t_node	*less_of_lis (t_node **stack);
-t_node	*how_is_next (t_node **stack);
-t_node	*first_go (t_node **stack);
-t_node  *at_least_of_to (t_node **stack);
+t_node		*at_least(t_node **stack);
+t_node		*second_node(t_node **stack, int info);
+t_node		*next_of_num(t_node **stack, int info);
+t_node		*min_instractions(t_node **stack);
+t_node		*next_of_num_sicondo(t_node **stack, int info);
+t_node		*min_value_in(t_node **stack);
+t_node		*less_of_lis(t_node **stack);
+t_node		*how_is_next(t_node **stack);
+t_node		*first_go(t_node **stack);
+t_node		*at_least_of_to(t_node **stack);
 void		push_to_stack(t_node **stack_0, t_node **stack_1, int delta);
 void		swap_2_elements(t_node **stack, int delta);
 void		print_nodes(t_node **stack);
@@ -86,36 +86,34 @@ void		make_the_lis_in_a(t_parss *fcbayern);
 void		make_a_in_oredre(t_node **stack);
 void		ft_are_sorted(t_node **stack);
 void		indxy_stack(t_node **stack);
-void		if_min_max_in_b (t_parss *azalim);
-void		an_node (t_node **stack, int info);
-void   		cont_the_best_b (t_node **stack);
-void		make_top (t_node **stack, int info);
-void	make_it_top (t_parss *munchen, int info);
-void	best_move_in_b (t_parss *djaja);
-void	best_move_in_a (t_parss *jwan);
-// void	total_of_a_b (t_parss *tamawayet);
-void	rev_or (t_node **stack);
-void	keep_it (t_parss *speed);
-void    ft_all_most (t_parss *sane);
-void    node_of_top (t_node **stack, int info, int name_of_inst, int type_of);
-void    make_money_a(t_node **stack, t_node *place, int info);
-void    make_money_b(t_node **stack, t_node *place, int info);
-// void	lis_moves (t_parss *lana);
-void	make_lis_top (t_node **stack, int info, int up_down);
-// void	to_be_move (t_node **my_stack);
-void	moves_befor (t_node **stack);
-void	total_of_moves (t_parss *tamawayet);
-void	p_move (t_parss *meekz, t_node *boss);
-void n_move(t_parss *dave, t_node *boss);
-void porn(t_parss *cee, t_node *boss);
-void	a_stro (t_parss *drake, t_node *boss);
-void	b_stro (t_parss *pnl, t_node *boss);
-void what_is_it(t_parss *gang, t_node *boss);
-void	five(t_parss *airbag);
-void	ft_tree (t_node	**stack);
-void	ft_tree_complet(t_node **stack);
-void	ft_for(t_parss *sherin);
-void	moveto(t_node **stack, int min);
+void		if_min_max_in_b(t_parss *azalim);
+void		an_node(t_node **stack, int info);
+void		cont_the_best_b(t_node **stack);
+void		make_top(t_node **stack, int info);
+void		make_it_top(t_parss *munchen, int info);
+void		best_move_in_b(t_parss *djaja);
+void		best_move_in_a(t_parss *jwan);
+void		rev_or(t_node **stack);
+void		keep_it(t_parss *speed);
+void		ft_all_most(t_parss *sane);
+void		node_of_top(t_node **stack, int info, int nameinst, int type_of);
+void		make_money_a(t_node **stack, t_node *place, int info);
+void		make_money_b(t_node **stack, t_node *place, int info);
+void		make_lis_top(t_node **stack, int info, int up_down);
+void		moves_befor(t_node **stack);
+void		total_of_moves(t_parss *tamawayet);
+void		p_move(t_parss *meekz, t_node *boss);
+void		n_move(t_parss *dave, t_node *boss);
+void		porn(t_parss *cee, t_node *boss);
+void		a_stro(t_parss *drake, t_node *boss);
+void		b_stro(t_parss *pnl, t_node *boss);
+void		what_is_it(t_parss *gang, t_node *boss);
+void		five(t_parss *airbag);
+void		ft_tree(t_node	**stack);
+void		ft_tree_complet(t_node **stack);
+void		ft_for(t_parss *sherin);
+void		moveto(t_node **stack, t_node *min);
+void		ft_five_complet(t_parss *jamal);
 int			sipared_arg(char *str);
 int			ft_lstsize(t_node *head);
 int			ft_strlen(char *str);
@@ -131,16 +129,14 @@ int			only_sing(char *str);
 int			find_the_big_length(t_node **stacka);
 int			check_if_lis_in_a(t_node **stack);
 int			min_value(t_node **stack);
-int	big_value(t_node **stack);
-int	how_may_move (t_parss *kane, int info);
-int	big_than (t_node **stack, int info);
-int	is_it (t_node **stack, int info, int min);
-int	only_lis (t_node **stack);
-// int min_instractions(t_node **stack);
-// int	first_of (t_node **stack);
-int	stil_ther (t_node **kmya);
-int	big_to_int (int a, int b);
-int	*bubble(int *arr, int size);
+int			big_value(t_node **stack);
+int			how_may_move(t_parss *kane, int info);
+int			big_than(t_node **stack, int info);
+int			is_it(t_node **stack, int info, int min);
+int			only_lis(t_node **stack);
+int			stil_ther(t_node **kmya);
+int			big_to_int(int a, int b);
+int			*bubble(int *arr, int size);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);

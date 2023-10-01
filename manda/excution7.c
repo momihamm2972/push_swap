@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   excution7.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:17:49 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 10:40:23 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 08:06:47 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *at_least_of_to(t_node **stack)
+t_node	*at_least_of_to(t_node **stack)
 {
-	t_node *ptr;
-	t_node *less;
-	int min;
+	t_node	*ptr;
+	t_node	*less;
+	int		min;
 
 	ptr = (*stack);
 	if (!ptr)
@@ -35,7 +35,7 @@ t_node *at_least_of_to(t_node **stack)
 	return (less);
 }
 
-void p_move(t_parss *meekz, t_node *boss)
+void	p_move(t_parss *meekz, t_node *boss)
 {
 	while (boss->moves_a > 0 && boss->moves_b > 0)
 	{
@@ -56,7 +56,7 @@ void p_move(t_parss *meekz, t_node *boss)
 	push_to_stack(meekz->stack_b, meekz->stack_a, 1);
 }
 
-void n_move(t_parss *dave, t_node *boss)
+void	n_move(t_parss *dave, t_node *boss)
 {
 	while (boss->moves_a < 0 && boss->moves_b < 0)
 	{
@@ -77,7 +77,7 @@ void n_move(t_parss *dave, t_node *boss)
 	push_to_stack(dave->stack_b, dave->stack_a, 1);
 }
 
-void porn(t_parss *cee, t_node *boss)
+void	porn(t_parss *cee, t_node *boss)
 {
 	while (boss->moves_a > 0)
 	{
@@ -99,10 +99,10 @@ void porn(t_parss *cee, t_node *boss)
 		rev_rotate(cee->stack_b, 1);
 		boss->moves_b++;
 	}
-		push_to_stack(cee->stack_b, cee->stack_a, 1);
+	push_to_stack(cee->stack_b, cee->stack_a, 1);
 }
 
-void	a_stro (t_parss *drake, t_node *boss)
+void	a_stro(t_parss *drake, t_node *boss)
 {
 	while (boss->moves_b != 0)
 	{
@@ -120,7 +120,7 @@ void	a_stro (t_parss *drake, t_node *boss)
 	push_to_stack(drake->stack_b, drake->stack_a, 1);
 }
 
-void	b_stro (t_parss *pnl, t_node *boss)
+void	b_stro(t_parss *pnl, t_node *boss)
 {
 	while (boss->moves_a != 0)
 	{
@@ -138,37 +138,19 @@ void	b_stro (t_parss *pnl, t_node *boss)
 	push_to_stack(pnl->stack_b, pnl->stack_a, 1);
 }
 
-void what_is_it(t_parss *gang, t_node *boss)
+void	what_is_it(t_parss *gang, t_node *boss)
 {
-	// printf ("weselt%d\n",boss->data);
 	if (boss->moves_a > 0 && boss->moves_b > 0)
-	{
 		p_move(gang, boss);
-		// printf ("italia\n");
-	}
 	else if (boss->moves_a < 0 && boss->moves_b < 0)
-	{
 		n_move(gang, boss);
-		// printf ("zetla\n");
-	}
-	else if ((boss->moves_a > 0 && boss->moves_b < 0) || (boss->moves_a < 0 && boss->moves_b > 0))
-	{
+	else if ((boss->moves_a > 0 && boss->moves_b < 0)
+		|| (boss->moves_a < 0 && boss->moves_b > 0))
 		porn(gang, boss);
-		// printf ("albizi\n");
-	}
 	else if (boss->moves_a == 0 && boss->moves_b != 0)
-	{
 		a_stro (gang, boss);
-		// printf ("madafack\n");
-	}
 	else if (boss->moves_b == 0 && boss->moves_a != 0)
-	{
 		b_stro (gang, boss);
-		// printf ("lean\n");
-	}
 	else if (boss->moves_a == 0 && boss->moves_b == 0)
-	{
-		push_to_stack (gang->stack_b,gang->stack_a,1);
-		// printf ("sherin\n");
-	}
+		push_to_stack (gang->stack_b, gang->stack_a, 1);
 }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   excution2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:31 by momihamm          #+#    #+#             */
-/*   Updated: 2023/09/30 07:49:13 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 06:47:20 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void make_a_in_oredre(t_node **stack)
+void	make_a_in_oredre(t_node **stack)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	ptr = (*stack);
 	while (ptr)
@@ -24,10 +24,7 @@ void make_a_in_oredre(t_node **stack)
 			if (ptr->indx_of_node <= ft_lstsize ((*stack)) / 2)
 				ptr->moves_a = ptr->indx_of_node;
 			else if (ptr->indx_of_node > ft_lstsize ((*stack)) / 2)
-			{
-				ptr->moves_a = ft_lstsize ((*stack)) - ptr->indx_of_node;
-				ptr->moves_a *= -1;
-			}
+				ptr->moves_a = (ft_lstsize ((*stack)) - ptr->indx_of_node) * -1;
 			if (ptr->moves_a > 0)
 			{
 				while ((*stack)->moves_a != ptr->moves_a)
@@ -43,9 +40,9 @@ void make_a_in_oredre(t_node **stack)
 	}
 }
 
-int check_if_lis_in_a(t_node **stack)
+int	check_if_lis_in_a(t_node **stack)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	ptr = (*stack);
 	while (ptr)
@@ -56,9 +53,10 @@ int check_if_lis_in_a(t_node **stack)
 	}
 	return (0);
 }
-void moves_befor(t_node **stack)
+
+void	moves_befor(t_node **stack)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	ptr = (*stack);
 	while (ptr)
@@ -76,16 +74,15 @@ void moves_befor(t_node **stack)
 				ptr->moves_b *= -1;
 				ptr->total_moves = ptr->moves_b;
 				ptr->total_moves *= -1;
-				// ptr->total_moves += 1;
 			}
 		}
 		ptr = ptr->next;
 	}
 }
 
-t_node *first_go(t_node **stack)
+t_node	*first_go(t_node **stack)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	ptr = (*stack);
 	while (ptr)
@@ -97,16 +94,14 @@ t_node *first_go(t_node **stack)
 	return (NULL);
 }
 
-t_node *next_to_go(t_node **stack)
+t_node	*next_to_go(t_node **stack)
 {
-	t_node *ptr;
-	t_node *node;
-	int min;
+	t_node	*ptr;
+	t_node	*node;
+	int		min;
 
 	ptr = (*stack);
 	node = first_go(stack);
-	// if (!node)
-	// 	return (NULL);
 	min = node->total_moves;
 	while (ptr)
 	{
@@ -123,9 +118,9 @@ t_node *next_to_go(t_node **stack)
 	return (node);
 }
 
-int	stil_ther (t_node **kmya)
+int	stil_ther(t_node **kmya)
 {
-	t_node *ptr;
+	t_node	*ptr;
 
 	ptr = (*kmya);
 	while (ptr)
@@ -137,33 +132,21 @@ int	stil_ther (t_node **kmya)
 	return (0);
 }
 
-void make_the_lis_in_a(t_parss *fcbayern)
+void	make_the_lis_in_a(t_parss *fcbayern)
 {
-	// t_node	**ptr;
-	t_node *go;
-	// int i = 0;
-	// ptr = fcbayern->stack_a;
+	t_node	*go;
+
 	fcbayern->stack_b = malloc(sizeof(t_node *));
 	(*fcbayern->stack_b) = NULL;
 	indxy_stack(fcbayern->stack_a);
 	while (1)
 	{
 		if (stil_ther (fcbayern->stack_a) == 0)
-			break;
+			break ;
 		moves_befor(fcbayern->stack_a);
-		// i++;
-		// if (i >= 15)
-		// 	break;
 		go = next_to_go(fcbayern->stack_a);
-		// printf("awera %d\n", go->data);
 		make_money_a(fcbayern->stack_a, go, go->data);
 		push_to_stack(fcbayern->stack_a, fcbayern->stack_b, 0);
 	}
 	make_a_in_oredre (fcbayern->stack_a);
-	// print_nodes(fcbayern->stack_a);
-	// printf("$$$$$$$$$$$$$$$$$$$$\n");
-	// print_nodes(fcbayern->stack_b);
 }
-// chi SEV bano 3end mo3ad;
-// tap;
-// 0 4 12 "      2      10       " "6"    9 13 3 11        "7      15"

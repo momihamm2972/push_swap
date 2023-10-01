@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   excution8.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momihamm <momihamm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:17:58 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/01 00:41:15 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/01 08:07:38 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+#include "push_swap.h"
+
 int	*bubble(int *arr, int size)
 {
-	int indx;
+	int	indx;
 	int	swap;
 
 	indx = 0;
@@ -100,28 +102,25 @@ void	ft_tree(t_node	**stack)
 
 void	five(t_parss *airbag)
 {
+	ft_are_sorted (airbag->stack_a);
 	if (ft_lstsize ((*airbag->stack_a)) == 2)
 	{
-		// printf ("2\n");
 		swap_2_elements ((airbag->stack_a), 0);
-		print_nodes (airbag->stack_a);
 		exit (0);
 	}
 	else if (ft_lstsize ((*airbag->stack_a)) == 3)
 	{
 		ft_tree (airbag->stack_a);
-		// printf ("3\n");
 		exit (0);
 	}
 	else if (ft_lstsize ((*airbag->stack_a)) == 4)
 	{
 		ft_for (airbag);
-		// print_nodes
-		printf ("4\n");
 		exit(0);
 	}
 	else if (ft_lstsize ((*airbag->stack_a)) == 5)
 	{
-		printf ("5\n");
+		ft_five_complet (airbag);
+		exit (0);
 	}
 }
