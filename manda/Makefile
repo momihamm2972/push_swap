@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/10/01 08:10:11 by momihamm         ###   ########.fr        #
+#    Updated: 2023/10/02 07:15:51 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,13 @@ FILES = push_swap.c\
 		excution7.c\
 		excution8.c\
 		excution9.c\
+		excution10.c\
+		excution11.c\
 		parssing1.c\
 		parssing2.c\
 		parssing3.c\
 		parssing4.c\
 		parssing5.c\
-		parssing6.c\
 		operations.c\
 		operations1.c\
 		ft_linedlist.c\

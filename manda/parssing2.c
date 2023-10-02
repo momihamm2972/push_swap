@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/01 08:11:36 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/02 07:08:26 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ t_node	*before_the_last(t_node **stack)
 	return (NULL);
 }
 
-void	print_nodes(t_node **stack)
-{
-	t_node	*tmp;
+// void	print_nodes(t_node **stack)
+// {
+// 	t_node	*tmp;
 
-	if (!(*stack))
-		return ;
-	tmp = (*stack);
-	while (tmp)
-	{
-		printf ("inod %d\t",tmp->indx_of_node);
-		printf ("data %d\t",tmp->data);
-		printf ("lent %d\t",tmp->length);
-		printf ("arei %d\t",tmp->are_in);
-		printf ("mova %d\t",tmp->moves_a);
-		printf ("movb %d\t",tmp->moves_b);
-		printf ("tmov %d\n",tmp->total_moves);
-		tmp = tmp->next;
-	}
-}
+// 	if (!(*stack))
+// 		return ;
+// 	tmp = (*stack);
+// 	while (tmp)
+// 	{
+// 		printf ("inod %d\t",tmp->indx_of_node);
+// 		printf ("data %d\t",tmp->data);
+// 		printf ("lent %d\t",tmp->length);
+// 		printf ("arei %d\t",tmp->are_in);
+// 		printf ("mova %d\t",tmp->moves_a);
+// 		printf ("movb %d\t",tmp->moves_b);
+// 		printf ("tmov %d\n",tmp->total_moves);
+// 		tmp = tmp->next;
+// 	}
+// }
 
 void	*ft_memcpy(void *to, const void *from, size_t len)
 {

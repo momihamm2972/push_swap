@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/01 08:20:37 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/02 06:46:40 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,11 @@ void	excution(t_parss *excution)
 	if (!p)
 		return ;
 	if (p->moves_b > 0)
-	{
 		while ((*excution->stack_a)->data != m)
 			rotate (excution->stack_a, 0);
-	}
 	else if (p->moves_b < 0)
-	{
 		while ((*excution->stack_a)->data != m)
 			rev_rotate (excution->stack_a, 0);
-	}
 }
 
 int	main(int ac, char **av)

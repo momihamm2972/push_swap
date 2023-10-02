@@ -6,53 +6,11 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:57:31 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/01 06:47:20 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/02 07:06:15 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	make_a_in_oredre(t_node **stack)
-{
-	t_node	*ptr;
-
-	ptr = (*stack);
-	while (ptr)
-	{
-		if (ptr->length == 1)
-		{
-			if (ptr->indx_of_node <= ft_lstsize ((*stack)) / 2)
-				ptr->moves_a = ptr->indx_of_node;
-			else if (ptr->indx_of_node > ft_lstsize ((*stack)) / 2)
-				ptr->moves_a = (ft_lstsize ((*stack)) - ptr->indx_of_node) * -1;
-			if (ptr->moves_a > 0)
-			{
-				while ((*stack)->moves_a != ptr->moves_a)
-					rotate (stack, 0);
-			}
-			else if (ptr->moves_b < 0)
-			{
-				while ((*stack)->moves_a != ptr->moves_a)
-					rev_rotate (stack, 0);
-			}
-		}
-		ptr = ptr->next;
-	}
-}
-
-int	check_if_lis_in_a(t_node **stack)
-{
-	t_node	*ptr;
-
-	ptr = (*stack);
-	while (ptr)
-	{
-		if (ptr->are_in == 1)
-			return (1);
-		ptr = ptr->next;
-	}
-	return (0);
-}
 
 void	moves_befor(t_node **stack)
 {

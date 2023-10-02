@@ -6,14 +6,13 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 18:55:00 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/01 08:27:12 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/02 07:07:21 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -137,6 +136,7 @@ int			only_lis(t_node **stack);
 int			stil_ther(t_node **kmya);
 int			big_to_int(int a, int b);
 int			*bubble(int *arr, int size);
+int			posi_val(int val_a, int val_b);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*arg_v_r(char *str);
 char		**ft_split(char *s, char c);

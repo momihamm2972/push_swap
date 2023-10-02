@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   instraction0.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/28 03:46:44 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/02 07:09:06 by momihamm         ###   ########.fr       */
+/*   Created: 2023/10/01 18:20:22 by momihamm          #+#    #+#             */
+/*   Updated: 2023/10/01 19:18:49 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	swap_2_elements(t_node **stack, int delta)
 {
@@ -25,10 +25,10 @@ void	swap_2_elements(t_node **stack, int delta)
 	swaper = (*stack)->indx_of_stack;
 	(*stack)->indx_of_stack = (*stack)->next->indx_of_stack;
 	(*stack)->next->indx_of_stack = swaper;
-	if (delta == 0)
-		write (1, "sa\n", 3);
-	else if (delta == 1)
-		write (1, "sb\n", 3);
+	// if (delta == 0)
+	// 	write (1, "sa\n", 3);
+	// else if (delta == 1)
+	// 	write (1, "sb\n", 3);
 	indxy_stack (stack);
 }
 
@@ -36,7 +36,7 @@ void	ss(t_node **stack_a, t_node **stack_b)
 {
 	swap_2_elements(stack_a, 2);
 	swap_2_elements(stack_b, 2);
-	write (1, "ss\n", 3);
+	// write (1, "ss\n", 3);
 }
 
 void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
@@ -60,10 +60,10 @@ void	push_to_stack(t_node **stack_0, t_node **stack_1, int delta)
 		(*stack_0) = (*stack_0)->next;
 		(*stack_1)->next = tmp;
 	}
-	if (delta == 0)
-		write (1, "pb\n", 3);
-	else if (delta == 1)
-		write (1, "pa\n", 3);
+	// if (delta == 0)
+	// 	write (1, "pb\n", 3);
+	// else if (delta == 1)
+	// 	write (1, "pa\n", 3);
 	indxy_stack (stack_0);
 	indxy_stack (stack_1);
 }
@@ -79,16 +79,18 @@ void	rotate(t_node **stack, int delta)
 	last->next = (*stack);
 	(*stack) = (*stack)->next;
 	last->next->next = NULL;
-	if (delta == 0)
-		write (1, "ra\n", 3);
-	else if (delta == 1)
-		write (1, "rb\n", 3);
+	// if (delta == 0)
+	// 	write (1, "ra\n", 3);
+	// else if (delta == 1)
+	// 	write (1, "rb\n", 3);
 	indxy_stack (stack);
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)
 {
+    if (!(*stack_a) || (*stack_b))
+        return ;
 	rotate (stack_a, 2);
 	rotate (stack_b, 2);
-	write (1, "rr\n", 3);
+	// write (1, "rr\n", 3);
 }
