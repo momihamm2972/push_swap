@@ -3,3 +3,4 @@ a.out
 *.o
 .gitignore
 .vscode/
+.DS_Store

@@ -6,11 +6,12 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/10/02 17:43:10 by momihamm         ###   ########.fr        #
+#    Updated: 2023/10/02 23:15:29 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONUS_NAME = my_checker
 CC = cc
 FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 FILES = manda/push_swap.c\
@@ -34,21 +35,53 @@ FILES = manda/push_swap.c\
 		manda/operations1.c\
 		manda/ft_linedlist.c\
 		manda/utils0.c
+BONUS_FILES = bonu_s/bonus_utils.c \
+			  bonu_s/bonusparss0.c \
+			  bonu_s/bonusparss1.c \
+			  bonu_s/bonusparss2.c \
+			  bonu_s/bonusparss3.c \
+			  bonu_s/bonusparss4.c \
+			  bonu_s/bonusparss5.c \
+			  bonu_s/bonusparss6.c \
+			  bonu_s/get_next_line.c \
+			  bonu_s/get_next_line_utils.c \
+			  bonu_s/linked_bonus0.c \
+			  bonu_s/linked_bonus1.c \
+			  bonu_s/linked_bonus2.c \
+			  bonu_s/my_checker.c \
 
 OBJ = $(FILES:.c=.o)
+
+BONUS_OBJ = $(BONUS_FILES:.c=.o)
 
 all : $(NAME)
 
 manda/%.o : manda/%.c manda/push_swap.h
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $<
 
 $(NAME) : $(OBJ)
 	$(CC) $(FILES) $(FLAGS) -o $(NAME)
 
+bonus : $(BONUS_NAME)
+
+bonu_s/%.o : bonu_s/%.c bonu_s/my_checker.h
+	$(CC) $(FLAGS) -c $<
+
+$(BONUS_NAME) : $(BONUS_OBJ)
+	$(CC) $(BONUS_FILES) $(FLAGS) -o $(BONUS_NAME)
+
 clean :
-		@rm -f $(OBJ)
+		rm -f $(OBJ)
 
 fclean : clean
-		@rm -f $(NAME)
+		rm -f $(NAME)
 
 re : fclean all
+
+clean_bonus :
+			  @rm -f $(BONUS_OBJ)
+
+fclean_bonus : clean_bonus
+			  @rm -f $(BONUS_NAME)
+
+re_bonus : fclean_bonus bonus

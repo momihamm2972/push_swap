@@ -6,16 +6,11 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:42:06 by momihamm          #+#    #+#             */
-/*   Updated: 2023/10/02 06:46:40 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/10/02 23:05:29 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	mr(void)
-{
-	system ("leaks push_swap");
-}
 
 t_node	*min_value_in(t_node **stack)
 {
