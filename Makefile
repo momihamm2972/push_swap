@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 14:57:47 by momihamm          #+#    #+#              #
-#    Updated: 2023/10/02 23:15:29 by momihamm         ###   ########.fr        #
+#    Updated: 2023/10/05 00:17:45 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ BONUS_OBJ = $(BONUS_FILES:.c=.o)
 all : $(NAME)
 
 manda/%.o : manda/%.c manda/push_swap.h
-	$(CC) $(FLAGS) -c $<
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
 	$(CC) $(FILES) $(FLAGS) -o $(NAME)
@@ -65,7 +65,7 @@ $(NAME) : $(OBJ)
 bonus : $(BONUS_NAME)
 
 bonu_s/%.o : bonu_s/%.c bonu_s/my_checker.h
-	$(CC) $(FLAGS) -c $<
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(BONUS_NAME) : $(BONUS_OBJ)
 	$(CC) $(BONUS_FILES) $(FLAGS) -o $(BONUS_NAME)
